@@ -1,0 +1,129 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+font-family: sans-serif;
+}
+
+body{
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#ff01cc, #550044);
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 0.3rem;
+}
+
+.container .card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #322f2f;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.card .per__mount{
+  position: absolute;
+  top: 5rem;
+  font-size: 0.9rem;
+  width: 100%;
+  color: #999;
+  text-align: center;
+}
+
+.container .card .card__title{
+  padding: 0.4rem 6rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+}
+
+.container .card .card__title-1{
+  background: #ffd700;
+}
+
+.container .card .card__title-2{
+  background: #00ff4c;
+}
+
+.container .card .card__title-3{
+  background: #9f60cd;
+}
+
+.card .content__wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .content__wrapper .add__btn{
+  position: relative;
+  border: none;
+  margin: 0.3rem;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  width: 97%;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  background: #555;
+}
+
+.card .content__wrapper .price__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 2rem;
+  color: white;
+  border-bottom: 0.15rem solid #555;
+}
+
+
+.card .content__wrapper .price__wrapper h1{
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.card .content__wrapper .price__wrapper small{
+  align-self: flex-end;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  margin-right: 0.3rem;
+}
+
+.card .content__wrapper .price__wrapper h6{
+  align-self: flex-start;
+  font-size: 1.4rem;
+  margin-top: 0.8rem;
+  margin-left: 0.2rem;
+}
+
+.card .descriptoion__wrapper{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .descriptoion__wrapper .descriptoion__list{
+  text-align: center;
+  padding: 1rem;
+  color: #999;
+  text-transform: capitalize;
+  border-bottom: 0.15rem solid #555;
+}
+
+.card .descriptoion__wrapper .descriptoion__list:last-child{
+  border: none;
+}

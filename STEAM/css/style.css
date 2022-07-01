@@ -1,0 +1,255 @@
+:root {
+  --bg-color: #212429;
+  --header-bg-clr: #171a21;
+  --text-color: #fff;
+  --text-clr-100: #dfe3e6;
+  --header-text-clr: #b8b6b4;
+  --install-btn-clr: #5c7e10;
+  --input-clr: #32353c;
+  --btn-linear-gradient: linear-gradient(45deg, #28a2ff, #0051ff);
+}
+
+.body {
+  min-height: 100vh;
+  background: var(--bg-color);
+}
+
+.body.bg__img {
+  background-image: url(../image/bg_img.jpg);
+  /* background-size: 50% 100%; */
+  background-position: -40vw 0;
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1200px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  background: var(--header-bg-clr);
+  color: var(--header-text-clr);
+}
+
+.header .container .nav {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header .container .nav .nav__left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.header .container .nav .nav__left .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.header .container .nav .nav__left .logo i {
+  font-size: 2.8rem;
+}
+
+.header .container .nav .nav__left .nav__item__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header .container .nav .nav__left .nav__item__wrapper .nav__item {
+  text-decoration: none;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: var(--header-text-clr);
+  font-family: sans-serif;
+}
+
+.header .nav .nav__right {
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 0.3rem;
+}
+
+.header .nav .nav__right .btn {
+  padding: 0.4rem 0.8rem;
+  text-decoration: none;
+  font-size: 0.7rem;
+  color: var(--header-text-clr);
+  font-family: sans-serif;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.header .nav .nav__right .btn.login {
+  border-right: 0.05rem solid var(--header-text-clr);
+}
+
+.header .nav .nav__right .btn.install {
+  background: var(--install-btn-clr);
+  color: var(--text-color);
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.main .container .create__acount__wrapper {
+  padding: 1rem;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__title {
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item:last-child {
+  margin-bottom: 0;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item label {
+  font-size: 0.8rem;
+  text-align: start;
+  width: 100%;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: var(--header-text-clr);
+  margin-bottom: 0.2rem;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item .input {
+  background: #32353C;
+  border-radius: 0.3rem;
+  color: var(--header-text-clr);
+  padding: 0.5rem 0.6rem;
+  display: block;
+  border: none;
+  width: 100%;
+  transition: .5s;
+  font-weight: normal;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .label__agree {
+  color: var(--header-text-clr);
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  width: 78%;
+  margin-bottom: 1rem;
+  line-height: 1.3rem;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .label__agree .checkbox {
+  display: inline;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #32353C;
+  accent-color: #32353C;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .label__agree a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main .container .create__acount__wrapper .account__form__wrapper .form__row .submit__btn__wrapper .continue__btn {
+  border-radius: 2px;
+  width: 100%;
+  border: none;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #c3e1f8;
+  text-shadow: 1px 1px 0px rgb(0 0 0 / 30%);
+  background: var(--btn-linear-gradient);
+}
+
+@media (min-width: 985px) {
+  .header .container .nav {
+    flex-wrap: nowrap;
+  }
+
+  .header .container .nav .nav__left {
+    gap: 4rem;
+  }
+
+  .header .container .nav .nav__left {
+    flex-wrap: nowrap;
+  }
+
+  .header .container .nav .nav__left .nav__item__wrapper {
+    flex-wrap: nowrap;
+  }
+
+}
+
+@media (min-width: 585px) {
+
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .submit__btn__wrapper .continue__btn {
+    width: auto;
+  }
+
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item .input {
+    max-width: 300px;
+  }
+
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item {
+    align-items: stretch;
+  }
+
+}
+
+@media (max-width: 580px) {
+  
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item .input {
+    max-width: 100%;
+  }
+
+}

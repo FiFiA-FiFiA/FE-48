@@ -1,0 +1,138 @@
+:root{
+  --bg-clr: #222;
+  --orange-clr: #ff8c00;
+  --red-clr: #ff0000;
+  --blue-clr: #0ad081;
+  --txt-clr: #ffffff;
+
+  --border-1: 0.12rem solid #444;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+font-family: sans-serif;
+}
+
+body{
+  min-height: 100vh;
+  background:var(--bg-clr);
+}
+
+.container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.container .header{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.container .header .logo{
+  font-size: 2.5rem;
+  text-transform: capitalize;
+  color: var(--txt-clr);
+}
+
+.container .wrapper{
+  border: var(--border-1);
+  border-top: none;
+  border-collapse: collapse;
+}
+
+.container .wrapper .head{
+  text-align: start;
+  padding: 0.4rem 1rem 0.4rem 0.7rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: var(--bg-clr);
+  background: var(--txt-clr);
+}
+
+.container .wrapper .head.starter{
+  background: var(--orange-clr);
+  color: var(--txt-clr);
+  padding: 0.6rem 3rem;
+
+}
+.container .wrapper .head.advance{
+  background: var(--red-clr);
+  color: var(--txt-clr);
+  padding: 0.6rem 3rem;
+
+}
+.container .wrapper .head.enterprise{
+  background: var(--blue-clr);
+  padding: 0.6rem 3rem;
+  color: var(--txt-clr);
+}
+
+.container .wrapper .title{
+  text-align: center;
+  max-width: 290px;
+  padding: 0.5rem 0.7rem;
+  font-size: 1rem;
+  text-transform: capitalize;
+  font-weight: 300;
+  color: var(--txt-clr);
+  border: var(--border-1);
+  border-top: none;
+}
+
+.container .wrapper .title:first-child{
+  text-align: start;
+}
+
+.container .wrapper .title.starter,
+.container .wrapper .title.advance,
+.container .wrapper .title.enterprise{
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.container .wrapper .title.starter{
+  color: var(--orange-clr);
+}
+.container .wrapper .title.advance{
+  color: var(--red-clr);
+}
+.container .wrapper .title.enterprise{
+  color: var(--blue-clr);
+}
+
+.container .wrapper .title.advance i{
+  color: var(--orange-clr);
+}
+.container .wrapper .title.enterprise i{
+  color: var(--orange-clr);
+}
+
+.container .wrapper .title .buy__btn{
+  padding: 0.6rem 1.6rem;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-shadow: 0 0 0.2rem #222;
+  text-transform: uppercase;
+  color: var(--txt-clr);
+  border-radius: 2rem;
+  background: var(--red-clr);
+  cursor: pointer;
+}

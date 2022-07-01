@@ -1,0 +1,159 @@
+html{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+::-webkit-scrollbar{
+  width: 0.6rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background: black;
+  /* border-radius: 1rem; */
+  border-right: 0.1rem solid #fed279;
+}
+
+body{
+  min-height: 100vh;
+  background: #fed279;
+}
+
+.container{
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.header{
+  position: relative;
+  margin-top: 4rem;
+}
+
+.header .container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.header .container .logo{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.header .container .logo h1{
+  font-size: 3.5rem;
+  text-transform: uppercase;
+}
+
+.header .container .contact{
+  display: flex;
+  gap: 0.4rem;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.header .container .contact p{
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+main {
+  margin: 1rem 0;
+  margin-bottom: 5rem;
+}
+
+main .container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+main .container .section{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: space-between;
+}
+
+main .container .section .section__title{
+  border-bottom: 0.2rem solid black;
+  padding: 0.3rem 0;
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+main .container .section p{
+  font-size: 1rem;
+  line-height: 1.3rem;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+main .container .section .jobs__wrapper{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+main .container .section .jobs__wrapper .jobs__title{
+  text-transform: uppercase;
+}
+
+main .container .section .jobs__wrapper p{
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+main .container .section .jobs__wrapper ul{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1rem;
+}
+
+main .container .section .jobs__wrapper ul li{
+  position: relative;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+main .container .section .jobs__wrapper ul li::before{
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 50%;
+  transform: translateY(-50%) rotateZ(45deg);
+  padding: 0.2rem;
+  background: black;
+}
+
+main .container .section .qualifications__wrapper{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-top: 0.7rem;
+}
+
+
+main .container .section .qualifications__wrapper .qualification__title{
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+main .container .section .qualifications__wrapper p{
+  margin-top: 0.3rem;
+  font-style: italic;
+  text-transform: capitalize;
+}
