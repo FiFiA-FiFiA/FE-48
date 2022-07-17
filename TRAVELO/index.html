@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!------------------ CUSTOM CSS ---------------->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <link rel="stylesheet" href="./assets/css/ALL.css">
+
+  <link rel="stylesheet" href="../ICON/css/all.css">
+
+  <link rel="stylesheet" href="./assets/css/media__query.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!------------------ CUSTOM JS ---------------->
+  <script src="./assets/js/main.js" defer></script>
+
+  <title>travelo</title>
+</head>
+
+<body>
+
+  <div class="page__content__overlay " page__content__overlay></div>
+
+  <header class="header" header>
+    <div class="container">
+      <div class="header__row">
+
+        <div class="header__item__column">
+          <a href="#" class="logo">
+            <img src="./assets/img/logo.webp" alt="">
+          </a>
+        </div>
+
+        <div class="header__item__column hide">
+          <nav class="nav">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Destination</a></li>
+              <li><a href="#">Pages <i class="fa fa-angle-down"></i></a></li>
+              <li><a href="#">blog <i class="fa fa-angle-down"></i></a></li>
+              <li><a href="#">contact</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="header__item__column hide">
+          <div class="header__social__wrapper">
+            <a href="#" class="phone__number"><i class="fa fa-phone"></i> 10(256)-928 256</a>
+            <ul class="social__link__wrapper">
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <button class="nav__open__btn" nav__open__btn>
+          <i class="fa fa-bars"></i>
+        </button>
+
+      </div>
+
+      <div class="header__search__btn hide" header__search__btn>
+        <i class="fa fa-search"></i>
+      </div>
+
+    </div>
+  </header>
+
+  <nav class="navigation__mobile__container" navigation__mobile__container>
+
+    <div class="nav__head">
+
+      <div class="logo">
+        <img src="./assets/img/logo.webp" alt="">
+      </div>
+
+      <div class="nav__close__btn" nav__close__btn>
+        <i class="fa fa-times"></i>
+      </div>
+    </div>
+
+    <label for="nav__search" class="mob__nav__search__wrapper">
+      <input type="text" id="nav__search" placeholder="search...">
+      <i class="fa fa-search"></i>
+    </label>
+
+    <div class="nav__list__wrapper">
+      <div class="nav__item">
+        <a href="#">Home</a>
+      </div>
+      <div class="nav__item">
+        <a href="#">About</a>
+      </div>
+      <div class="nav__item">
+        <a href="#">Destination</a>
+      </div>
+      <div class="nav__item" nav__item>
+        <a href="#">Pages</a>
+        <i class="fa fa-angle-down"></i>
+      </div>
+      <div class="submenu__item__wrapper" submenu__item__wrapper>
+        <a href="#" class="submenu__item">Destinations details</a>
+        <a href="#" class="submenu__item">elements</a>
+      </div>
+      <div class="nav__item" nav__item>
+        <a href="#">blog</a>
+        <i class="fa fa-angle-down"></i>
+      </div>
+      <div class="submenu__item__wrapper" submenu__item__wrapper>
+        <a href="#" class="submenu__item">blog</a>
+        <a href="#" class="submenu__item">single-blog</a>
+      </div>
+      <div class="nav__item">
+        <a href="#">contact</a>
+      </div>
+    </div>
+
+    <div class="mob__nav__social__wrapper">
+      <a href="#" class="phone__number"><i class="fa fa-phone"></i> 10(256)-928 256</a>
+      <ul class="social__link__wrapper">
+        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-google-plus"></i></a></li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <div class="search__overlay__container" search__overlay__container>
+    <div class="search__shadow" search__shadow></div>
+    <label for="overlay__search" class="overlay__search__wrapper">
+      <input type="text" id="overlay__search" placeholder="search...">
+      <button class="btn">search</button>
+    </label>
+  </div>
+
+  <main class="container">
+
+    <section class="home__section section__slider">
+
+      <div class="slider__container">
+        <div class="slider__btn slider__prew__btn" slider__prew__btn>
+          <i class="fa fa-angle-left"></i>
+        </div>
+
+        <div class="slider__btn slider__next__btn" slider__next__btn>
+          <i class="fa fa-angle-right"></i>
+        </div>
+
+        <div class="slider__wrapper" slider__wrapper>
+
+          <div class="slider">
+            <img src="./assets/img/slide__1.jpg" alt="">
+            <div class="slider__text__wrapper">
+              <p class="country__title">Australia</p>
+              <span class="description">Pixel perfect design with awesome contents</span>
+              <button class="btn explore__btn">Explore Now</button>
+            </div>
+          </div>
+
+          <div class="slider">
+            <img src="./assets/img/slide__2.jpg" alt="">
+            <div class="slider__text__wrapper">
+              <p class="country__title">Switzeland</p>
+              <span class="description">Pixel perfect design with awesome contents</span>
+              <button class="btn explore__btn">Explore Now</button>
+            </div>
+          </div>
+
+          <div class="slider">
+            <img src="./assets/img/slide__3.jpg" alt="">
+            <div class="slider__text__wrapper">
+              <p class="country__title">Indonesia</p>
+              <span class="description">Pixel perfect design with awesome contents</span>
+              <button class="btn explore__btn">Explore Now</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="where__togo__wrapper">
+        <p class="title">where you want to go?</p>
+
+        <form action="#">
+          <label class="input__wrapper" for="input__1">
+            <input type="text" class="input" id="input__1" placeholder="Where to go?">
+          </label>
+
+          <label class="input__wrapper" for="input__2">
+            <p class="curent">Data</p>
+            <i class="fa fa-caret-down"></i>
+            <input type="date" class="input" id="input__2" hidden>
+          </label>
+
+          <div class="input__wrapper" travel__type__wrapper>
+            <p class="curent" curent>Travrl type</p>
+            <i class="fa fa-caret-down"></i>
+            <ul class="select__wrapper" select__wrapper>
+              <li option__value="Travrl type" class="option selection">Travrl type</li>
+              <li option__value="Some option" class="option">some option</li>
+              <li option__value="Another option" class="option">Another option</li>
+            </ul>
+          </div>
+
+          <button class="btn search__btn">search</button>
+        </form>
+
+      </div>
+    </section>
+
+    <section class="home__section section__popular__destination">
+      <h1 class="title">Popular Destination</h1>
+      <p class="description">Suffered alteration
+        in some form, by injected humour or
+        good day randomised booth anim 8-bit
+        hella wolf moon beard words.</p>
+
+      <div class="img__item__wrapper">
+
+        <div class="item__wrapper">
+          <img src="./assets/img/destination__1.png"
+            alt="">
+          <div class="content__wrapper">
+            <p class="country">Italy <span>07 Places</span></p>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <img src="./assets/img/destination__2.png"
+            alt="">
+          <div class="content__wrapper">
+            <p class="country">Brazil<span>03 Places</span></p>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <img src="./assets/img/destination__3.png"
+            alt="">
+          <div class="content__wrapper">
+            <p class="country">America<span>10 Places</span></p>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <img src="./assets/img/destination__4.png"
+            alt="">
+          <div class="content__wrapper">
+            <p class="country">Nepal<span>02 Places</span></p>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <img src="./assets/img/destination__5.png"
+            alt="">
+          <div class="content__wrapper">
+            <p class="country">Maldives<span>02 Places</span></p>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <img src="./assets/img/destination__6.png"
+            alt="">
+          <div class="content__wrapper">
+            <p class="country">Indonesia<span>05 Places</span></p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="newletter__wrapper">
+        <div class="newsletter__text">
+          <h4>Subscribe Our Newsletter</h4>
+          <p>Subscribe newsletter to get offers and about
+            new places to discover.</p>
+        </div>
+
+        <form class="newsletter__form">
+          <div class="newsletter__field">
+            <input type="email" placeholder="Your mail">
+          </div>
+
+          <button class="newsletter__btn" type="submit">Subscribe</button>
+        </form>
+      </div>
+
+    </section>
+
+    <section class="home__section section__popular__places">
+      <h1 class="title">Popular Places</h1>
+      <p class="description">Suffered alteration
+        in some form, by injected humour or
+        good day randomised booth anim 8-bit
+        hella wolf moon beard words.</p>
+
+      <div class="place__item__wrapper">
+
+        <div class="item__wrapper">
+          <span class="price">$500</span>
+          <img src="./assets/img/place__1.jpg" alt="">
+          <div class="place__info__wrapper">
+            <p class="country">California</p>
+            <p class="description">United State of America</p>
+            <div class="rating__day__wrapper">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>(20 Review)</p>
+              </div>
+              <div class="day">
+                <i class="far fa-clock"></i>
+                <p> 5 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <span class="price">$500</span>
+          <img src="./assets/img/place__2.jpg" alt="">
+          <div class="place__info__wrapper">
+            <p class="country">Korola Megna</p>
+            <p class="description">United State of America</p>
+            <div class="rating__day__wrapper">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>(20 Review)</p>
+              </div>
+              <div class="day">
+                <i class="far fa-clock"></i>
+                <p> 5 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <span class="price">$500</span>
+          <img src="./assets/img/place__3.jpg" alt="">
+          <div class="place__info__wrapper">
+            <p class="country">London</p>
+            <p class="description">United State of America</p>
+            <div class="rating__day__wrapper">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>(20 Review)</p>
+              </div>
+              <div class="day">
+                <i class="far fa-clock"></i>
+                <p> 5 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <span class="price">$500</span>
+          <img src="./assets/img/place__4.jpg" alt="">
+          <div class="place__info__wrapper">
+            <p class="country">Miami Beach</p>
+            <p class="description">United State of America</p>
+            <div class="rating__day__wrapper">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>(20 Review)</p>
+              </div>
+              <div class="day">
+                <i class="far fa-clock"></i>
+                <p> 5 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <span class="price">$500</span>
+          <img src="./assets/img/place__5.jpg" alt="">
+          <div class="place__info__wrapper">
+            <p class="country">California</p>
+            <p class="description">United State of America</p>
+            <div class="rating__day__wrapper">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>(20 Review)</p>
+              </div>
+              <div class="day">
+                <i class="far fa-clock"></i>
+                <p> 5 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item__wrapper">
+          <span class="price">$500</span>
+          <img src="./assets/img/place__6.jpg" alt="">
+          <div class="place__info__wrapper">
+            <p class="country">Saintmartine Iceland</p>
+            <p class="description">United State of America</p>
+            <div class="rating__day__wrapper">
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <p>(20 Review)</p>
+              </div>
+              <div class="day">
+                <i class="far fa-clock"></i>
+                <p> 5 Days</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="place__btn__wrapper">
+        <button class="btn">More Places</button>
+      </div>
+    </section>
+
+    <section class="home__section section__video">
+      <div class="text__content">
+        <h3 class="title">Enjoy Video</h3>
+
+        <div class="play__btn__animation">
+          <i class="fa fa-play"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="home__section section__travel__variation">
+      <div class="travel__variation__item__wrapper">
+
+        <div class="travel__variation__item">
+          <img src="./assets/img/svg/1.svg" alt="">
+
+          <h3 class="title">Comfortable Journey</h3>
+          <p class="description">A wonderful serenity has taken to the possession of my entire soul.</p>
+        </div>
+
+        <div class="travel__variation__item">
+          <img src="./assets/img/svg/2.svg" alt="">
+
+          <h3 class="title">Comfortable Journey</h3>
+          <p class="description">A wonderful serenity has taken to the possession of my entire soul.</p>
+        </div>
+
+        <div class="travel__variation__item">
+          <img src="./assets/img/svg/3.svg" alt="">
+
+          <h3 class="title">Comfortable Journey</h3>
+          <p class="description">A wonderful serenity has taken to the possession of my entire soul.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="home__section section__testimonial">
+
+      <div class="testimonial__wrapper">
+        <div class="testimonial__slider__wrapper" testimonial__slider__wrapper>
+
+          <div class="slide" id="slide__1" testimonial__slide>
+            <div class="author__img__wrapper">
+              <img src="./assets/img/woman_1.jpg" alt="">
+              <i class="fa fa-quote-left"></i>
+            </div>
+            <p class="testimonial__text">
+              "Working in conjunction with
+              humanitarian aid agencies,
+              we have supported programmes
+              to help alleviate
+              human suffering."
+            </p>
+            <div class="testimonial__author">
+              <h3>- Jerry Mouse</h3>
+            </div>
+          </div>
+
+          <div class="slide" id="slide__2" testimonial__slide>
+            <div class="author__img__wrapper">
+              <img src="./assets/img/woman_2.jpg" alt="">
+              <i class="fa fa-quote-left"></i>
+            </div>
+            <p class="testimonial__text">
+              "Working in conjunction with
+              humanitarian aid agencies,
+              we have supported programmes
+              to help alleviate
+              human suffering."
+            </p>
+            <div class="testimonial__author">
+              <h3>- Tom Mouse</h3>
+            </div>
+          </div>
+
+          <div class="slide" id="slide__3" testimonial__slide>
+            <div class="author__img__wrapper">
+              <img src="./assets/img/woman_3.jpg" alt="">
+              <i class="fa fa-quote-left"></i>
+            </div>
+            <p class="testimonial__text">
+              "Working in conjunction with
+              humanitarian aid agencies,
+              we have supported programmes
+              to help alleviate
+              human suffering."
+            </p>
+            <div class="testimonial__author">
+              <h3>- Micky Mouse</h3>
+            </div>
+          </div>
+
+        </div>
+        <div class="testimonial__pagination">
+          <a href="#slide__1" class="slide__1 pagination__btn active" pagination__btn></a>
+          <a href="#slide__2" class="slide__2 pagination__btn" pagination__btn></a>
+          <a href="#slide__3" class="slide__3 pagination__btn" pagination__btn></a>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="home__section section__recent__trips">
+      <h1 class="title">Recent Trips</h1>
+
+      <div class="recent__trips__wrapper">
+
+        <div class="recent__item">
+          <div class="img__wrapper">
+            <img src="./assets/img/recent__1.webp" alt="">
+          </div>
+          <div class="recent__info">
+            <span class="date">Oct 12, 2019</span>
+            <h3>Journeys Are Best Measured In New Friends</h3>
+          </div>
+        </div>
+
+        <div class="recent__item">
+          <div class="img__wrapper">
+            <img src="./assets/img/recent__2.webp" alt="">
+          </div>
+          <div class="recent__info">
+            <span class="date">Oct 12, 2019</span>
+            <h3>Journeys Are Best Measured In New Friends</h3>
+          </div>
+        </div>
+
+        <div class="recent__item">
+          <div class="img__wrapper">
+            <img src="./assets/img/recent__3.webp" alt="">
+          </div>
+          <div class="recent__info">
+            <span class="date">Oct 12, 2019</span>
+            <h3>Journeys Are Best Measured In New Friends</h3>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <div class="footer__top">
+        <div class="row">
+
+          <div class="footer__widget">
+            <div class="footer__logo">
+              <img src="./assets/img/logo__light.webp" alt="">
+            </div>
+
+            <div class="footer__text">
+              <p>5th flora, 700/D kings road, green</p>
+              <p>lane New York-1782</p>
+              <a href="#">+10 367 826 2567</a>
+              <a href="#">contact@carpenter.com</a>
+            </div>
+
+
+            <ul class="social__link__wrapper">
+              <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+              <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            </ul>
+          </div>
+
+          <div class="footer__widget">
+            <h3 class="footer__title">Company</h3>
+
+            <ul class="links">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#"> Gallery</a></li>
+              <li><a href="#"> Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__widget">
+            <h3 class="footer__title">Popular Destination</h3>
+
+            <ul class="links double__links">
+              <li><a href="#">Indonesia</a></li>
+              <li><a href="#">America</a></li>
+              <li><a href="#">India</a></li>
+              <li><a href="#">Switzerland</a></li>
+              <li><a href="#">Italy</a></li>
+              <li><a href="#">Canada</a></li>
+              <li><a href="#">Franch</a></li>
+              <li><a href="#">England</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__widget">
+            <h3 class="footer__title">Instagram</h3>
+
+            <div class="instagram__feed__wrapper">
+              <div class="item">
+                <img src="./assets/img/place__3.jpg" alt="">
+              </div>
+              <div class="item">
+                <img src="./assets/img/place__5.jpg" alt="">
+              </div>
+              <div class="item">
+                <img src="./assets/img/place__2.jpg" alt="">
+              </div>
+              <div class="item">
+                <img src="./assets/img/place__4.jpg" alt="">
+              </div>
+              <div class="item">
+                <img src="./assets/img/destination__3.png" alt="">
+              </div>
+              <div class="item">
+                <img src="./assets/img/destination__5.png" alt="">
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="copy__right">Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="far fa-heart"></i> by <a href="#" target="_blank">Colorlib</a></p>
+      </div>
+    </footer>
+
+  </main>
+</body>
+
+</html>

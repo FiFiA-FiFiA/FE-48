@@ -9,13 +9,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-------------------- CUSTOM CSS ----------------->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media_query.css">
     <link rel="stylesheet" href="../ICON/css/all.css">
     <link rel="stylesheet" href="../ALL.css">
+
+    <!-------------------- CUSTOM js ----------------->
+    <script src="./js/script.js" defer></script>
 
     <title>Steam</title>
   </head>
 
 <body class="body bg__img">
+
+  <div class="page__content__overlay" page__content__overlay></div>
 
   <header class="header">
     <div class="container">
@@ -23,13 +29,75 @@
       <nav class="nav">
 
         <div class="nav__left">
+
+          <div class="nav__bar__icon" nav__bar__btn>
+            <i class="fa fa-bars"></i>
+          </div>
+
           <h1 class="logo"><i class="fab fa-steam"></i> STEAM</h1>
 
           <div class="nav__item__wrapper">
-            <a href="#" class="nav__item">store</a>
-            <a href="#" class="nav__item">community</a>
-            <a href="#" class="nav__item">about</a>
-            <a href="#" class="nav__item">support</a>
+            <ul>
+              <li>
+                <a href="#" class="nav__item">store</a>
+              </li>
+              <li>
+                <a href="#" class="nav__item">community</a>
+              </li>
+              <li>
+                <a href="#" class="nav__item">about</a>
+              </li>
+              <li>
+                <a href="#" class="nav__item">support</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="menu__item__wrapper__mob" nav__item__wrapper__mob>
+            
+            <div class="menu__item__wrapper">
+              <a href="#" class="menu__item">login</a>
+              <a class="menu__item" menu__down__btn>store <div class="fa fa-angle-down menu__down__btn"></div>
+              </a>
+              <div class="menu__item submenu__item__wrapper" submenu__item__wrapper>
+                <a href="#" class="submenu__item">home</a>
+                <a href="#" class="submenu__item">Discovery Queue</a>
+                <a href="#" class="submenu__item">Wishlist</a>
+                <a href="#" class="submenu__item">Points Shop</a>
+                <a href="#" class="submenu__item">News</a>
+                <a href="#" class="submenu__item">Stats</a>
+              </div>
+              <a class="menu__item" menu__down__btn>community <div class="fa fa-angle-down menu__down__btn"></div></a>
+              <div class="menu__item submenu__item__wrapper" submenu__item__wrapper>
+                <a href="#" class="submenu__item">home</a>
+                <a href="#" class="submenu__item">Discussions</a>
+                <a href="#" class="submenu__item">Workshop</a>
+                <a href="#" class="submenu__item">Market</a>
+                <a href="#" class="submenu__item">Broadcasts</a>
+              </div>
+              <a href="#" class="menu__item">support</a>
+
+              <div class="minor__menu__items">
+                <div class="menuitem change__language__action">Change language </div>
+                <div class="menuitem"> View desktop website </div>
+              </div>
+            </div>
+
+            <div class="mainmenu__footer__spacer "></div>
+
+            <div class="mainmenu__footer">
+              <div class="mainmenu__footer__logo">
+                <img src="https://store.cloudflare.steamstatic.com/public/shared/images/responsive/logo_valve_footer.png">
+              </div>
+                © Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US
+                and other countries. <span class="mainmenu__valve__links">
+                <a href="#">Privacy Policy</a>
+                &nbsp;| &nbsp;<a href="#">Legal</a>
+                &nbsp;| &nbsp;<a href="#">Steam Subscriber Agreement</a>
+                &nbsp;| &nbsp;<a href="#">Refunds</a>
+              </span>
+            </div>
+
           </div>
 
         </div>

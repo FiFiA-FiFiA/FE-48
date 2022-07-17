@@ -1,0 +1,66 @@
+@media screen and (max-width: 900px) {
+  .body.bg__img {
+    background-image: none;
+  }
+
+  .container,
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .submit__btn__wrapper .continue__btn,
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .label__agree {
+    width: 100%;
+  }
+
+  .nav__bar__icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+  }
+
+  .header .container .nav .nav__left .logo {
+    color: var(--text-color);
+  }
+
+  .header .container .nav .nav__left {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .header .container .nav .nav__left .nav__item__wrapper,
+  .header .nav .nav__right {
+    display: none;
+  }
+
+  .header .container .nav .nav__left {
+    gap: 4rem;
+  }
+
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item .input {
+    max-width: 100%;
+  }
+
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item {
+    align-items: stretch;
+  }
+}
+
+
+@media (max-width: 775px) {
+  .create__acount__wrapper {
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 580px) {
+
+  .main .container .create__acount__wrapper .account__form__wrapper .form__row .input__item .input {
+    max-width: 100%;
+  }
+
+  .main .container .create__acount__wrapper .account__form__wrapper {
+    padding: 1rem;
+  }
+
+}

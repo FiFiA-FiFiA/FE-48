@@ -1,0 +1,190 @@
+:root{
+  --sky-clr: #FFEDAC;
+  --sun-clr: #FFF2DE;
+
+  --moon-c-clr: #3E4347;
+  --moon-o-clr: #FFE8A6;
+
+  --m1-orange: #FF3D00;
+  --m1-orange-light: #FF7A00;
+
+  --m2-orange:#FF7A00;
+  --m2-orange-light: #FFCF23;
+ 
+  --m3-orange: #FFC700;
+  --m3-orange-light: #FFEDAC;
+}
+
+:root.night{
+  --sky-clr: #2F2E41;
+
+  --m1-orange: #4A4860;
+  --m1-orange-light: #010102;
+
+  --m2-orange:#7E7BA1;
+  --m2-orange-light: #010102;
+ 
+  --m3-orange: #A39FCE;
+  --m3-orange-light: #010102;
+}
+
+body{
+  min-height: 100vh;
+}
+
+svg{
+  display: block;
+  width: 100%;
+}
+
+.container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--sky-clr);
+}
+
+.container .m{
+  position: absolute;
+  width: 130vw;
+  height: 50vh;
+  bottom: 0;
+  left: -200px;
+  right: 0;
+}
+
+.container .m.m__1{
+  z-index: 10;
+  animation: m1 3s linear forwards;
+}
+
+@keyframes m1 {
+  0%{
+    transform: translate(-5%, 10%);
+  }
+  100%{
+    transform: translate(0%, 0%);
+  }
+}
+
+.container .m.m__2{
+  z-index: 9;
+  animation: m2 3s linear forwards;
+}
+@keyframes m2 {
+  0%{
+    transform: translate(0%, 0%);
+  }
+  100%{
+    transform: translate(-10%, -10%);
+  }
+}
+.container .m.m__3{
+  z-index: 8;
+  animation: m3 3s linear forwards;
+}
+
+@keyframes m3 {
+  0%{
+    transform: translate(0%, 0%);
+  }
+  100%{
+    transform: translate(-10%, -10%);
+  }
+}
+
+
+:root.night .container .m.m__1{
+  animation: mn1 3s linear forwards;
+}
+
+@keyframes mn1 {
+  0%{
+    transform: translate(0%, 0%);
+  }
+  100%{
+    transform: translate(10%, 10%);
+  }
+}
+
+:root.night .container .m.m__2{
+  animation: mn2 3s linear forwards;
+}
+
+@keyframes mn2 {
+  0%{
+    transform: translate(0%, 10%);
+  }
+  100%{
+    transform: translate(-10%, 0%);
+  }
+}
+
+:root.night .container .m.m__3{
+  animation: mn3 3s linear forwards;
+}
+
+@keyframes mn3 {
+  0%{
+    transform: translate(0%, 0%);
+  }
+  100%{
+    transform: translate(10%, 10%);
+  }
+}
+
+.container .m svg{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container .m svg path{
+  width: 100%;
+}
+
+.sun{
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 4rem var(--m3-orange);
+  animation: sunset 3s linear forwards;
+}
+
+:root.night .sun{
+  animation: sunrise 3s linear forwards;
+}
+
+.sun svg{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes sunset {
+  0%{
+    transform: translate(-240%, 90%);
+  }
+  50%{
+    transform: translate(-120%, 50%);
+  }
+  100%{
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes sunrise {
+  0%{
+    transform: translate(0%, 0%);
+  }
+  50%{
+    transform: translate(150%, 25%);
+  }
+  100%{
+    transform: translate(220%, 50%);
+  }
+}

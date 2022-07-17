@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-------------- CUSTOM CSS ------------->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/media__query.css">
+
+  <link rel="stylesheet" href="../ALL.css">
+  <link rel="stylesheet" href="../ICON/css/all.css">
+
+  <!---------------- CUSTOM JS ------------->
+  <script src="./js/script.js" defer></script>
+  <title>ORIGIN</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <nav class="nav__top active" nav__top>
+
+        <div class="nav__left__overlay" onclick="opan()"></div>
+
+        <div class="nav__bar" onclick="opan()">
+          <div class="line"></div>
+        </div>
+
+        <div class="logo">
+          <img src="./image/origin__logo.svg" alt="">
+        </div>
+
+        <!-- <form class="search__container"> -->
+
+        <label class="nav__search__top" for="nav__search__top">
+          <i class="fa fa-search"></i>
+        </label>
+
+        <!-- <div class="search__input__container">
+            <i class="fa fa-search"></i>
+            <input type="search" placeholder="search games and more" id="nav__search__top">
+            <i class="fa fa-times"></i>
+          </div> -->
+
+        <!-- </form> -->
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <nav class="nav__left active" nav__left>
+
+        <div class="original__nav__top">
+
+          <div class="origin__logo">
+            <img src="./image/origin__logo.svg" alt="">
+          </div>
+
+          <div class="left__search__container">
+            <label for="nav__search__left">
+              <i class="fa fa-search"></i>
+              <input type="search" placeholder="search games and more" id="nav__search__left">
+            </label>
+          </div>
+        </div>
+
+        <div class="origin__nav__primary__manu">
+
+          <div class="origin__nav__ul">
+            <div class="origin__nav__list">
+              <a href="#" class="nav__list">EA Play <i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="origin__nav__list">
+              <a href="#" class="nav__list active">Store</a>
+              <ul>
+                <li><a href="#" class="nav__list">browse game <i class="fa fa-angle-right"></i></a></li>
+                <li><a href="#" class="nav__list">deals <i class="fa fa-angle-right"></i></a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="origin__nav__tertiary">
+          <a href="#">about</a>
+          <a href="#">download</a>
+          <a href="#">help</a>
+        </div>
+
+        <div class="origin__nav__bottom">
+          <a href="#" class="btn signin__btn">sign in</a>
+          <a href="#" class="btn signup__btn">register</a>
+          <span class="line"></span>
+          <button class="lang"><i class="fa fa-language"></i>Language Preferences</button>
+        </div>
+
+      </nav>
+      <div class="content">
+        <div class="original__background__wrapper">
+          <img src="./image/original.jpg" alt="" class="bg__img">
+
+          <div class="origin__store__takeover__wrapper">
+            <img src="./image/original 1.png" alt="">
+
+            <h4 class="takeover__subtitle">the sims™ 4 high school years</h4>
+
+            <div class="origin__store__takeover__btn__wrapper">
+              <a href="#" class="btn pre__order__btn">pre-order now</a>
+              <a href="#" class="btn">continue to origin</a>
+            </div>
+
+          </div>
+        </div>
+        <footer class="original__footer">
+          <ul class="footer__column">
+            <li>
+              <a href="#">About Great Game Guarantee</a>
+            </li>
+            <li>
+              <a href="#">Great Game Guarantee Terms</a>
+            </li>
+            <li>
+              <a href="#">Legal</a>
+            </li>
+            <li>
+              <a href="#">Contact Us</a>
+            </li>
+          </ul>
+          <ul class="footer__column">
+            <li>
+              <a href="#">Terms of Sale</a>
+            </li>
+            <li>
+              <a href="#">User Agreement</a>
+            </li>
+            <li>
+              <a href="#">Corporate Information</a>
+            </li>
+            <li>
+              <a href="#">Privacy and Cookie Policy (Your Privacy Rights)</a>
+            </li>
+          </ul>
+          <ul class="footer__column">
+            <li>
+              <div class="leng__select__wrapper">
+                <i class="fa fa-language"></i>
+                <select class="select">
+                  <option label="Dansk" value="string:da-dk">Dansk</option>
+                  <option label="Deutsch" value="string:de-de">Deutsch</option>
+                  <option label="English" value="string:en-us" selected="selected">English</option>
+                  <option label="Español (España)" value="string:es-es">Español (España)</option>
+                  <option label="Spanish (Mexico)" value="string:es-mx">Spanish (Mexico)</option>
+                  <option label="Suomi" value="string:fi-fi">Suomi</option>
+                  <option label="French (Canada)" value="string:fr-ca">French (Canada)</option>
+                  <option label="Français" value="string:fr-fr">Français</option>
+                  <option label="Italiano" value="string:it-it">Italiano</option>
+                  <option label="日本語" value="string:ja-jp">日本語</option>
+                  <option label="한국어" value="string:ko-kr">한국어</option>
+                  <option label="Nederlands" value="string:nl-nl">Nederlands</option>
+                  <option label="Norsk" value="string:no-no">Norsk</option>
+                  <option label="Polski" value="string:pl-pl">Polski</option>
+                  <option label="Português (Brasil)" value="string:pt-br">Português (Brasil)</option>
+                  <option label="Русский" value="string:ru-ru">Русский</option>
+                  <option label="Svenska" value="string:sv-se">Svenska</option>
+                  <option label="ภาษาไทย" value="string:th-th">ภาษาไทย</option>
+                  <option label="繁體中文" value="string:zh-tw">繁體中文</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <p class="copy">© 2022 Electronic Arts Inc.</p>
+            </li>
+            <li>
+              <p class="origin__footer__legal">
+                <p><a href="#" class="external__link">Online Safety Guidelines</a></p>
+                <p><a href="#" class="external__link">PEGI</a></p>
+                <p>Seller: EA Swiss Sàrl, Place du Molard 8, 1204, Geneva, Switzerland. Registered in the Geneva
+                  Companies Registry with Company Registered Number: CH-660-2328005-8. For details of our VAT
+                  Registrations please click <a href="#" class="external__link">here</a>.</p>
+              </p>
+            </li>
+            <li>
+              <p class="origin__footer__version">Origin v10.4.74-2632-1d12df91</p>
+            </li>
+          </ul>
+        </footer>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

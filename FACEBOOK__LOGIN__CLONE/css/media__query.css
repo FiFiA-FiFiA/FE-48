@@ -1,0 +1,35 @@
+@media (min-width: 695px) {
+
+  .main {
+    position: relative;
+    width: 80%;
+    height: auto;
+  }
+
+  .main .content__wrapper {
+    flex-wrap: nowrap;
+  }
+  
+ .main .content__wrapper .content.left{
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: start;
+  margin: 0;
+ }
+
+ .main .content__wrapper .content .description {
+  font-size: 1.2rem;
+}
+
+ .main .content__wrapper .content .title {
+  text-align: start;
+ } 
+
+ .main .content__wrapper {
+  gap: 3rem;
+ }
+
+ .main .content__wrapper .content.left {
+  margin-bottom: 4rem;
+ }
+}

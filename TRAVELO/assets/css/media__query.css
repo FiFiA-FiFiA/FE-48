@@ -1,0 +1,277 @@
+@media screen and (max-width: 1100px) {
+  .header .container .header__row {
+    padding-right: 90px;
+  }
+
+  .header .container .header__row .header__item__column .nav::before,
+  .header .container .header__row .header__item__column .header__social__wrapper .social__link__wrapper::before {
+    content: none;
+  }
+
+  .header .container .header__row .header__item__column .header__social__wrapper .social__link__wrapper {
+    display: none;
+  }
+
+  .home__section .where__togo__wrapper {
+    flex-direction: column;
+  }
+
+  .home__section .where__togo__wrapper .title {
+    font-size: 1.6rem !important;
+    text-align: start;
+    width: 80%;
+  }
+
+  .footer .footer__top .row{
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home__section.section__travel__variation .travel__variation__item__wrapper .travel__variation__item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+
+  .header .container .header__row .header__item__column .logo {
+    margin: 0.6rem;
+  }
+
+  .header .container .header__row {
+    padding: 0.5rem;
+  }
+
+  .header.active .container .header__row {
+    padding: 0.5rem;
+  }
+
+  .header .container .hide {
+    display: none;
+  }
+
+  .header .container .header__row .nav__open__btn {
+    display: block;
+  }
+
+  .home__section .where__togo__wrapper form {
+    flex-direction: column;
+    align-items: stretch;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .home__section .where__togo__wrapper form .input__wrapper {
+    width: 100%;
+  }
+
+  .home__section .where__togo__wrapper form .search__btn {
+    max-width: 200px;
+  }
+
+  .home__section .newletter__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 10rem;
+  }
+
+  .home__section .newletter__wrapper .newsletter__text {
+    max-width: 500px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .img__item__wrapper .item__wrapper {
+    max-width: 350px;
+    height: 300px;
+    width: 100%;
+  }
+
+  .img__item__wrapper .item__wrapper .content__wrapper {
+    bottom: 2rem;
+    left: 2rem;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .img__item__wrapper .item__wrapper {
+    max-width: 510px;
+    height: 350px;
+    border-radius: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .home__section .newletter__wrapper {
+    padding: 5rem;
+  }
+}
+
+@media screen and (max-width: 680px){
+  .home__section.section__recent__trips .recent__trips__wrapper .recent__item {
+    max-width: 400px;
+    height: 350px;
+  }
+  
+}
+
+@media screen and (max-width: 660px) {
+
+  .home__section .newletter__wrapper {
+    padding: 5rem 1rem;
+  }
+
+  .home__section .newletter__wrapper .newsletter__form {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .home__section .newletter__wrapper .newsletter__form .newsletter__field {
+    width: 100%;
+    margin: 0;
+  }
+
+  .home__section .newletter__wrapper .newsletter__form .newsletter__field input {
+    min-width: 100%;
+  }
+
+  .home__section .newletter__wrapper .newsletter__form .newsletter__btn {
+    width: 100%;
+  }
+
+  .container .home__section .title {
+    font-size: 1.8rem;
+  }
+
+  .container .home__section .description {
+    font-size: var(--fs-3);
+    width: 100%;
+  }
+
+  .home__section.section__travel__variation .travel__variation__item__wrapper .travel__variation__item {
+    flex: 0 0 100%;
+    max-width: 90%;
+  }
+
+  .home__section.section__video {
+    padding: 6rem 0;
+  }
+
+
+  .home__section.section__video .text__content .title {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
+
+  .home__section.section__video .text__content .play__btn__animation {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+  }
+
+  .home__section.section__testimonial .testimonial__wrapper .testimonial__slider__wrapper {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+
+  .home__section .slider__container .slider__wrapper .slider .slider__text__wrapper .country__title {
+    font-size: 5rem;
+  }
+
+  .home__section .where__togo__wrapper form {
+    width: 95%;
+  }
+
+  .home__section .where__togo__wrapper form .search__btn {
+    max-width: 160px;
+  }
+
+  .home__section .where__togo__wrapper {
+    gap: 1rem;
+  }
+
+  .home__section .where__togo__wrapper .title {
+    width: 90%;
+  }
+
+  .home__section .img__item__wrapper {
+    margin-top: 2rem;
+    padding: 0 0.3rem;
+  }
+
+  .home__section .img__item__wrapper .item__wrapper {
+    max-width: 90%;
+    height: auto;
+    margin: 1rem 0;
+  }
+
+  .home__section .img__item__wrapper .item__wrapper img {
+    position: relative;
+  }
+
+  .home__section .place__item__wrapper .item__wrapper {
+    max-width: 90%;
+    height: auto;
+    margin: 1rem 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .navigation__mobile__container {
+    max-width: 100%;
+  }
+
+  .home__section.section__video {
+    padding: 4rem 0;
+  }
+
+  .home__section.section__video .text__content .title {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+
+  .home__section.section__video .text__content .play__btn__animation {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+  }
+
+  .home__section.section__travel__variation {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  .home__section.section__testimonial .testimonial__wrapper .testimonial__slider__wrapper {
+    width: 90%;
+  }
+
+  .footer .footer__top .row .footer__widget .instagram__feed__wrapper .item {
+    max-width: 80px;
+  }
+  .footer .footer__top .row .footer__widget .instagram__feed__wrapper {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .navigation__mobile__container .mob__nav__social__wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: var(--card-padding);
+    bottom: 0;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .navigation__mobile__container .mob__nav__social__wrapper {
+    position: relative;
+    margin-top: 2rem;
+  }
+}
