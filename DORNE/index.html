@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!---------------- CUSTOM CSS LINK ------------->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/media__query.css">
+
+  <!---------------- FONTAWESOME CSS LINK ------------->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!---------------- SWIPER CSS LINK ------------->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <!---------------- AOS CSS LINK ------------->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!---------------- CUSTOM JS ------------->
+  <script src="./assets/js/main.js" defer></script>
+
+  <!---------------- SWIPER JS SCRIPT ------------->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+  <!---------------- AOS JS ------------->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <title>DORNE</title>
+</head>
+
+<body>
+
+  <a href="#welcome" class="scroll__top__btn" scroll__top__btn>
+    <i class="fa fa-angle-up"></i>
+  </a>
+
+  <!-- 
+    ========================= HEADER START ==================== //
+   -->
+
+  <header class="sticky__header__container" sticky__header>
+    <div class="header__wrapper">
+      <div class="header__row">
+        <a href="#" class="logo">
+          <img src="./assets/img/logo.png" alt="">
+        </a>
+
+        <nav class="header__navigation" header__navigation>
+
+          <ul class="nav__item__wrapper">
+            <li class="nav__item active">
+              <a href="#">Home</a>
+            </li>
+            <li class="nav__item dropdown__item" dropdown__manu__btn>
+              <a href="#">Explore <i class="fa fa-angle-down"></i></a>
+              <div class="dropdown__manu__wrapper" dropdown__manu__wrapper>
+                <a href="#" class="dropdown__manu__item">Home</a>
+                <a href="#" class="dropdown__manu__item">Explore</a>
+                <a href="#" class="dropdown__manu__item">Listings</a>
+                <a href="#" class="dropdown__manu__item">Single Listing</a>
+                <a href="#" class="dropdown__manu__item">Contact</a>
+              </div>
+            </li>
+            <li class="nav__item dropdown__item" dropdown__manu__btn>
+              <a href="#">Listings <i class="fa fa-angle-down"></i></a>
+              <div class="dropdown__manu__wrapper" dropdown__manu__wrapper>
+                <a href="#" class="dropdown__manu__item">Home</a>
+                <a href="#" class="dropdown__manu__item">Explore</a>
+                <a href="#" class="dropdown__manu__item">Listings</a>
+                <a href="#" class="dropdown__manu__item">Single Listing</a>
+                <a href="#" class="dropdown__manu__item">Contact</a>
+              </div>
+            </li>
+            <li class="nav__item">
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+
+          <div class="dorne__search__btn" dorne__search__btn>
+            <i class="fa fa-search"></i>
+            <p>Search</p>
+          </div>
+
+          <div class="dorne__signin__btn">
+            <a href="#" class="signin">Sign in or Register</a>
+          </div>
+
+          <div class="dorne__add__listing__btn">
+            <a href="#" class="btn dorne__btn">+ Add Listings</a>
+          </div>
+
+        </nav>
+
+        <button class="navbar__btn" navbar__btn>
+          <i class="fa fa-bars"></i>
+        </button>
+
+      </div>
+    </div>
+    <div class="dorne__search__form" dorne__search__form>
+      <div class="container">
+        <form action="#" class="search__form">
+          <input type="search" name="search" id="search" placeholder="Search Your Desire Destinations">
+          <div class="search__close__btn" search__close__btn>
+            <i class="far fa-times-circle"></i>
+          </div>
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <!-- 
+    ========================= HEADER END ==================== //
+   -->
+
+  <!-- 
+    ========================= MAIN START ==================== //
+   -->
+
+  <main>
+    <!-- 
+      ====================== SECTION WELCOME START ============== //
+     -->
+    <section class="dorne__section welcome bg__overlay" id="welcome">
+      <div class="dorne__social__btn__wrapper">
+        <div class="dorne__social__title">
+          <h2>Follow us on Social Media</h2>
+          <span>—————</span>
+        </div>
+        <div class="social__btns">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-behance"></i></a>
+          <a href="#"><i class="fab fa-dribbble"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="hero__content__wrapper">
+          <div class="content__wrapper">
+            <div class="hero__text__wrapper">
+              <h1 class="hero__title">Discover places near you</h1>
+              <h4 class="sub__title">This is the best guide of your city</h4>
+            </div>
+
+            <div class="hero__search__container__wrapper">
+              <div class="hero__search__tab__btn__wrapper">
+                <div class="hero__search__tab__btn active" hero__search__tab__btn>PLACES</div>
+                <div class="hero__search__tab__btn" hero__search__tab__btn>EVENTS</div>
+              </div>
+
+              <div class="hero__search__tab__content__wrapper">
+                <div class="hero__search__tab__content active" hero__search__tab__content>
+                  <h3>What are you looking for?</h3>
+                  <form action="#">
+                    <select class="custom__select">
+                      <option selected="">Your Destinations</option>
+                      <option value="1">New York</option>
+                      <option value="2">Latvia</option>
+                      <option value="3">Dhaka</option>
+                      <option value="4">Melbourne</option>
+                      <option value="5">London</option>
+                    </select>
+                    <select class="custom__select">
+                      <option selected="">All Catagories</option>
+                      <option value="1">Catagories 1</option>
+                      <option value="2">Catagories 2</option>
+                      <option value="3">Catagories 3</option>
+                    </select>
+                    <select class="custom__select">
+                      <option selected="">Price Range</option>
+                      <option value="1">$100 - $499</option>
+                      <option value="2">$500 - $999</option>
+                      <option value="3">$1000 - $4999</option>
+                    </select>
+                    <button type="submit" class="btn dorne__btn"><i class="fa fa-search"></i>Search</button>
+                  </form>
+                </div>
+                <div class="hero__search__tab__content" hero__search__tab__content>
+                  <h3>What are you looking for?</h3>
+                  <form action="#">
+                    <select class="custom__select">
+                      <option selected="">Your Destinations</option>
+                      <option value="1">New York</option>
+                      <option value="2">Latvia</option>
+                      <option value="3">Dhaka</option>
+                      <option value="4">Melbourne</option>
+                      <option value="5">London</option>
+                    </select>
+                    <select class="custom__select">
+                      <option selected="">All Catagories</option>
+                      <option value="1">Catagories 1</option>
+                      <option value="2">Catagories 2</option>
+                      <option value="3">Catagories 3</option>
+                    </select>
+                    <select class="custom__select">
+                      <option selected="">Price Range</option>
+                      <option value="1">$100 - $499</option>
+                      <option value="2">$500 - $999</option>
+                      <option value="3">$1000 - $4999</option>
+                    </select>
+                    <button type="submit" class="btn dorne__btn"><i class="fa fa-search"></i>Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION WELCOME END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION CATEGORY START ============== //
+     -->
+    <section class="dorne__section catagory">
+      <div class="container">
+        <div class="category__wrapper">
+          <div class="all__category__wrapper">
+
+            <a href="#" class="category" data-aos="fade-up" data-aos-duration="500" data-aos-delay="0">
+              <div class="category__content">
+                <img src="./assets/img/category__1.webp" alt="">
+                <h6>Hotels</h6>
+              </div>
+            </a>
+
+            <a href="#" class="category" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+              <div class="category__content">
+                <img src="./assets/img/category__2.webp" alt="">
+                <h6>Restaurants</h6>
+              </div>
+            </a>
+
+            <a href="#" class="category" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
+              <div class="category__content">
+                <img src="./assets/img/category__3.webp" alt="">
+                <h6>Shopping</h6>
+              </div>
+            </a>
+
+            <a href="#" class="category" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+              <div class="category__content">
+                <img src="./assets/img/category__4.webp" alt="">
+                <h6>Beauty & Spa</h6>
+              </div>
+            </a>
+
+            <a href="#" class="category" data-aos="fade-up" data-aos-duration="500" data-aos-delay="400">
+              <div class="category__content">
+                <img src="./assets/img/category__5.webp" alt="">
+                <h6>Cinema</h6>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION CATEGORY END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION ABOUT START ============== //
+     -->
+    <section class="dorne__section about">
+      <div class="container">
+        <div class="content__wrapper">
+          <div class="about__title__wrapper">
+            <h2>DISCOVER YOUR CITY WITH</h2>
+            <span>DORNE</span>
+          </div>
+
+          <div class="about__text__content">
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce quis
+              tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus, nunc nec
+              tincidunt volutpat, ex libero.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION ABOUT END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION EDITORS START ============== //
+     -->
+    <section class="dorne__section editors bg__overlay">
+      <div class="container">
+        <div class="editors__wrapper">
+
+          <div class="editors__title__wrapper section__title__wrapper">
+            <span>———</span>
+            <h2>CITIES YOU MUST SEE</h2>
+            <p>Editor's pick</p>
+          </div>
+
+          <div class="editor__item__container">
+
+            <div class="editors__item single__editors__item__wrapper">
+
+              <div class="single__editors__item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">
+                <img src="./assets/img/editors__1.webp" alt="">
+                <div class="editors__info__wrapper">
+                  <div class="places__total__destinations">
+                    <a href="#">NEW YORK</a>
+                    <a href="#">1643 Destinations</a>
+                  </div>
+                  <div class="add__more">
+                    <a href="#">+</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="editors__item double__editors__item__wrapper">
+
+              <div class="single__editors__item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <img src="./assets/img/editors__2.webp" alt="">
+
+                <div class="editors__info__wrapper">
+                  <div class="places__total__destinations">
+                    <a href="#">Barcelona</a>
+                    <a href="#">943 Destinations</a>
+                  </div>
+                  <div class="add__more">
+                    <a href="#">+</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="single__editors__item" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                <img src="./assets/img/editors__3.webp" alt="">
+
+                <div class="editors__info__wrapper">
+                  <div class="places__total__destinations">
+                    <a href="#">PARIS</a>
+                    <a href="#">243 Destinations</a>
+                  </div>
+                  <div class="add__more">
+                    <a href="#">+</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION EDITORS END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION FEATURE START ============== //
+     -->
+    <section class="dorne__section features feature__destination">
+      <div class="container">
+        <div class="features__wrapper">
+
+          <div class="features__title__wrapper section__title__wrapper">
+            <span>———</span>
+            <h2>FEATURED DESTINATIONS</h2>
+            <p>Editor's pick</p>
+          </div>
+
+          <div class="swiper features__slider feature__destination__slider">
+            <div class="swiper-wrapper features__slider__wrapper">
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/features__1.webp" alt="">
+                <div class="feature__price">
+                  <p>FROM $59/night</p>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Ibiza</h5>
+                    <p>Party</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/features__2.webp" alt="">
+                <div class="feature__price">
+                  <p>FROM $59/night</p>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>PARIS</h5>
+                    <p>Luxury</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/features__3.webp" alt="">
+                <div class="feature__price">
+                  <p>FROM $59/night</p>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Lake Como</h5>
+                    <p>Spectacular</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/features__4.webp" alt="">
+                <div class="feature__price">
+                  <p>FROM $59/night</p>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Greece</h5>
+                    <p>Sunny</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/features__5.webp" alt="">
+                <div class="feature__price">
+                  <p>FROM $59/night</p>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Norway</h5>
+                    <p>All Year round</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION FEATURE END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION RESTAURANTS START ============== //
+     -->
+    <section class="dorne__section restaurants restaurants__destination">
+      <div class="container">
+        <div class="restaurants__wrappper">
+
+          <div class="restaurants__title__wrapper section__title__wrapper">
+            <span>———</span>
+            <h2>FEATURED RESTAURANTS</h2>
+            <p>Editor's pick</p>
+          </div>
+
+          <div class="swiper features__slider features__restaurants__slider">
+            <div class="swiper-wrapper features__slider__wrapper features__restaurants__slider__wrapper">
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/restaurant__1.webp" alt="">
+                <div class="ratings__map">
+                  <a>9.8</a>
+                  <a href="#">
+                    <img src="./assets/img/location__icon.webp" alt="">
+                  </a>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Martha's bar</h5>
+                    <p>Manhathan</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/restaurant__2.webp" alt="">
+                <div class="ratings__map">
+                  <a>9.5</a>
+                  <a href="#">
+                    <img src="./assets/img/location__icon.webp" alt="">
+                  </a>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Delux Restaurant</h5>
+                    <p>Paris</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/restaurant__3.jpg" alt="">
+                <div class="ratings__map">
+                  <a>8.2</a>
+                  <a href="#">
+                    <img src="./assets/img/location__icon.webp" alt="">
+                  </a>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Jim's corner Pub</h5>
+                    <p>Madrid</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/restaurant__4.webp" alt="">
+                <div class="ratings__map">
+                  <a>8.7</a>
+                  <a href="#">
+                    <img src="./assets/img/location__icon.webp" alt="">
+                  </a>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>tower Risto bar</h5>
+                    <p>Sydney</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide single__feature__slide">
+                <img src="./assets/img/restaurant__5.jpg" alt="">
+                <div class="ratings__map">
+                  <a>9.5</a>
+                  <a href="#">
+                    <img src="./assets/img/location__icon.webp" alt="">
+                  </a>
+                </div>
+                <div class="feature__content">
+                  <div class="feature__slide__title">
+                    <h5>Pizzeria venezia</h5>
+                    <p>Hong Kong</p>
+                  </div>
+                  <div class="feature__slide__favourite">
+                    <i class="far fa-heart"></i>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION RESTAURANTS END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION EVENT START ============== //
+     -->
+    <section class="dorne__section event bg__overlay">
+      <div class="container">
+        <div class="event__wrappper">
+
+          <div class="event__title__wrapper section__title__wrapper">
+            <span>———</span>
+            <h2>FEATURED RESTAURANTS</h2>
+            <p>Editor's pick</p>
+          </div>
+
+          <div class="event__item__container">
+
+            <div class="single__event__item__wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0">
+              <div class="single__event__item">
+                <div class="event__thumb">
+                  <div class="event__thumb__map">
+                    <a href="#">9.8 Nov</a>
+                    <a href="#">
+                      <img src="./assets/img/location__icon.webp" alt="">
+                    </a>
+                  </div>
+                  <img src="./assets/img/events__1.jpg" alt="">
+                </div>
+                <div class="event__content">
+                  <h4>Jazz Concert</h4>
+                  <h6>Manhathan</h6>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                </div>
+                <div class="event__add">
+                  <i class="fa fa-add"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="single__event__item__wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+              <div class="single__event__item">
+                <div class="event__thumb">
+                  <div class="event__thumb__map">
+                    <a href="#">9.8 Nov</a>
+                    <a href="#">
+                      <img src="./assets/img/location__icon.webp" alt="">
+                    </a>
+                  </div>
+                  <img src="./assets/img/events__2.webp" alt="">
+                </div>
+                <div class="event__content">
+                  <h4>DeeJay in the house</h4>
+                  <h6>Manhathan</h6>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                </div>
+                <div class="event__add">
+                  <i class="fa fa-add"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="single__event__item__wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+              <div class="single__event__item">
+                <div class="event__thumb">
+                  <div class="event__thumb__map">
+                    <a href="#">9.8 Nov</a>
+                    <a href="#">
+                      <img src="./assets/img/location__icon.webp" alt="">
+                    </a>
+                  </div>
+                  <img src="./assets/img/events__3.jpg" alt="">
+                </div>
+                <div class="event__content">
+                  <h4>Theatre Night outside</h4>
+                  <h6>Manhathan</h6>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                </div>
+                <div class="event__add">
+                  <i class="fa fa-add"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="single__event__item__wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+              <div class="single__event__item">
+                <div class="event__thumb">
+                  <div class="event__thumb__map">
+                    <a href="#">9.8 Nov</a>
+                    <a href="#">
+                      <img src="./assets/img/location__icon.webp" alt="">
+                    </a>
+                  </div>
+                  <img src="./assets/img/events__4.jpg" alt="">
+                </div>
+                <div class="event__content">
+                  <h4>Wine tasting</h4>
+                  <h6>Manhathan</h6>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                </div>
+                <div class="event__add">
+                  <i class="fa fa-add"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="single__event__item__wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+              <div class="single__event__item">
+                <div class="event__thumb">
+                  <div class="event__thumb__map">
+                    <a href="#">9.8 Nov</a>
+                    <a href="#">
+                      <img src="./assets/img/location__icon.webp" alt="">
+                    </a>
+                  </div>
+                  <img src="./assets/img/events__5.webp" alt="">
+                </div>
+                <div class="event__content">
+                  <h4>New Moon Party</h4>
+                  <h6>Manhathan</h6>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                </div>
+                <div class="event__add">
+                  <i class="fa fa-add"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="single__event__item__wrapper" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+              <div class="single__event__item">
+                <div class="event__thumb">
+                  <div class="event__thumb__map">
+                    <a href="#">9.8 Nov</a>
+                    <a href="#">
+                      <img src="./assets/img/location__icon.webp" alt="">
+                    </a>
+                  </div>
+                  <img src="./assets/img/events__6.jpg" alt="">
+                </div>
+                <div class="event__content">
+                  <h4>Happy hour at pub</h4>
+                  <h6>Manhathan</h6>
+                  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
+                </div>
+                <div class="event__add">
+                  <i class="fa fa-add"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION EVENT END ============== //
+     -->
+
+    <!-- 
+      ====================== SECTION CLIENTS START ============== //
+     -->
+    <section class="dorne__section clients">
+      <div class="container">
+        <div class="clents__item__container">
+
+          <div class="single__clent__item">
+            <img src="./assets/img/clients__1.webp" alt="">
+          </div>
+
+          <div class="single__clent__item">
+            <img src="./assets/img/clients__2.webp" alt="">
+          </div>
+
+          <div class="single__clent__item">
+            <img src="./assets/img/clients__3.webp" alt="">
+          </div>
+
+          <div class="single__clent__item">
+            <img src="./assets/img/clients__4.webp" alt="">
+          </div>
+          `
+          <div class="single__clent__item">
+            <img src="./assets/img/clients__5.webp" alt="">
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- 
+      ====================== SECTION CLIENTS END ============== //
+     -->
+
+  </main>
+
+  <!-- 
+    ========================= MAIN END ==================== //
+   -->
+
+  <!-- 
+    ========================= FOOTER START ==================== //
+   -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer__text">
+        <p>Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o"></i> by <a href="#" target="_blank">F***SOCIEYTY</a></p>
+      </div>
+
+      <div class="footer__social__btns">
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-behance"></i></a>
+        <a href="#"><i class="fab fa-dribbble"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- 
+    ========================= FOOTER END ==================== //
+   -->
+
+</body>
+
+</html>
