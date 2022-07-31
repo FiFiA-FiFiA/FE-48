@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>script 1</title>
+
+  <!----------------- CUSTOM JS ---------------->
+  <script src="./js/script.js" defer></script>
+</head>
+<body>
+  <input type="text" class="input" placeholder="write down any day">
+  <button onclick="submit()">submit</button>
+  <p class="text"></p>
+</body>
+
+<style>
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  html{
+    font-family: sans-serif;
+    text-transform: capitalize;
+  }
+
+  .input{
+    width: 200px;
+    height: 40px;
+    border: 0.1rem solid #3335;
+    color: #333;
+    border-radius: 0.4rem;
+    outline: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+  .input:focus{
+    border: 0.1rem solid #333;
+  }
+  button{
+    height: 40px;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    background: #333;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .text{
+    font-size: 2rem;
+    text-align: start;
+    width: 100%;
+    color: #333;
+  }
+
+</style>
+
+</html>
