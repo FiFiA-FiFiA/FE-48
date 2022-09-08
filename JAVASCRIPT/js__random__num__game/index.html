@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+
+  <!----------------- CUSTOM JS ---------------->
+  <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <input type="number" placeholder="Enter any number from 0 to 20" input>
+    <button onclick="submit()" submit>submit</button>
+    <button onclick="reset()">reset</button>
+  </div>
+
+  <p class="text" text></p>
+
+</body>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    font-family: sans-serif;
+    text-transform: capitalize;
+  }
+  
+  .text {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 100%;
+    color: #222;
+  }
+  
+  .container {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  input {
+    position: relative;
+    width: 100%;
+    outline: none;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    border: 0.1rem solid #444;
+    color: #222;
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  button {
+    border: none;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background: #444;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: 0.3s linear;
+  }
+  
+  button:active {
+    transform: scale(0.9);
+  }
+  
+  button:nth-child(2) {
+    background: #10ba01;
+  }
+  
+  button:nth-child(3) {
+    background: #ec7600;
+  }
+  
+  .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+</style>
+
+</html>
