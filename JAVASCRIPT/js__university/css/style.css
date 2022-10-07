@@ -209,7 +209,7 @@ button.disabled {
 }
 
 .All__Container header .right .info__btn .info__wrapper p {
-  font-size: var(--fs-3);
+  font-size: var(--fs-4);
   color: var(--text__clr-light);
 }
 
@@ -358,25 +358,23 @@ main .Students__Item__Wrapper .Student__item {
   position: relative;
   width: calc(50% - 15%);
   height: fit-content;
-  box-shadow: 0 0 0.5rem var(--bg__clr-dark-transparent);
-  border-radius: var(--border__radius-1);
+  border: var(--border-2-primary);
+  border-radius: var(--border__radius-2);
   min-width: 350px;
   min-height: 450px;
   transform-style: preserve-3d;
   transition: var(--def-transition);
+  box-shadow: 0 0 0.5rem var(--bg__clr-dark-transparent);
   cursor: pointer;
 }
 
+main .Students__Item__Wrapper .Student__item.show__details:hover,
 main .Students__Item__Wrapper .Student__item:hover {
-  transform: scale(0.98);
+  border-color: var(--secondary-clr);
 }
 
 main .Students__Item__Wrapper .Student__item.show__details {
   transform: rotateY(180deg);
-}
-
-main .Students__Item__Wrapper .Student__item.show__details:hover {
-  transform: rotateY(180deg) scale(0.98);
 }
 
 main .Students__Item__Wrapper .Student__item .front__wrapper,
@@ -402,14 +400,43 @@ main .Students__Item__Wrapper .Student__item .front__wrapper {
 
 main .Students__Item__Wrapper .Student__item .back__wrapper .Student__title,
 main .Students__Item__Wrapper .Student__item .front__wrapper .Student__title {
-  --fs-1: 1.8rem;
+  position: relative;
+  --fs-1: 1.4rem;
   font-size: var(--fs-1);
   text-align: center;
   padding: var(--header-padding);
-  color: var(--primary-clr);
+  color: var(--secondary-clr);
   font-weight: var(--fw-700);
   width: 100%;
+  text-align: center;
   border-bottom: var(--border-2-primary);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .Student__title span {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1rem;
+  top: 50%;
+  font-size: var(--fs-2);
+  transform: translateY(-50%);
+  width: 35px;
+  height: 35px;
+  background: var(--primary-clr);
+  color: var(--text__clr-light);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .Student__title span::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 35px;
+  height: 35px;
+  background: var(--primary-clr);
+  z-index: -1;
 }
 
 main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper {
@@ -497,5 +524,18 @@ main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrap
   }
   main .main__header select {
     width: 150px;
+  }
+  .All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  main .main__header select {
+    width: 115px;
+  }
+  main .Students__Item__Wrapper .Student__item {
+    width: 100%;
+    min-width: 320px;
   }
 }

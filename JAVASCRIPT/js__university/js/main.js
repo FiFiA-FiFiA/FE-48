@@ -278,20 +278,22 @@ Get__Student__Data(STUDENT__DATA);
 
 function Get__Student__Data(DATA) {
   Students__Item__Wrapper.innerHTML = "";
-  for (const Student of DATA) {
-
+  for (const i in DATA) {
     let Student__item = document.createElement("div");
     Student__item.classList.add("Student__item");
 
+    let ind = i;
+    ind >= 0 ? ind++ : "";
+
     Student__item.innerHTML = `
     <div class="front__wrapper">
-      <h3 class="Student__title">Student</h3>
+      <h3 class="Student__title"><span>${ind}</span>Student</h3>
     <div class="front__details__Wrapper">
-      <div class="Student__image ${Student.Gender == "Female" ? "female" : "male"}"></div>
-      <div class="Student__FullName">${Student.First__Name} ${Student.Last__Name}</div>
-      <div class="details">Age: ${Student.Age}</div>
-      <div class="details">Course: ${Student.Course}</div>
-      <div class="details">Average Score: ${Student.Average}</div>
+      <div class="Student__image ${DATA[i].Gender == "Female" ? "female" : "male"}"></div>
+      <div class="Student__FullName">${DATA[i].First__Name} ${DATA[i].Last__Name}</div>
+      <div class="details">Age: ${DATA[i].Age}</div>
+      <div class="details">Course: ${DATA[i].Course}</div>
+      <div class="details">Average Score: ${DATA[i].Average}</div>
     </div>
   </div>
   <div class="back__wrapper">
@@ -299,42 +301,42 @@ function Get__Student__Data(DATA) {
     <div class="back__details__Wrapper">
       <div class="details__item">
         <span class="title__name">First Name:</span>
-        <span class="value">${Student.First__Name}</span>
+        <span class="value">${DATA[i].First__Name}</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">Last Name:</span>
-        <span class="value">${Student.Last__Name}</span>
+        <span class="value">${DATA[i].Last__Name}</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">Age:</span>
-        <span class="value">${Student.Age} Years old</span>
+        <span class="value">${DATA[i].Age} Years old</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">Gender:</span>
-        <span class="value">${Student.Gender}</span>
+        <span class="value">${DATA[i].Gender}</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">University:</span>
-        <span class="value">${Student.University}</span>
+        <span class="value">${DATA[i].University}</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">Course:</span>
-        <span class="value">${Student.Course}</span>
+        <span class="value">${DATA[i].Course}</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">Faculty:</span>
-        <span class="value">${Student.Faculty}</span>
+        <span class="value">${DATA[i].Faculty}</span>
       </div>
 
       <div class="details__item">
         <span class="title__name">Average Score:</span>
-        <span class="value">${Student.Average}</span>
+        <span class="value">${DATA[i].Average}</span>
       </div>
 
     </div>
@@ -345,20 +347,18 @@ function Get__Student__Data(DATA) {
 
   let Students__Item = document.querySelectorAll("[Students__Item__Wrapper] .Student__item");
 
-  Students__Item.forEach(item => {
-    item.addEventListener("click", Show__Student__Details);
+  Students__Item.forEach((item, index) => {
+    item.addEventListener("click", () => {
+      item.classList.toggle('show__details');
+      remove__Show_Details(index)
+    });
   });
 
-  function Show__Student__Details() {
-    Students__Item.forEach(item => {
-      item.addEventListener("click", () => {
-        if (this.classList.contains('show__details')) {
-          this.classList.remove('show__details');
-        } else {
-          Students__Item.forEach(i => { i.classList.remove('show__details') });
-          this.classList.add('show__details');
-        }
-      });
+  function remove__Show_Details(index1) {
+    Students__Item.forEach((item, index2) => {
+      if (index1 != index2) {
+        item.classList.remove('show__details');
+      };
     });
   }
 }
