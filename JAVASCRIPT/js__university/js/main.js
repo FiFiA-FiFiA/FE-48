@@ -1,5 +1,4 @@
 "use strict";
-
 class Students {
   constructor(First__Name, Last__Name, Age, Gender, University, Course, Faculty) {
     this.First__Name = First__Name;
@@ -15,7 +14,6 @@ class Students {
     this.Average = (Math.floor((this.Score__1 + this.Score__2 + this.Score__3) / 3));
   }
 }
-
 class University {
   constructor(university, course, faculty) {
     this.university = university;
@@ -36,27 +34,22 @@ let UNIVERSITY__DATA = [
   new University("Massachusetts", "2 Biological sciences", "2 Faculty of Natural Sciences"),
   new University("Massachusetts", "3 Biological sciences", "3 Faculty of Natural Sciences"),
   new University("Massachusetts", "4 Biological sciences", "4 Faculty of Natural Sciences"),
-
   new University("Cambridge", "1 Criminology", "1 Faculty of Philosophy"),
   new University("Cambridge", "2 Criminology", "2 Faculty of Philosophy"),
   new University("Cambridge", "3 Criminology", "3 Faculty of Philosophy"),
   new University("Cambridge", "4 Criminology", "4 Faculty of Philosophy"),
-
   new University("Stanford", "1 Game design", "1 Faculty of Education"),
   new University("Stanford", "2 Game design", "2 Faculty of Education"),
   new University("Stanford", "3 Game design", "3 Faculty of Education"),
   new University("Stanford", "4 Game design", "4 Faculty of Education"),
-
   new University("Oxford", "1 Art and design", "1 Faculty of Education"),
   new University("Oxford", "2 Art and design", "2 Faculty of Education"),
   new University("Oxford", "3 Art and design", "3 Faculty of Education"),
   new University("Oxford", "4 Art and design", "4 Faculty of Education"),
-
   new University("Harvard", "1 Computer science", "1 Faculty of Education"),
   new University("Harvard", "2 Computer science", "2 Faculty of Education"),
   new University("Harvard", "3 Computer science", "3 Faculty of Education"),
   new University("Harvard", "4 Computer science", "4 Faculty of Education"),
-
   new University("Pennsylvania", "1 Mechanical engineering", "1 Faculty of Arts"),
   new University("Pennsylvania", "2 Mechanical engineering", "2 Faculty of Arts"),
   new University("Pennsylvania", "3 Mechanical engineering", "3 Faculty of Arts"),
@@ -66,9 +59,7 @@ let UNIVERSITY__DATA = [
 let Nav__SingUp__Btn = document.querySelector("[Nav__SingUp__Btn]");
 let Student__SignUp__Container = document.querySelector("[Student__SignUp__Container]");
 let Student__SignUp__Overlay = document.querySelector("[Student__SignUp__Overlay]");
-
 let Students__Item__Wrapper = document.querySelector("[Students__Item__Wrapper]");
-
 let Input__First__Name = document.querySelector("[Input__First__Name]");
 let Input__Last__Name = document.querySelector("[Input__Last__Name]");
 let Input__Age = document.querySelector("[Input__Age]");
@@ -81,12 +72,11 @@ let Select__SortBy = document.querySelector("[Select__SortBy]");
 let error__text__wrapper = document.querySelector("[error__text__wrapper]");
 let error__text = document.querySelector("[error__text]");
 
-let info__btn = document.querySelector("[info__btn]");
-let info__wrapper = document.querySelector("[info__wrapper]");
-
 let Btn__SignUp = document.querySelector("[Btn__SignUp]");
 Btn__SignUp.addEventListener('click', SignUp__Student);
 
+let info__btn = document.querySelector("[info__btn]");
+let info__wrapper = document.querySelector("[info__wrapper]");
 info__btn.addEventListener('click', () => {
   info__wrapper.classList.toggle('active');
 });
@@ -108,20 +98,22 @@ function OpenClose__SingUp__Container() {
   Student__SignUp__Container.classList.toggle('active');
   if (Student__SignUp__Container.classList.contains('active')) {
     document.body.style.overflow = "hidden";
+    document.body.style.paddingInlineEnd = `${0.3}rem`;
   } else {
+    document.body.style.paddingInlineEnd = `${0}rem`;
     document.body.style.overflow = "auto";
   }
 }
 
-function Error__Text(err__text, duration) {
+function Error__Text(Err__text, Duration) {
   error__text__wrapper.classList.add('active');
-  error__text.innerText = `${err__text}`;
+  error__text.innerText = `${Err__text}`;
   document.body.style.overflow = "hidden";
   setTimeout(() => {
     error__text__wrapper.classList.remove('active');
     error__text.innerText = ``;
     document.body.style.overflow = "auto";
-  }, duration);
+  }, Duration);
 }
 
 function SignUp__Student() {
@@ -153,31 +145,6 @@ function SignUp__Student() {
     OpenClose__SingUp__Container();
     Get__Student__Data(STUDENT__DATA);
   }
-}
-
-const Create__Element = function(element__Obj) {
-  const element = document.createElement(element__Obj.tagName);
-
-  if (element__Obj.text) {
-    element.innerText = element__Obj.text;
-  }
-
-  if (element__Obj.classList) {
-    for (let i = 0; i < element__Obj.classList.length; i++) {
-      element.classList.add(element__Obj.classList[i]);
-    }
-  }
-
-  if (element__Obj.attrList) {
-    for (let i = 0; i < element__Obj.attrList.length; i++) {
-      element.setAttribute(
-        element__Obj.attrList[i].attrName,
-        element__Obj.attrList[i].attrValue,
-      );
-    }
-  }
-
-  return element;
 }
 
 function Create__University__Option() {
@@ -273,42 +240,43 @@ function Create__Faculty__Option() {
 
 Create__Faculty__Option();
 
+let STUDENT__NEW__DATA = STUDENT__DATA;
+
 function Get__SortBy__Value() {
   let SortBy__Value = Select__SortBy.value;
+  if (SortBy__Value == "") { STUDENT__NEW__DATA = STUDENT__DATA }
 
   if (SortBy__Value == "Rating") {
-
-    let Temp__Student__Data = STUDENT__DATA.map(i => i.Average).sort((a, b) => {
-      if (a < b) {
+    STUDENT__NEW__DATA = STUDENT__DATA;
+    STUDENT__NEW__DATA = STUDENT__NEW__DATA.sort((a, b) => {
+      if (a.Average < b.Average) {
         return 1
       } else {
         return -1
       }
     });
 
-    console.table(Temp__Student__Data);
-
-    let temp = [];
-    let temp__Arr = STUDENT__DATA.filter(i => i.Average == i.Average);
-
+    Get__Student__Data(STUDENT__NEW__DATA);
   }
-
   if (SortBy__Value == "Neme") {
-    let Name__Arr = STUDENT__DATA.map(i => i.First__Name.toLowerCase()).sort();
-
+    STUDENT__NEW__DATA = STUDENT__DATA;
+    STUDENT__NEW__DATA = STUDENT__NEW__DATA.sort((a, b) => {
+      a = a.First__Name.toLowerCase();
+      b = b.First__Name.toLowerCase();
+      if (a < b) {
+        return -1
+      } else {
+        return 1
+      }
+    });
+    Get__Student__Data(STUDENT__NEW__DATA);
   }
-
-  if (SortBy__Value == "default") {
-    Get__Student__Data(STUDENT__DATA);
-  }
-
   Get__Student__Data(STUDENT__DATA);
 }
 
 Get__Student__Data(STUDENT__DATA);
 
 function Get__Student__Data(DATA) {
-  console.table(DATA);
   Students__Item__Wrapper.innerHTML = "";
   for (const Student of DATA) {
 

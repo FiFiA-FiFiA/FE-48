@@ -489,3 +489,13 @@ main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrap
   font-size: var(--fs-3);
   color: var(--secondary-clr);
 }
+
+@media screen and (max-width: 520px) {
+  main .main__header .Main__Title {
+    padding: 0;
+    font-size: var(--fs-2);
+  }
+  main .main__header select {
+    width: 150px;
+  }
+}
