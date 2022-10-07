@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript</title>
+
+  <!----------------- CUSTOM JS ---------------->
+  <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="slider__container">
+      <label for="word__length">
+        <h3 class="title" title__word__length>Length of words: 2</h3>
+        <input type="range" class="input__range" value="2" min="1" max="10" id="word__length" input__word__length>
+      </label>
+      <label for="string__length">
+        <h3 class="title" title__string__length>Length of lettrs: 6</h3>
+        <input type="range" class="input__range" value="6" min="3" max="10" id="string__length" input__string__length>
+      </label>
+    </div>
+    <button class="btn" btn__print>print string</button>
+    <div>
+      <h3>result</h3>
+      <div class="words__container" words__container>
+      </div>
+    </div>
+  </div>
+</body>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: sans-serif;
+    text-transform: capitalize;
+  }
+  
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .input__range {
+    -webkit-appearance: none;
+    background: #222;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .input__range:hover {
+    background: #333;
+  }
+  
+  .btn {
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background: #0675d7;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .btn:hover {
+    background: #114c80;
+  }
+  
+  .word {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    background: #111;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .word.green {
+    color: green;
+  }
+  
+  .word.orange {
+    color: orange;
+  }
+  
+  .word.red {
+    color: red;
+  }
+</style>
+
+</html>

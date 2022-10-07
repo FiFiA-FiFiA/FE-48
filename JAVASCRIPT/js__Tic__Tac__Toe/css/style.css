@@ -112,6 +112,14 @@ html {
   user-select: none;
 }
 
+.container .inner__text__wrapper .score__wrapper .inner__text:first-child {
+  color: #02a6d7;
+}
+
+.container .inner__text__wrapper .score__wrapper .inner__text:last-child {
+  color: #ffda05;
+}
+
 @media (min-width: 495px) {
    :root {
     --cell-size: 150px;

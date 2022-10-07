@@ -1,0 +1,491 @@
+:root {
+  /* color */
+  --primary-clr: #00548B;
+  --primary-clr-dark: #143850;
+  --secondary-clr: #EA8603;
+  --text__clr-light: #FFFFFF;
+  --text__clr-light-5: #9e9e9e;
+  --text__clr-dark: #202020;
+  --bg__clr-dark: #202020;
+  --bg__clr-light: #ffffff;
+  --bg__clr-dark-transparent: #0005;
+  /* border */
+  --border-1-primary: 0.1rem solid var(--primary-clr);
+  --border-2-primary: 0.2rem solid var(--primary-clr);
+  --border-1-secondary: 0.1rem solid var(--secondary-clr);
+  --border-2-secondary: 0.2rem solid var(--secondary-clr);
+  --border-1-dark: 0.1rem solid var(--text__clr-dark);
+  --border-2-dark: 0.2rem solid var(--text__clr-dark);
+  --border__radius-1: 2rem;
+  --border__radius-2: 1rem;
+  --border__radius-3: 0.5rem;
+  /* padding */
+  --btn-padding: 0.7rem 1rem;
+  --header-padding: 1rem;
+  /* font size */
+  --fs-1: 1.5rem;
+  --fs-2: 1.3rem;
+  --fs-3: 1.1rem;
+  --fs-4: 1rem;
+  --fs-5: 0.9rem;
+  --fs-6: 0.8rem;
+  /* font size */
+  --fw-400: 400;
+  --fw-600: 600;
+  --fw-700: 700;
+  /* other */
+  --def-transition: 0.2s ease-in-out;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--secondary-clr);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--primary-clr);
+  border-radius: var(--border-radius-1);
+}
+
+body {
+  font-family: sans-serif;
+  user-select: none;
+}
+
+img,
+span {
+  display: block;
+}
+
+select,
+input {
+  padding: var(--btn-padding);
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  border: var(--border-1-primary);
+  border-radius: var(--border__radius-3);
+  font-size: var(--fs-4);
+}
+
+input:focus {
+  outline: var(--border-1-primary);
+}
+
+select {
+  pointer-events: painted;
+  opacity: 1;
+  cursor: pointer;
+}
+
+select.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  pointer-events: painted;
+  background: none;
+  border: none;
+  outline: none;
+  opacity: 1;
+  cursor: pointer;
+  padding: var(--btn-padding);
+  font-weight: var(--fw-600);
+  transition: var(--def-transition);
+}
+
+.Primary__Btn {
+  border-radius: var(--border__radius-3);
+  background: var(--primary-clr);
+  border: var(--border-2-secondary);
+  color: var(--text__clr-light);
+  white-space: nowrap;
+}
+
+.Primary__Btn:hover {
+  background: var(--primary-clr-dark);
+}
+
+button.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.All__Container {
+  position: relative;
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.All__Container header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--header-padding);
+  background: var(--bg__clr-light);
+  z-index: 2;
+}
+
+.All__Container header.active {
+  border-bottom: var(--border-1-secondary);
+}
+
+.All__Container header .logo {
+  position: relative;
+  min-width: 85px;
+  width: 84px;
+  height: 45px;
+  background: url(../Image/EDU\ Logo.png) no-repeat center;
+  background-size: 130px;
+}
+
+.All__Container header .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.All__Container header .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 5;
+}
+
+.All__Container header .right .info__btn {
+  position: relative;
+  background: var(--primary-clr);
+  border: var(--border-2-secondary);
+  border-radius: var(--border__radius-3);
+  padding: 0.6rem 0.7rem;
+  font-size: var(--fs-4);
+  color: var(--text__clr-light);
+  cursor: pointer;
+}
+
+.All__Container header .right .info__btn .info__wrapper {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: var(--primary-clr-dark);
+  border: var(--border-2-secondary);
+  top: 120%;
+  left: 50%;
+  transform-origin: top left;
+  transform: scale(0) translateX(-50%);
+  transition: var(--def-transition);
+  border-radius: var(--border__radius-3);
+  width: 200px;
+  height: auto;
+  padding: var(--header-padding);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.All__Container header .right .info__btn .info__wrapper.active {
+  opacity: 1;
+  pointer-events: painted;
+  transform: scale(1) translateX(-50%);
+}
+
+.All__Container header .right .info__btn .info__wrapper p {
+  font-size: var(--fs-3);
+  color: var(--text__clr-light);
+}
+
+.All__Container .error__text__wrapper {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--bg__clr-dark-transparent);
+  z-index: 7;
+}
+
+.All__Container .error__text__wrapper.active {
+  display: flex;
+}
+
+.All__Container .error__text__wrapper .error__text {
+  width: 90%;
+  max-width: 400px;
+  background: var(--primary-clr);
+  color: var(--text__clr-light);
+  border-radius: var(--border__radius-3);
+  text-transform: capitalize;
+  text-align: center;
+  font-size: var(--fs-2);
+  padding: 1rem 2rem;
+  outline: var(--border-2-secondary);
+  border: var(--border-2-secondary);
+  outline-color: var(--primary-clr-dark);
+}
+
+.All__Container .Student__SignUp__Container {
+  position: fixed;
+  display: none;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+.All__Container .Student__SignUp__Container.active {
+  display: block;
+}
+
+.All__Container .Student__SignUp__Container .Student__SignUp__Overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--bg__clr-dark-transparent);
+  z-index: 1;
+}
+
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper {
+  position: absolute;
+  width: 90%;
+  max-width: 350px;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg__clr-dark);
+  border-left: var(--border-2-primary);
+  z-index: 2;
+  padding: var(--btn-padding);
+}
+
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper h1 {
+  color: var(--text__clr-light-5);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+}
+
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper input::placeholder,
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper input,
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper select {
+  background: var(--primary-clr-dark);
+  color: var(--text__clr-light);
+  margin-top: 0.7rem;
+}
+
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper input:focus::placeholder {
+  color: var(--text__clr-light-5);
+}
+
+.All__Container .Student__SignUp__Container .Student__SignUp__Layout__Wrapper .btn__SignUp {
+  margin-top: auto;
+  width: 100%;
+  border: var(--border-1-secondary);
+  border-radius: var(--border__radius-3);
+  background: var(--primary-clr-dark);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-400);
+  color: var(--text__clr-light);
+}
+
+main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+
+main .main__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+main .main__header .Main__Title {
+  padding: var(--header-padding);
+  font-size: var(--fs-1);
+  font-weight: var(--fw-600);
+  color: var(--primary-clr);
+}
+
+main .main__header select {
+  width: 170px;
+}
+
+main .Students__Item__Wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+  perspective: 4000px;
+}
+
+main .Students__Item__Wrapper .Student__item {
+  position: relative;
+  width: calc(50% - 15%);
+  height: fit-content;
+  box-shadow: 0 0 0.5rem var(--bg__clr-dark-transparent);
+  border-radius: var(--border__radius-1);
+  min-width: 350px;
+  min-height: 450px;
+  transform-style: preserve-3d;
+  transition: var(--def-transition);
+  cursor: pointer;
+}
+
+main .Students__Item__Wrapper .Student__item:hover {
+  transform: scale(0.98);
+}
+
+main .Students__Item__Wrapper .Student__item.show__details {
+  transform: rotateY(180deg);
+}
+
+main .Students__Item__Wrapper .Student__item.show__details:hover {
+  transform: rotateY(180deg) scale(0.98);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper,
+main .Students__Item__Wrapper .Student__item .back__wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+main .Students__Item__Wrapper .Student__item .back__wrapper .Student__title,
+main .Students__Item__Wrapper .Student__item .front__wrapper .Student__title {
+  --fs-1: 1.8rem;
+  font-size: var(--fs-1);
+  text-align: center;
+  padding: var(--header-padding);
+  color: var(--primary-clr);
+  font-weight: var(--fw-700);
+  width: 100%;
+  border-bottom: var(--border-2-primary);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper {
+  padding: var(--header-padding);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper .Student__image {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  min-width: 180px;
+  min-height: 180px;
+  max-width: 180px;
+  max-height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: var(--border-2-secondary);
+  border-radius: 100%;
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper .Student__image.female {
+  background-image: url(../Image/Woman\ Avatar.png);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper .Student__image.male {
+  background-image: url(../Image/Man\ Avatar.webp);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper .Student__FullName {
+  font-size: var(--fs-1);
+  color: var(--secondary-clr);
+  font-weight: var(--fw-700);
+}
+
+main .Students__Item__Wrapper .Student__item .front__wrapper .front__details__Wrapper .details {
+  font-size: var(--fs-3);
+  font-weight: var(--fw-600);
+  color: var(--primary-clr);
+}
+
+main .Students__Item__Wrapper .Student__item .back__wrapper {
+  transform: rotateY(180deg);
+}
+
+main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrapper {
+  padding: var(--header-padding);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrapper .details__item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrapper .details__item .title__name {
+  font-size: var(--fs-3);
+  color: var(--bg__clr-dark);
+  font-weight: var(--fw-600);
+}
+
+main .Students__Item__Wrapper .Student__item .back__wrapper .back__details__Wrapper .details__item .value {
+  font-size: var(--fs-3);
+  color: var(--secondary-clr);
+}

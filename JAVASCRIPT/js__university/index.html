@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <script src="./js/main.js" defer></script>
+
+  <title>University</title>
+</head>
+
+<body>
+
+  <div class="All__Container">
+
+    <header class="All__Container">
+      <div class="logo"></div>
+
+      <div class="right">
+        <div class="info__btn" info__btn>
+          <i class="fa fa-question-circle"></i>
+
+          <div class="info__wrapper" info__wrapper>
+            <p>"თითოეულ ქარდზე დაჭერით ნახავ სტუდენტის სრულ ინფორმნაციას"</p>
+          </div>
+        </div>
+
+        <button class="Primary__Btn Nav__SingUp__Btn" Nav__SingUp__Btn>
+        <i class="fa fa-sign-in-alt"></i>
+        <span>Sing up</span>
+      </button>
+      </div>
+
+    </header>
+
+    <div class="Student__SignUp__Container" Student__SignUp__Container>
+
+      <div class="Student__SignUp__Overlay" Student__SignUp__Overlay></div>
+
+      <div class="Student__SignUp__Layout__Wrapper">
+
+        <h1>Sign up</h1>
+
+        <input type="text" placeholder="First Name" Input__First__Name>
+        <input type="text" placeholder="Last Name" Input__Last__Name>
+        <input type="number" placeholder="Age" Input__Age>
+
+        <select id="Gender" Select__Gender>
+          <option value="">Select Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male ">Male </option>
+        </select>
+
+        <select id="University" Select__University>
+          <option value="" selected>Select University</option>
+          <!-- <option value="Massachusetts">Massachusetts</option>
+          <option value="Cambridge ">Cambridge </option>
+          <option value="Stanford">Stanford</option>
+          <option value="Oxford">Oxford</option>
+          <option value="Harvard">Harvard</option>
+          <option value="Pennsylvania">Pennsylvania</option> -->
+        </select>
+
+        <select id="Course" Select__Course>
+          <option value="">Select Course</option>
+          <!-- <option value="Art and design">Art and design</option>
+          <option value="Biological sciences">Biological sciences</option>
+          <option value="Computer science">Computer science</option>
+          <option value="Criminology">Criminology</option>
+          <option value="Economics">Economics</option>
+          <option value="Film, cinematics, and photography">Film, cinematics, and photography</option>
+          <option value="Game design">Game design</option>
+          <option value="Geology">Geology</option>
+          <option value="Marketing">Marketing</option>
+          <option value="Mechanical engineering">Mechanical engineering</option> -->
+        </select>
+
+        <select id="Faculty" Select__Faculty>
+    <option value="">Select Faculty</option>
+    <option value="Faculty of Commerce">Faculty of Commerce</option>
+    <option value="Faculty of Economics ">Faculty of Economics </option>
+    <option value="Faculty of Education">Faculty of Education</option>
+    <option value="Faculty of Arts">Faculty of Arts</option>
+    <option value="Faculty of Information Technolog">Faculty of Information Technology</option>
+    <option value="Faculty of Natural Sciences">Faculty of Natural Sciences</option>
+    <option value="Faculty of Philosophy">Faculty of Philosophy</option>
+        </select>
+
+        <button class="btn btn__SignUp" Btn__SignUp>Sign up now</button>
+      </div>
+
+    </div>
+
+    <div class="error__text__wrapper" error__text__wrapper>
+      <h2 class="error__text" error__text></h2>
+    </div>
+
+    <main>
+      <div class="main__header">
+        <h1 class="Main__Title">All STUDENTS LIST</h1>
+        <select class="Primary__Btn" Select__SortBy>
+          <option value="">Sort by</option>
+          <option value="default" selected>Sort by default</option>
+          <option value="Neme">Sort by name</option>
+          <option value="Rating">Sort by rating</option>
+        </select>
+      </div>
+
+      <div class="Students__Item__Wrapper" Students__Item__Wrapper></div>
+
+    </main>
+  </div>
+
+</body>
+
+</html>

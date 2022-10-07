@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <section class="board">
+
+      <header>
+        <h1>Random Number</h1>
+      </header>
+      <main>
+        <div class="ball" ball></div>
+        <div class="ball" ball></div>
+        <div class="ball" ball></div>
+        <div class="ball" ball></div>
+        <div class="ball" ball></div>
+        <div class="ball" ball></div>
+      </main>
+      <button class="start__btn" start__btn>Start</button>
+    </section>
+
+
+    <section class="board">
+
+      <header>
+        <h1>Your Number</h1>
+      </header>
+      <main>
+        <div type="number" class="input" preview_input></div>
+        <div type="number" class="input" preview_input></div>
+        <div type="number" class="input" preview_input></div>
+        <div type="number" class="input" preview_input></div>
+        <div type="number" class="input" preview_input></div>
+        <div type="number" class="input" preview_input></div>
+      </main>
+      <form class="form">
+        <input type="number" placeholder="Enter any number" class="input" input maxlength="2">
+        <div class="submit" submit__btn>submit</div>
+      </form>
+    </section>
+
+  </div>
+
+  <div class="page__overlay " page__overlay>
+
+    <section class="board">
+
+      <header>
+        <h1>Random digits</h1>
+      </header>
+      <main>
+        <div class="ball" ball__resoult></div>
+        <div class="ball" ball__resoult></div>
+        <div class="ball" ball__resoult></div>
+        <div class="ball" ball__resoult></div>
+        <div class="ball" ball__resoult></div>
+        <div class="ball" ball__resoult></div>
+      </main>
+    </section>
+
+    <section class="board">
+
+      <header>
+        <h1 class="inner__text" inner__text>Result:</h1>
+      </header>
+      <main>
+        <div class="ball" your__rasult></div>
+        <div class="ball" your__rasult></div>
+        <div class="ball" your__rasult></div>
+        <div class="ball" your__rasult></div>
+        <div class="ball" your__rasult></div>
+        <div class="ball" your__rasult></div>
+      </main>
+    </section>
+
+    <div class="try__again__btn" try__again__btn>Try again</div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

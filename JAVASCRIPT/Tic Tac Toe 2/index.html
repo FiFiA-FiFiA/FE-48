@@ -15,7 +15,11 @@
 <body>
   <div class="container">
 
-    <h1 class="inner__text" inner__start__text></h1>
+    <div class="start__text__wrapper">
+      <h1 class="inner__text x" inner__start__X>X</h1>
+      <h1 class="inner__text" inner__start__text></h1>
+      <h1 class="inner__text o" inner__start__O>O</h1>
+    </div>
 
     <div class="board">
       <div class="cell" cell></div>
@@ -31,13 +35,15 @@
 
 
     <div class="inner__text__wrapper" inner__text__wrapper>
+      <h1 class="inner__text big__text" inner__text></h1>
       <div class="score__wrapper">
         <h1 class="inner__text" X__Score></h1>
         <h1 class="inner__text" O__Score></h1>
       </div>
-      <h1 class="inner__text" inner__text>winner!</h1>
-      <button class="btn__restart" btn__restart>restart</button>
-      <button class="btn__restart" btn__reset>reset game</button>
+      <div class="action__btn__wrapper">
+        <button class="btn__restart" btn__restart>play again</button>
+        <button class="btn__restart secondary" btn__reset>reset game</button>
+      </div>
     </div>
 
   </div>

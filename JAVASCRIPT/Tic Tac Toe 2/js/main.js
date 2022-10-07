@@ -6,6 +6,8 @@ const btn__restart = document.querySelector("[btn__restart]");
 const btn__reset = document.querySelector("[btn__reset]");
 const X__Score__inner = document.querySelector("[X__Score]");
 const O__Score__inner = document.querySelector("[O__Score]");
+const inner__start__X = document.querySelector("[inner__start__X]");
+const inner__start__O = document.querySelector("[inner__start__O]");
 
 let board = ["", "", "", "", "", "", "", "", ""];
 let player = "X";
@@ -60,6 +62,8 @@ function restart__game() {
   })
   inner__start__text.innerText = `Start with: ${player}`;
   inner__text__wrapper.classList.remove('active');
+  inner__start__X.classList.remove('active');
+  inner__start__O.classList.remove('active');
 }
 
 function reset__game() {
@@ -78,10 +82,14 @@ cells.forEach((cell, index) => {
 
     if (player == "X") {
       player = "O";
-      inner__start__text.innerText = `Now: ${player}`;
+      inner__start__O.classList.add('active');
+      inner__start__X.classList.remove('active');
+      inner__start__text.innerText = `→`;
     } else {
       player = "X";
-      inner__start__text.innerText = `Now: ${player}`;
+      inner__start__X.classList.add('active');
+      inner__start__O.classList.remove('active');
+      inner__start__text.innerText = `←`;
     }
 
     if (!board.includes("") && !cell.classList.contains("win")) {
