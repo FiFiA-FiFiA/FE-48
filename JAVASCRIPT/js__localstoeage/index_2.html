@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="user__container" user__container>
+      <h1>Welcome Back</h1>
+      <button class="btn" Btn__LogOut>Log out</button>
+      <a href="./index.html" class="btn">Creat New Account</a>
+    </div>
+
+    <div class="form__Container" ResetPassword__Container>
+      <header>
+        <h2>Reset Your Password</h2>
+      </header>
+      <form action="#" class="form" ResetForm__container>
+        <div class="error__text__wrapper" err__text__wrapper></div>
+        <div class="Check__Wrapper Input__Wrapper">
+          <input class="input" type="email" placeholder="Your Email" required Forgot__Email__Input>
+          <input class="input" type="text" placeholder="Your Unique Word" required UniqueWord__input>
+          <div class="Button__Wrapper">
+            <button type="button" class="btn" Btn__Next>Next</button>
+          </div>
+        </div>
+
+        <div class="Change__Wrapper Input__Wrapper">
+          <input class="input" type="text" placeholder="Enter New Password" required NewPassword__input>
+          <input class="input" type="text" placeholder="Confirm Password" required Confirm__NewPassword__input>
+          <div class="Button__Wrapper">
+            <button type="button" class="btn btn__outline" Btn__Back>Back</button>
+            <button type="button" class="btn" Btn__ChangePassword>Change Password</button>
+          </div>
+        </div>
+        <p>Do you remember the password? <a Btn__Login__Back>Login Now</a></p>
+      </form>
+    </div>
+
+    <div class="form__Container active" form__Container>
+      <header>
+        <h2>Login</h2>
+      </header>
+      <form action="#" class="form">
+        <div class="error__text__wrapper" err__text__wrapper>
+          <p err__text></p>
+        </div>
+        <input class="input" type="email" placeholder="example@gmail.com" required Email__Input>
+        <input class="input" type="password" placeholder="password" required Password__input>
+        <div class="Btn__Forgot__Password__Wrapper">
+          <p class="Forgot__Password" Btn__Forgot__Password>Forgot Password?</p>
+        </div>
+        <button type="button" class="btn" Btn__Submit>Submit</button>
+        <p>Don't have an account? <a href="./index.html">Sign up</a></p>
+      </form>
+    </div>
+
+  </div>
+</body>
+<script>
+  const Email__Input = document.querySelector("[Email__Input]");
+  const Password__input = document.querySelector("[Password__input]");
+  const Btn__Submit = document.querySelector("[Btn__Submit]");
+  const Btn__LogOut = document.querySelector("[Btn__LogOut]");
+  const Btn__Forgot__Password = document.querySelector("[Btn__Forgot__Password]");
+
+  const ResetForm__container = document.querySelector("[ResetForm__container]");
+  const Forgot__Email__Input = document.querySelector("[Forgot__Email__Input]");
+  const UniqueWord__input = document.querySelector("[UniqueWord__input]");
+  const NewPassword__input = document.querySelector("[NewPassword__input]");
+  const Confirm__NewPassword__input = document.querySelector("[Confirm__NewPassword__input]");
+  const Btn__Login__Back = document.querySelector("[Btn__Login__Back]");
+  const Btn__Back = document.querySelector("[Btn__Back]");
+  const Btn__Next = document.querySelector("[Btn__Next]");
+  const Btn__ChangePassword = document.querySelector("[Btn__ChangePassword]");
+
+  const user__container = document.querySelector("[user__container]");
+  const form__Container = document.querySelector("[form__Container]");
+  const ResetPassword__Container = document.querySelector("[ResetPassword__Container]");
+
+  const err__text__wrapper = document.querySelectorAll("[err__text__wrapper]");
+
+  Btn__Submit.addEventListener('click', Valid__Input);
+  Btn__LogOut.addEventListener('click', Login__User);
+  Btn__Forgot__Password.addEventListener('click', Opan__ResetPassword__Container);
+  Btn__Login__Back.addEventListener('click', Opan__ResetPassword__Container);
+  Btn__Next.addEventListener('click', Next__ResetForm);
+  Btn__Back.addEventListener('click', () => {
+    ResetForm__container.classList.remove('next')
+  });
+
+  let User__Arr = JSON.parse(localStorage.getItem("User")) || [];
+
+  if (localStorage.getItem("Logged") == "true") {
+    Login__User();
+  }
+
+  function Valid__Input() {
+    let Email__Value = Email__Input.value;
+    let Password__Value = Password__input.value;
+
+    if (Email__Value != "" && Password__Value != "") {
+      if (Password__Value.length >= 8) {
+        Check__User(Email__Value, Password__Value);
+      } else {
+        Show__Error("Password should be minimum 8 characters!", 2000);
+      }
+    } else {
+      Show__Error("Email or password are empty!", 2000);
+    }
+  }
+
+  function Check__User(email, pass) {
+    if (User__Arr != "") {
+      let new__arr = User__Arr.filter(i => i.Email == email && i.Password == pass);
+      if (new__arr != "") {
+        Login__User();
+        Email__Input.value = "";
+        Password__input.value = "";
+      } else {
+        Show__Error("User not found!", 2000);
+      }
+    } else {
+      Show__Error("User does not exist!", 2000);
+    }
+  }
+
+  function Login__User() {
+    user__container.classList.toggle('active');
+    if (user__container.classList.contains('active')) {
+      localStorage.setItem("Logged", "true");
+      form__Container.classList.remove('active');
+      user__container.classList.add('active');
+    } else {
+      localStorage.setItem("Logged", "felse");
+      form__Container.classList.add('active');
+      user__container.classList.remove('active');
+    }
+  }
+
+  function Opan__ResetPassword__Container() {
+    form__Container.classList.toggle('active');
+    ResetPassword__Container.classList.toggle('active');
+    ResetForm__container.classList.remove('next');
+    Forgot__Email__Input.value = "";
+    UniqueWord__input.value = "";
+  }
+
+  function Next__ResetForm() {
+    Reset__Valid__Input();
+  }
+
+  function Reset__Valid__Input() {
+    let Forgot__Email__Value = Forgot__Email__Input.value;
+    let UniqueWord__Value = UniqueWord__input.value;
+
+    let X = User__Arr.findIndex(i => i.Email == Forgot__Email__Value && i.UniqueWord == UniqueWord__Value);
+
+    if (Forgot__Email__Value != "" && UniqueWord__Value != "") {
+      if (X >= 0) {
+        ResetForm__container.classList.toggle('next');
+        Check__New__Password(X);
+      } else {
+        Show__Error("No sush email!", 2000);
+      }
+    } else {
+      Show__Error("Email or unique word are Empty!", 2000);
+    }
+  }
+
+  function Check__New__Password(X) {
+    let index = X;
+
+    Btn__ChangePassword.addEventListener('click', () => {
+      let NewPassword__Value = NewPassword__input.value;
+      let Confirm__NewPassword__Value = Confirm__NewPassword__input.value;
+
+      if (NewPassword__Value != "" && Confirm__NewPassword__Value != "") {
+        if (NewPassword__Value.length >= 8 && Confirm__NewPassword__Value.length >= 8) {
+          if (NewPassword__Value == Confirm__NewPassword__Value) {
+            if (NewPassword__Value.toLowerCase() != Confirm__NewPassword__Value) {
+              User__Arr[index].Password = NewPassword__Value;
+              localStorage.setItem("User", JSON.stringify(User__Arr));
+              NewPassword__input.value = "";
+              Confirm__NewPassword__input.value = "";
+              Show__Error("Password has been changed!", 2000);
+            } else {
+              Show__Error("Password must contain at least one upperacase character!", 2000);
+            }
+          } else {
+            Show__Error("Password does not matches!", 2000);
+          }
+        } else {
+          Show__Error("Password should be minimum 8 characters!", 2000);
+        }
+      } else {
+        Show__Error("Password can't be empty!", 2000);
+      }
+    })
+  }
+
+  function Show__Error(err, duration) {
+    err__text__wrapper.forEach(err__text => {
+      err__text.classList.add("active");
+      err__text.innerText = err;
+    });
+    setTimeout(() => {
+      err__text__wrapper.forEach(err__text => {
+        err__text.classList.remove("active");
+        err__text.innerText = "";
+      });
+    }, duration);
+  }
+</script>
+
+</html>
