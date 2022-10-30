@@ -1,0 +1,303 @@
+:root {
+  --primary-clr: #6E5AFF;
+  --primary-clr-transparent-03: #6E5AFF3B;
+  --primary-clr-transparent-05: #6E5AFF73;
+  --bg__clr-dark: #111;
+  --bg__clr-dark-150: #181818;
+  --bg__clr-dark-200: #222;
+  --bg__clr-dark-300: #333;
+  --bg__clr-dark-500: #555;
+  --bg__clr-dark-700: #777;
+  --bg__clr-light: #fff;
+  --border__radius-1: 2rem;
+  --border__radius-2: 1rem;
+  --border__radius-3: 0.5rem;
+  --border__radius-4: 0.3rem;
+  --danger-clr: #cc2c2c;
+  --warn-clr: #eecd15;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+  background: var(--bg__clr-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: var(--border__radius-2);
+  background: var(--primary-clr);
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg__clr-dark-150);
+  user-select: none;
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  perspective: 500;
+  padding-top: 2rem;
+}
+
+.container .form__Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border__radius-4);
+  overflow: hidden;
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-200);
+  transition: all 0.3s;
+  max-width: 400px;
+}
+
+.container .form__Container header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--primary-clr);
+  border-bottom: 0.1rem solid var(--primary-clr);
+}
+
+.container .form__Container header .header__text {
+  font-size: 1.2rem;
+  color: var(--bg__clr-light);
+}
+
+.container .form__Container .Error__Text {
+  display: none;
+  padding: 0.8rem;
+  text-align: center;
+  width: auto;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-clr);
+  border: 0.15rem solid var(--primary-clr);
+  background: var(--primary-clr-transparent-03);
+}
+
+.container .form__Container .Error__Text.active {
+  display: block;
+}
+
+.container .form__Container .Form__Wrapper {
+  display: block;
+}
+
+.container .form__Container .form {
+  position: relative;
+  display: none;
+  padding: 0 1rem;
+  padding-bottom: 1rem;
+  animation: Feed__In 0.5s ease-in-out forwards;
+}
+
+.container .form__Container .Form__Wrapper.Sign-Up .form.Sign__Up {
+  display: block;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.container .form__Container .Form__Wrapper.Sign-In .form.Sign__In {
+  display: block;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.container .form__Container .Form__Wrapper.Sign-Pass .form.Sign__Pass {
+  display: block;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.container .form__Container .Form__Wrapper .Sign__Pass .Input__Wrapper {
+  display: none;
+}
+
+.container .form__Container .Form__Wrapper.Sign-Pass.Prev .form.Sign__Pass .Check__Wrapper {
+  display: block;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.container .form__Container .Form__Wrapper.Sign-Pass.Next .form.Sign__Pass .Change__Wrapper {
+  display: block;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.container .form__Container .form .Input__Row__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container .form__Container .form .input {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  background: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--bg__clr-dark-700);
+}
+
+.container .form__Container .form .input.error {
+  animation: Input__Error 1.5s ease-in forwards;
+}
+
+.container .form__Container .form .input.warn {
+  animation: Input__Warn 1.5s ease-in forwards;
+}
+
+.container .form__Container .form .input.Text__Area {
+  text-align: start;
+  resize: none;
+  height: 90px;
+}
+
+.container .form__Container .form .Input__Row__Wrapper select {
+  appearance: none;
+  padding: 0 1rem;
+  background: var(--bg__clr-dark-200);
+}
+
+.container .form__Container .form .Input__Row__Wrapper select:focus {
+  color: var(--bg__clr-dark-700);
+}
+
+.container .form__Container .form .input:focus {
+  outline: 0.15rem solid var(--primary-clr);
+  color: var(--bg__clr-light);
+}
+
+.container .form__Container .form p {
+  width: 100%;
+  text-align: center;
+  color: var(--bg__clr-dark-700);
+  font-size: 1rem;
+}
+
+.container .form__Container .form p a {
+  color: var(--primary-clr);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn__outline,
+.btn.delete,
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 45px;
+  border: 0.1rem solid var(--primary-clr);
+  border-radius: 0.4rem;
+  padding: 1rem;
+  cursor: pointer;
+  background: var(--primary-clr);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg__clr-light);
+  transition: 0.1s ease-in-out;
+  margin: 1rem 0;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn.delete {
+  max-width: 400px;
+}
+
+.btn__outline {
+  border: 0.15rem solid var(--primary-clr);
+  color: var(--primary-clr);
+  background: none;
+}
+
+.btn.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.container .form__Container .form .Btn__Forgot__Password__Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.container .form__Container .form .Btn__Forgot__Password__Wrapper .Forgot__Password {
+  color: var(--primary-clr);
+  width: fit-content;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes Feed__In {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Feed__Up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes Input__Error {
+  0% {
+    outline: 0.1rem solid var(--danger-clr);
+  }
+  100% {
+    outline: 0.1rem solid var(--bg__clr-dark-700);
+  }
+}
+
+@keyframes Input__Warn {
+  0% {
+    outline: 0.1rem solid var(--warn-clr);
+  }
+  100% {
+    outline: 0.1rem solid var(--bg__clr-dark-700);
+    animation: none;
+  }
+}

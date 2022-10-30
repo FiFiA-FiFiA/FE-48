@@ -1,0 +1,1431 @@
+:root {
+  --primary-clr: #6E5AFF;
+  --primary-clr-transparent-03: #6E5AFF3B;
+  --primary-clr-transparent-05: #6E5AFF73;
+  --bg__clr-dark: #111;
+  --bg__clr-dark-150: #181818;
+  --bg__clr-dark-200: #222;
+  --bg__clr-dark-300: #333;
+  --bg__clr-dark-500: #555;
+  --bg__clr-dark-700: #777;
+  --bg__clr-dark-900: #999;
+  --bg__clr-light: #fff;
+  --border__radius-1: 2rem;
+  --border__radius-2: 1rem;
+  --border__radius-3: 0.5rem;
+  --border__radius-4: 0.3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+  background: var(--bg__clr-dark-150);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: var(--border__radius-2);
+  background: var(--primary-clr);
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg__clr-dark-150);
+}
+
+img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 100%;
+  height: 45px;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  outline-offset: 0.15rem;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  cursor: pointer;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg__clr-light);
+  transition: 0.1s ease-in-out;
+  margin: 1rem 0;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.Btn__Primary {
+  outline-offset: 0;
+  outline: 0.15rem solid var(--primary-clr);
+  background: var(--primary-clr);
+  color: var(--bg__clr-dark-150);
+}
+
+.Btn__Outline {
+  outline-offset: 0;
+  outline: 0.1rem solid var(--primary-clr);
+  color: var(--primary-clr);
+  background: none;
+}
+
+.Btn:hover {
+  outline-offset: 0.1rem;
+  outline: 0.15rem solid var(--primary-clr);
+}
+
+.Btn:active {
+  background: var(--primary-clr-transparent-03);
+  color: var(--primary-clr);
+  outline-offset: 0.1rem;
+}
+
+.Select {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background: var(--bg__clr-dark-200);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg__clr-dark-900);
+  transition: 0.1s ease-in-out;
+  margin: 1rem 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.Loading__Contaner {
+  position: relative;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--bg__clr-dark-150);
+  font-size: 1.5rem;
+  color: var(--primary-clr);
+}
+
+.Loading__Contaner.active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Loading__Contaner .Loading {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 0.4rem solid var(--bg__clr-dark-300);
+  border-top-color: var(--primary-clr);
+  animation: Loading 0.5s cubic-bezier(0.5, 0.5, 0.5, 0) infinite;
+}
+
+@keyframes Loading {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.Container {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  overflow: hidden;
+}
+
+.Container.active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+
+/* === Header Start =================== */
+
+.Container header {
+  position: sticky;
+  padding: 0rem 2rem;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+}
+
+.Container header .logo {
+  font-size: 1.9rem;
+  color: var(--bg__clr-light);
+}
+
+.Container header .Header__Right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.Container header .Header__Right .User__Icon {
+  position: relative;
+  min-height: 50px;
+  min-width: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* === Header End =================== */
+
+
+/* === Nav Start =================== */
+
+.Container nav {
+  position: fixed;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 350px;
+  pointer-events: none;
+  height: 100%;
+  background: var(--bg__clr-dark-200);
+  border-left: 0.1rem solid var(--bg__clr-dark-700);
+  animation: Feed__In 0.3s ease-in-out forwards;
+}
+
+.Container nav.active {
+  pointer-events: painted;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container nav .Nav__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--bg__clr-dark-150);
+  opacity: 0.7;
+}
+
+.Container nav .Nav__Header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  z-index: 1;
+}
+
+.Container nav .Nav__Header .Nav__Title {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container nav .Nav__Header .Nav__Title::before {
+  content: "Your Information";
+}
+
+.Container nav .Nav__Header .Nav__Title.active::before {
+  content: "Change Password";
+}
+
+.Container nav .Nav__Header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: 0.1rem solid var(--bg__clr-dark-900);
+  border-radius: var(--border__radius-4);
+  height: 35px;
+  width: 35px;
+}
+
+.Container nav .Nav__Header button i {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container nav .Nav__Header .Btn__Setting.active {
+  background: var(--primary-clr);
+  border: 0.15rem solid var(--primary-clr);
+}
+
+.Container nav .Nav__Header .Btn__Setting.active i {
+  color: var(--bg__clr-dark-150);
+}
+
+.Container nav .Nav__Content__Wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+
+.Container nav .Nav__Content__Wrapper .Content {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.Container nav .Nav__Content__Wrapper .Content.active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Content {
+  flex: 1;
+  padding: 1rem;
+  width: 100%;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.User__Profile__Top div:last-child {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.User__Profile__Top div:last-child h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-700);
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--primary-clr);
+  overflow: hidden;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Name {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio h3 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  padding: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info:last-child {
+  border: none;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info h4 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1rem;
+  padding: 0.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio p {
+  display: block;
+}
+
+.Container .Error__Text {
+  display: none;
+  padding: 0.8rem;
+  text-align: center;
+  width: auto;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-clr);
+  border: 0.15rem solid var(--primary-clr);
+  background: var(--primary-clr-transparent-03);
+}
+
+.Container .Error__Text.active {
+  display: block;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding: 1rem;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper .input {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  background: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--bg__clr-dark-700);
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper .input:first-child {
+  margin: 0;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper .input:focus {
+  outline: 0.15rem solid var(--primary-clr);
+  color: var(--bg__clr-light);
+}
+
+.Container nav .Nav__Button__Wrapper {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-200);
+}
+
+.Container nav .Nav__Button__Wrapper button {
+  margin: 0;
+  height: 40px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.Container nav .Nav__Button__Wrapper .Btn__active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Container nav .Nav__Button__Wrapper.active .Btn__active {
+  display: none;
+}
+
+.Container nav .Nav__Button__Wrapper.active .Btn__hidden {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+
+/* === Nav End =================== */
+
+
+/* === Main Start =================== */
+
+.Container main {
+  position: relative;
+  display: inline-flex;
+  flex: 1;
+  width: 100%;
+}
+
+.Container main .Main__Header {
+  position: relative;
+  padding: 0rem 2rem;
+  top: -1px;
+  width: 100%;
+  max-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container main .Main__Header .Main__Title {
+  font-size: var(1.5rem);
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+}
+
+.Container main .Main__Content__Wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.Container main .Main__Content__Wrapper.active {
+  padding-right: 350px;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content {
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  border-right: 0.1rem solid var(--bg__clr-dark-700);
+  max-height: calc(100vh - 158px);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+  position: relative;
+  display: grid;
+  place-items: flex-start;
+  grid-template-columns: repeat(3, minmax(200px, auto));
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.Container .People__Item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-200);
+  border-radius: var(--border__radius-3);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+}
+
+.Container .People__Item:hover {
+  background: var(--bg__clr-dark-300);
+}
+
+.Container .People__Item .Profile__Image {
+  position: relative;
+  min-height: 150px;
+  min-width: 150px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  outline: 0.15rem solid var(--primary-clr);
+  overflow: hidden;
+  outline-offset: 0.2rem;
+}
+
+.Container .People__Item h3 {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--bg__clr-dark-900);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Container .People__Item h3:hover {
+  text-decoration: underline;
+}
+
+.Container .People__Item span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--bg__clr-dark-700);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content footer {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg__clr-dark-200);
+  border-top: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content footer h3 {
+  font-size: 1.2rem;
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content footer h3 a {
+  color: var(--primary-clr);
+}
+
+
+/* === Aside Start =================== */
+
+.Container main aside {
+  position: absolute;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  right: -360px;
+  top: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 350px;
+  background: var(--bg__clr-dark-150);
+  z-index: 2;
+  transition: 0.3s ease-in-out;
+}
+
+.Container main aside::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.Container main aside .Aside__Overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg__clr-dark-150);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Container main aside.active {
+  right: 0;
+}
+
+.Container main aside .Aside__Header {
+  position: sticky;
+  padding: 1rem;
+  top: 0;
+  width: 100%;
+  max-height: 70px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  z-index: 2;
+}
+
+.Container main aside .Aside__Header div {
+  padding: 1rem;
+}
+
+.Container main aside .Aside__Header h3 {
+  font-size: 1.2rem;
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+}
+
+.Container main aside .Aside__Header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: 0.1rem solid var(--bg__clr-dark-900);
+  border-radius: var(--border__radius-4);
+  height: 35px;
+  width: 35px;
+  min-height: 35px;
+  min-width: 35px;
+}
+
+.Container main aside .Aside__Header button i {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container main aside .Aside__Header button i:first-child {
+  display: block;
+}
+
+.Container main aside .Aside__Header button i:last-child {
+  display: none;
+}
+
+.Container main aside .User__Profile__Content {
+  flex: 1;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.Container main aside .User__Profile__Top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.Container main aside .User__Profile__Top .User__Image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--primary-clr);
+  overflow: hidden;
+}
+
+.Container main aside .User__Profile__Top .User__Name {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container main aside .User__Profile__Bottom {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Container main aside .User__Profile__Bottom .User__Bio {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Container main aside .User__Profile__Bottom .User__Bio h3 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  padding: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Container main aside .User__Profile__Bottom .User__Bio p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container main aside .User__Profile__Bottom .User__Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container main aside .User__Profile__Bottom .User__Info:last-child {
+  border: none;
+}
+
+.Container main aside .User__Profile__Bottom .User__Info h4 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1rem;
+  padding: 0.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.Container main aside .User__Profile__Bottom .User__Info p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container main aside .User__Profile__Bottom .User__Bio p {
+  display: block;
+}
+
+.Container main aside .Follow__Btn__Wrapper {
+  position: sticky;
+  display: flex;
+  bottom: 0;
+  padding: 1rem;
+  border-top: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-200);
+  z-index: 1;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Container main aside .Follow__Btn__Wrapper.hidden {
+  display: none;
+}
+
+.Container main aside .Follow__Btn__Wrapper.Unfollow .Follow__Btn {
+  display: none;
+}
+
+.Container main aside .Follow__Btn__Wrapper.Follow .Unfollow__Btn {
+  display: none;
+}
+
+.Container main aside .Follow__Btn__Wrapper button {
+  margin: 0;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+
+/* ======================================= */
+
+
+/* ======================================= */
+
+.Container .Follows__Contaner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+  pointer-events: none;
+  animation: Feed__In 0.3s ease-in-out forwards;
+}
+
+.Container .Follows__Contaner.active {
+  pointer-events: painted;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container .Follows__Contaner .Follows__Overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--bg__clr-dark-150);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper {
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+  height: 80%;
+  max-height: 600px;
+  max-width: 400px;
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-150);
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Header {
+  position: sticky;
+  padding: 1rem;
+  top: 0;
+  width: 100%;
+  max-height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+  z-index: 2;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Btn__Wrapper {
+  position: sticky;
+  padding: 0.5rem 1rem;
+  top: 65px;
+  width: 100%;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  z-index: 2;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Btn__Wrapper .Follower__Tab__Btn {
+  background: var(--bg__clr-dark-200);
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  color: var(--bg__clr-dark-900);
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  margin: 0;
+  height: auto;
+  outline: none;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Btn__Wrapper .Follower__Tab__Btn.active {
+  background: var(--bg__clr-dark-300);
+}
+
+.Container .Follows__Contaner.Follower .Follower__Wrapper .Follower__Tab__Btn__Wrapper .Follower__TabBtn {
+  background: var(--bg__clr-dark-300);
+}
+
+.Container .Follows__Contaner.Follower .Follower__Wrapper .Follower__Tab__Btn__Wrapper .Following__TabBtn {
+  background: var(--bg__clr-dark-200);
+}
+
+.Container .Follows__Contaner.Following .Follower__Wrapper .Follower__Tab__Btn__Wrapper .Following__TabBtn {
+  background: var(--bg__clr-dark-300);
+}
+
+.Container .Follows__Contaner.Following .Follower__Wrapper .Follower__Tab__Btn__Wrapper .Follower__TabBtn {
+  background: var(--bg__clr-dark-200);
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Header div {
+  padding: 1rem;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Header h3 {
+  font-size: 1.2rem;
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: 0.1rem solid var(--bg__clr-dark-900);
+  border-radius: var(--border__radius-4);
+  height: 35px;
+  width: 35px;
+  min-height: 35px;
+  min-width: 35px;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Header button i {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner {
+  position: relative;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.4rem;
+  padding: 1rem;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner.active {
+  display: flex;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container .Follows__Contaner.Follower .Follower__Wrapper .Follower__Tab {
+  display: flex;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container .Follows__Contaner.Follower .Follower__Wrapper .Following__Tab {
+  display: none;
+}
+
+.Container .Follows__Contaner.Following .Follower__Wrapper .Following__Tab {
+  display: flex;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container .Follows__Contaner.Following .Follower__Wrapper .Follower__Tab {
+  display: none;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Follow__Count {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: start;
+  color: var(--bg__clr-dark-700);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  cursor: default;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Empty {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--bg__clr-dark-700);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  cursor: default;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Follower__People__Item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  border-radius: var(--border__radius-3);
+  transition: 0.2s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Follower__People__Item:hover {
+  background: var(--bg__clr-dark-300);
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Follower__People__Item .Profile__Image {
+  position: relative;
+  min-height: 50px;
+  min-width: 50px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  outline: 0.15rem solid var(--primary-clr);
+  overflow: hidden;
+  outline-offset: 0.2rem;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Follower__People__Item h3 {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: start;
+  color: var(--bg__clr-dark-900);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.Container .Follows__Contaner .Follower__Wrapper .Follower__Tab__Contaner .Follower__People__Item span {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+  font-size: 1rem;
+  text-align: start;
+  color: var(--bg__clr-dark-700);
+}
+
+
+/* === Main End =================== */
+
+
+/* === Form Start =================== */
+
+.Container .SwitchAccount__Contaner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 7;
+  pointer-events: none;
+  animation: Feed__In 0.3s ease-in-out forwards;
+}
+
+.Container .SwitchAccount__Contaner.active {
+  pointer-events: painted;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container .SwitchAccount__Contaner .SwitchAccount__Overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--bg__clr-dark-150);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.Container .SwitchAccount__Contaner .form__Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 85%;
+  height: auto;
+  max-width: 350px;
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-150);
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .form__Header {
+  position: sticky;
+  padding: 1rem;
+  top: 0;
+  width: 100%;
+  max-height: 65px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  z-index: 2;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .form__Header div {
+  padding: 1rem;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .form__Header h3 {
+  font-size: 1.2rem;
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .form__Header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: 0.1rem solid var(--bg__clr-dark-900);
+  border-radius: var(--border__radius-4);
+  height: 35px;
+  width: 35px;
+  min-height: 35px;
+  min-width: 35px;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .form__Header button i {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container .SwitchAccount__Contaner .form__Container .Form__Wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .Error__Text {
+  width: calc(100% - 2rem);
+}
+
+.Container .SwitchAccount__Contaner .form__Container .Form__Wrapper .input {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  background: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--bg__clr-dark-700);
+}
+
+.Container .SwitchAccount__Contaner .form__Container .Form__Wrapper .input:first-child {
+  margin: 0;
+}
+
+.Container .SwitchAccount__Contaner .form__Container .Form__Wrapper .input:focus {
+  outline: 0.15rem solid var(--primary-clr);
+  color: var(--bg__clr-light);
+}
+
+
+/* === Form End =================== */
+
+@media screen and (min-width: 1200px) {
+  .Container nav {
+    position: absolute;
+  }
+  .Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+    grid-template-rows: repeat(5, 1fr);
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+    grid-template-columns: repeat(2, minmax(200px, auto));
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .Container main aside {
+    position: fixed;
+    right: -360px;
+    width: 85%;
+    pointer-events: none;
+    border-left: 0.1rem solid var(--bg__clr-dark-700);
+    z-index: 1;
+    animation: Feed__In 0.5s ease-in-out forwards;
+  }
+  .Container main aside .Aside__Overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .Container main aside.active {
+    right: 0;
+    animation: Feed__Up 0.3s ease-in-out forwards;
+    pointer-events: painted;
+  }
+  .Container main aside.active .Aside__Overlay {
+    opacity: 0.6;
+    pointer-events: painted;
+  }
+  .Container main .Main__Content__Wrapper.active {
+    padding-right: 0px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Container header .logo {
+    font-size: 1.6rem;
+  }
+  .Container header .Header__Right .User__Icon {
+    height: 40px;
+    width: 40px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  .Container header .Btn__Outline {
+    display: none;
+  }
+  .Container main .Main__Header .Main__Title {
+    font-size: 1.2rem;
+  }
+  .Container main .Select {
+    max-width: 110px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .Container main .Main__Content__Wrapper .Main__Content {
+    max-height: calc(100vh - 143px);
+  }
+  .Container main aside {
+    right: -360px;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+  }
+  .Container main aside .Aside__Header {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  .Container main aside .Aside__Header button i:first-child {
+    display: none;
+  }
+  .Container main aside .Aside__Header button i:last-child {
+    display: block;
+  }
+  .Container main aside .Follow__Btn__Wrapper {
+    padding: 0.5rem;
+  }
+  .Container .People__Item {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .Container .People__Item .Profile__Image {
+    min-height: 60px;
+    min-width: 60px;
+    height: 60px;
+    width: 60px;
+  }
+  .Container .People__Item h3 {
+    text-align: start;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .Container .People__Item span {
+    font-size: 1rem;
+    text-align: start;
+  }
+  .Container .Follows__Contaner .Follower__Wrapper {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    max-width: none;
+    border: 0;
+    border-radius: 0;
+  }
+  .Container .SwitchAccount__Contaner .form__Container {
+    width: 90%;
+  }
+}
+
+@keyframes Feed__In {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Feed__Up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

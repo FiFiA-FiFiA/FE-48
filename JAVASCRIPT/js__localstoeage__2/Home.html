@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hi | Home </title>
+  <link rel="shortcut icon" href="./image/logo.png" type="image/x-icon">
+
+  <!-- Custom link -->
+  <link rel="stylesheet" href="./css/Home.css">
+  <!-- Fontawesome link -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <!-- Custom script -->
+  <script src="./js/Home.js" defer></script>
+</head>
+
+<body>
+  <div class="Container">
+
+    <header>
+      <div class="logo"><i class="fa fa-users"></i> Society</div>
+      <div class="Header__Right">
+        <button class="Btn__Outline Btn" Header__Logout__Btn>
+          <i class="fas fa-sign-out-alt"></i>
+          <span>Logout</span>
+        </button>
+        <button class="Btn User__Icon" Btn__User__Icon></button>
+      </div>
+    </header>
+
+    <nav class="Nav" Nav__Container>
+      <div class="Nav__Overlay" Nav__Overlay></div>
+
+      <div class="Nav__Header">
+        <button class="Btn__Close" Btn__NavClose>
+          <i class="fa fa-times"></i>
+        </button>
+        <h3 class="Nav__Title" Nav__Title></h3>
+        <button class="Btn__Setting" Btn__NavSetting>
+          <i class="fas fa-sliders-h"></i>
+        </button>
+      </div>
+
+      <div class="Nav__Content__Wrapper">
+        <div class="Content User__Content active" Nav__UserContent Nav__UserProfileWrapper></div>
+
+        <form action="#" class="Content User__Settings " Nav__UserContent>
+          <div class="Error__Text" err__text></div>
+          <div class="Input__Wrapper">
+            <input class="input" type="email" placeholder="Your Email" required Nav__Forgot__Email__Input>
+            <input class="input" type="text" placeholder="Your Secret key" required Nav__Forgot__SecretKey__Input>
+            <input class="input" type="text" placeholder="Enter New Password" required Nav__NewPassword__input>
+            <input class="input" type="password" placeholder="Confirm Password" required Nav__Confirm__NewPassword__input>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="Nav__Button__Wrapper " Nav__Button__Wrapper>
+        <button type="button" class="Btn Btn__Outline Btn__active" Nav__Btn__Logout>Logout</button>
+        <button type="button" class="Btn Btn__Primary Btn__active" Nav__Create__NewAccount>Create New Account</button>
+        <button type="button" class="Btn Btn__Outline Btn__hidden" Nav__Btn__ChangePassword>Change Password</button>
+      </div>
+    </nav>
+
+    <main>
+      <div class="Main__Header">
+        <h2 class="Main__Title">Explore</h2>
+        <select class="Select" Select__SortBy>
+          <option value=" ">Sort by</option>
+          <option value="Defult">Sort by Defult</option>
+          <option value="Name">Sort by Name</option>
+          <option value="Age">Sort by Age</option>
+          <option value="Female">Sort by Female</option>
+          <option value="Male">Sort by Male</option>
+        </select>
+      </div>
+
+      <div class="Main__Content__Wrapper">
+        <div class="Main__Content">
+          <div class="People__Item__Wrapper" People__Item__Wrapper></div>
+          <footer>
+            <h3>Create by <a href="#">FSOCIETY</a></h3>
+          </footer>
+        </div>
+        <aside class="Aside__Container" Aside__Container>
+          <div class="Aside__Overlay" Aside__Overlay></div>
+          <div class="Aside__Header">Information</div>
+
+          <div class="User__Profile__Content" User__Profile__Content></div>
+
+        </aside>
+      </div>
+
+    </main>
+
+  </div>
+
+</body>
+
+</html>

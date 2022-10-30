@@ -1,0 +1,861 @@
+:root {
+  --primary-clr: #6E5AFF;
+  --primary-clr-transparent-03: #6E5AFF3B;
+  --primary-clr-transparent-05: #6E5AFF73;
+  --bg__clr-dark: #111;
+  --bg__clr-dark-150: #181818;
+  --bg__clr-dark-200: #222;
+  --bg__clr-dark-300: #333;
+  --bg__clr-dark-500: #555;
+  --bg__clr-dark-700: #777;
+  --bg__clr-dark-900: #999;
+  --bg__clr-light: #fff;
+  --border__radius-1: 2rem;
+  --border__radius-2: 1rem;
+  --border__radius-3: 0.5rem;
+  --border__radius-4: 0.3rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.2rem;
+  background: var(--bg__clr-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: var(--border__radius-2);
+  background: var(--primary-clr);
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg__clr-dark-150);
+}
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 100%;
+  height: 45px;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  outline-offset: 0.15rem;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  cursor: pointer;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg__clr-light);
+  transition: 0.1s ease-in-out;
+  margin: 1rem 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.Btn__Primary {
+  outline-offset: 0;
+  outline: 0.15rem solid var(--primary-clr);
+  background: var(--primary-clr);
+  color: var(--bg__clr-dark-150);
+}
+
+.Btn__Outline {
+  outline-offset: 0;
+  outline: 0.1rem solid var(--primary-clr);
+  color: var(--primary-clr);
+  background: none;
+}
+
+.Btn:hover {
+  outline-offset: 0.1rem;
+  outline: 0.15rem solid var(--primary-clr);
+}
+
+.Btn:active {
+  background: var(--primary-clr-transparent-03);
+  color: var(--primary-clr);
+  outline-offset: 0.1rem;
+}
+
+.Select {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 40px;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background: var(--bg__clr-dark-200);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg__clr-dark-900);
+  transition: 0.1s ease-in-out;
+  margin: 1rem 0;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  min-height: 100vh;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+
+/* === Header Start =================== */
+
+.Container header {
+  position: sticky;
+  padding: 0rem 2rem;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+}
+
+.Container header .logo {
+  font-size: 1.9rem;
+  color: var(--bg__clr-light);
+}
+
+.Container header .Header__Right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.Container header .Header__Right .User__Icon {
+  position: relative;
+  min-height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Container header .Header__Right .User__Icon.Img__Girl {
+  background-image: url(../image/Girl\ Avatar.png);
+}
+
+.Container header .Header__Right .User__Icon.Img__Boy {
+  background-image: url(../image/Boy\ Avatar.png);
+}
+
+.Container header .Header__Right .User__Icon.Img__Man {
+  background-image: url(../image/Man\ Avatar.png);
+}
+
+.Container header .Header__Right .User__Icon.Img__Woman {
+  background-image: url(../image/Woman\ Avatar.png);
+}
+
+
+/* === Header End =================== */
+
+
+/* === Nav Start =================== */
+
+.Container nav {
+  position: fixed;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 85%;
+  max-width: 350px;
+  pointer-events: none;
+  height: 100%;
+  background: var(--bg__clr-dark-200);
+  border-left: 0.1rem solid var(--bg__clr-dark-700);
+  animation: Feed__In 0.3s ease-in-out forwards;
+}
+
+.Container nav.active {
+  pointer-events: painted;
+  animation: Feed__Up 0.3s ease-in-out forwards;
+}
+
+.Container nav .Nav__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: var(--bg__clr-dark-150);
+  opacity: 0.7;
+}
+
+.Container nav .Nav__Header {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  z-index: 1;
+}
+
+.Container nav .Nav__Header .Nav__Title {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container nav .Nav__Header .Nav__Title::before {
+  content: "Your Information";
+}
+
+.Container nav .Nav__Header .Nav__Title.active::before {
+  content: "Change Password";
+}
+
+.Container nav .Nav__Header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: 0.15rem solid var(--bg__clr-dark-900);
+  border-radius: var(--border__radius-4);
+  height: 35px;
+  width: 35px;
+}
+
+.Container nav .Nav__Header button i {
+  font-size: 1.1rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container nav .Nav__Header .Btn__Setting.active {
+  background: var(--primary-clr);
+  border: 0.15rem solid var(--primary-clr);
+}
+
+.Container nav .Nav__Header .Btn__Setting.active i {
+  color: var(--bg__clr-dark-150);
+}
+
+.Container nav .Nav__Content__Wrapper {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  display: flex;
+}
+
+.Container nav .Nav__Content__Wrapper .Content {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.Container nav .Nav__Content__Wrapper .Content.active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Content {
+  flex: 1;
+  padding: 1rem;
+  width: 100%;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--primary-clr);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image.Img__Girl {
+  background-image: url(../image/Girl\ Avatar.png);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image.Img__Boy {
+  background-image: url(../image/Boy\ Avatar.png);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image.Img__Man {
+  background-image: url(../image/Man\ Avatar.png);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Image.Img__Woman {
+  background-image: url(../image/Woman\ Avatar.png);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Top .User__Name {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio h3 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  padding: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Bio p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info h4 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1rem;
+  padding: 0.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.Container nav .Nav__Content__Wrapper .User__Content .User__Profile__Bottom .User__Info p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Error__Text {
+  display: none;
+  padding: 0.8rem;
+  text-align: center;
+  width: auto;
+  margin: 0 1rem;
+  margin-top: 1rem;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-clr);
+  border: 0.15rem solid var(--primary-clr);
+  background: var(--primary-clr-transparent-03);
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Error__Text.active {
+  display: block;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding: 1rem;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper .input {
+  position: relative;
+  margin-top: 1rem;
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: 0.1rem solid var(--bg__clr-dark-700);
+  background: none;
+  border-radius: 0.4rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: var(--bg__clr-dark-700);
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper .input:first-child {
+  margin: 0;
+}
+
+.Container nav .Nav__Content__Wrapper .Content .Input__Wrapper .input:focus {
+  outline: 0.15rem solid var(--primary-clr);
+  color: var(--bg__clr-light);
+}
+
+.Container nav .Nav__Button__Wrapper {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-top: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-200);
+}
+
+.Container nav .Nav__Button__Wrapper button {
+  margin: 0;
+  height: 40px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.Container nav .Nav__Button__Wrapper .Btn__active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Container nav .Nav__Button__Wrapper.active .Btn__active {
+  display: none;
+}
+
+.Container nav .Nav__Button__Wrapper.active .Btn__hidden {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+
+/* === Nav End =================== */
+
+
+/* === Main Start =================== */
+
+.Container main {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+}
+
+.Container main .Main__Header {
+  position: relative;
+  padding: 0rem 2rem;
+  top: -1px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg__clr-dark-200);
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container main .Main__Header .Main__Title {
+  font-size: var(1.5rem);
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+  letter-spacing: 0.4rem;
+}
+
+.Container main .Main__Content__Wrapper {
+  position: relative;
+  display: flex;
+  flex: 1;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content {
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
+  border-right: 0.1rem solid var(--bg__clr-dark-700);
+  max-height: calc(100vh - 158px);
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+  position: relative;
+  display: grid;
+  place-items: flex-start;
+  grid-template-columns: repeat(3, minmax(200px, auto));
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  border: 0.1rem solid var(--bg__clr-dark-700);
+  background: var(--bg__clr-dark-200);
+  border-radius: var(--border__radius-3);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item:hover {
+  background: var(--bg__clr-dark-300);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item .Profile__Image {
+  position: relative;
+  min-height: 150px;
+  min-width: 150px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  outline: 0.15rem solid var(--primary-clr);
+  outline-offset: 0.2rem;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item .Profile__Image.Img__Girl {
+  background-image: url(../image/Girl\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item .Profile__Image.Img__Boy {
+  background-image: url(../image/Boy\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item .Profile__Image.Img__Man {
+  background-image: url(../image/Man\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item .Profile__Image.Img__Woman {
+  background-image: url(../image/Woman\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item h3 {
+  margin: 1rem 0;
+  width: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper .People__Item span {
+  width: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content footer {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg__clr-dark-200);
+  border-top: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container main .Main__Content__Wrapper .Main__Content footer h3 {
+  font-size: 1.2rem;
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+}
+
+.Container main .Main__Content__Wrapper .Main__Content footer h3 a {
+  color: var(--primary-clr);
+}
+
+
+/* === Aside Start =================== */
+
+.Container main .Main__Content__Wrapper aside {
+  position: sticky;
+  display: none;
+  overflow-y: auto;
+  flex-direction: column;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 90%;
+  max-width: 350px;
+  background: var(--bg__clr-dark-150);
+}
+
+.Container main .Main__Content__Wrapper aside .Aside__Overlay {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg__clr-dark-150);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Container main .Main__Content__Wrapper aside.active {
+  display: flex;
+  animation: Feed__Up 0.5s ease-in-out forwards;
+}
+
+.Container main .Main__Content__Wrapper aside .Aside__Header {
+  position: sticky;
+  padding: 1rem;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg__clr-dark-200);
+  font-size: 1.2rem;
+  color: var(--bg__clr-dark-900);
+  font-weight: 600;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  z-index: 1;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Content {
+  flex: 1;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--primary-clr);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Image.Img__Girl {
+  background-image: url(../image/Girl\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Image.Img__Boy {
+  background-image: url(../image/Boy\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Image.Img__Man {
+  background-image: url(../image/Man\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Image.Img__Woman {
+  background-image: url(../image/Woman\ Avatar.png);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Top .User__Name {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: var(--bg__clr-dark-900);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom {
+  position: relative;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom .User__Bio {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom .User__Bio h3 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+  padding: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom .User__Bio p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom .User__Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+  border-bottom: 0.1rem solid var(--bg__clr-dark-700);
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom .User__Info h4 {
+  color: var(--bg__clr-dark-900);
+  font-size: 1rem;
+  padding: 0.2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.Container main .Main__Content__Wrapper aside .User__Profile__Bottom .User__Info p {
+  color: var(--bg__clr-dark-700);
+  font-size: 0.9rem;
+}
+
+
+/* === Main End =================== */
+
+@media screen and (min-width: 1200px) {
+  .Container nav {
+    position: absolute;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+    grid-template-columns: repeat(2, minmax(200px, auto));
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .Container main .Main__Content__Wrapper aside {
+    position: fixed;
+    display: flex;
+    right: 0;
+    width: 85%;
+    opacity: 0;
+    pointer-events: none;
+    border-left: 0.1rem solid var(--bg__clr-dark-700);
+    z-index: 1;
+    animation: Feed__In 0.3s ease-in-out forwards;
+  }
+  .Container main .Main__Content__Wrapper aside .Aside__Overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .Container main .Main__Content__Wrapper aside.active {
+    right: 0;
+    opacity: 1;
+    animation: Feed__Up 0.3s ease-in-out forwards;
+  }
+  .Container main .Main__Content__Wrapper aside.active .Aside__Overlay {
+    opacity: 0.6;
+    pointer-events: painted;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Container header .logo {
+    font-size: 1.6rem;
+  }
+  .Container header .Header__Right .User__Icon {
+    height: 40px;
+    min-height: 40px;
+    min-width: 40px;
+  }
+  .Container header .Btn__Outline {
+    display: none;
+  }
+  .Container main .Main__Header .Main__Title {
+    font-size: 1.2rem;
+  }
+  .Container main .Select {
+    max-width: 110px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+  .Container main .Main__Content__Wrapper .Main__Content .People__Item__Wrapper {
+    grid-template-columns: repeat(1, minmax(200px, auto));
+  }
+  .Container main .Main__Content__Wrapper .Main__Content {
+    max-height: calc(100vh - 143px);
+  }
+}
+
+@keyframes Feed__In {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes Feed__Up {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
