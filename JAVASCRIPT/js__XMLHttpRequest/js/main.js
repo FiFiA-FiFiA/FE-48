@@ -4,49 +4,72 @@ const Input = document.querySelector("[Input]");
 const Search__Btn = document.querySelector("[Search__Btn]");
 const Result__Wrapper = document.querySelector("[Result__Wrapper]");
 
-const SUN__JPEG = "./Image/SUN__JPEG.jpg";
-const SUN__PNG = "./Image/SUN__PNG.png";
-const CLOUD__JPEG = "./Image/CLOUD__JPEG.jpg";
-const CLOUD__PNG = "./Image/CLOUD__PNG.png";
-const RAIN__JPEG = "./Image/RAIN__JPEG.jpg";
-const RAIN__PNG = "./Image/RAIN__PNG.png";
+const Converting__Letters = {
+  ა: "a",
+  ბ: "b",
+  გ: "g",
+  დ: "d",
+  ე: "e",
+  ვ: "v",
+  ზ: "z",
+  თ: "t",
+  ი: "i",
+  კ: "k",
+  ლ: "l",
+  მ: "m",
+  ნ: "n",
+  ო: "o",
+  პ: "p",
+  ჟ: "zh",
+  რ: "r",
+  ს: "s",
+  ტ: "t",
+  უ: "u",
+  ფ: "p",
+  ქ: "k",
+  ღ: "gh",
+  ყ: "k",
+  შ: "sh",
+  ჩ: "ch",
+  ც: "ts",
+  ძ: "dz",
+  წ: "ts",
+  ჭ: "ch",
+  ხ: "kh",
+  ჯ: "j",
+  ჰ: "h",
+};
 
 let Get__Weather = () => {
   let City__Name = Input.value;
 
+  let Letters = "";
+
+  for (const i of City__Name) {
+    if (Object.keys(Converting__Letters).includes(i)) {
+      Letters += Converting__Letters[i];
+    } else {
+      Letters = City__Name;
+    }
+  }
+
   if (City__Name.trim() == "") {
     Result__Wrapper.innerHTML = `<h3 class="Massage">Please enter a city name</h3>`;
   } else {
-    const API__Link = `https://api.openweathermap.org/data/2.5/weather?q=${City__Name}&appid=${API__KEY}&units=metric`;
+    const API__Link = `https://api.openweathermap.org/data/2.5/weather?q=${Letters}&appid=${API__KEY}&units=metric`;
     Input.value = "";
 
     fetch(API__Link)
       .then((Response) => Response.json())
       .then((Data) => {
 
-        let Weather__Image;
-
-        if (Data.weather[0].main.toLowerCase() == "clouds") {
-          document.body.style.backgroundImage = `url(${CLOUD__JPEG})`;
-          Weather__Image = CLOUD__PNG;
-          document.querySelector("title").textContent = `Weather | ${Data.name} ☁`;
-        } else if (Data.weather[0].main.toLowerCase() == "clear") {
-          document.body.style.backgroundImage = `url(${SUN__JPEG})`;
-          document.querySelector("title").textContent = `Weather | ${Data.name} ☀`;
-          Weather__Image = SUN__PNG;
-        } else if (Data.weather[0].main.toLowerCase() == "rain") {
-          document.body.style.backgroundImage = `url(${RAIN__JPEG})`;
-          document.querySelector("title").textContent = `Weather | ${Data.name} 🌧`;
-          Weather__Image = RAIN__PNG;
-        } else {
-          document.body.style.backgroundColor = "#628cf5";
-        }
+        document.body.style.backgroundImage = `url(./Image/${Data.weather[0].main}.gif)`;
+        document.querySelector("title").textContent = `Weather | ${Data.name}`;
 
         Result__Wrapper.innerHTML = `
         <h2>${Data.name}</h2>
         <h4 class="weather">${Data.weather[0].main}</h4>
         <h4 class="desc">${Data.weather[0].description}</h4>
-        <img src="${Weather__Image}">
         <h1>${Data.main.temp}℃</h1>
         <div class="Temp__Container">
             <div>

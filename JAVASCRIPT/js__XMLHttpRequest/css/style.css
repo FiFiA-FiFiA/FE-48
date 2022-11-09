@@ -133,8 +133,8 @@ body {
 
 .Container .Wrapper .Result__Wrapper h1 {
   font-size: 4em;
-  margin: 0.3em 0 0.7em 0;
-  line-height: 0;
+  margin: 1rem 0;
+  line-height: 1;
   font-weight: 400;
   color: var(--white);
 }
