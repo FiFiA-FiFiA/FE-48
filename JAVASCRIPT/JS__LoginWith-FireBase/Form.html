@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign up | | Form</title>
+  <link rel="shortcut icon" href="./image/logo.png" type="image/x-icon">
+  <!-- Custom link -->
+  <link rel="stylesheet" href="./css/Form.css">
+
+  <!-- Custom script -->
+  <script src="./js/Form.js" defer></script>
+
+  <!-- Firebase Config -->
+  <!-- <script src="./js/Firebase.js" defer></script> -->
+
+  <!-- Firebase Script -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form__Container">
+      <header>
+        <h2 class="header__text" header__text>Create an account</h2>
+      </header>
+      <div class="Error__Text" err__text></div>
+      <div class="Form__Wrapper Sign-Up" Form__Wrapper>
+        <form action="#" class="form Sign__Up">
+          <div class="Input__Row__Wrapper">
+            <input type="text" class="input" placeholder="First name" FirstName__Input>
+            <input type="text" class="input" placeholder="Last name" LastName__Input>
+            <select class="input" Gender__Select>
+              <option value="">Gender</option>    
+              <option value="Female">Female</option>    
+              <option value="Male">Male</option>    
+            </select>
+          </div>
+          <input class="input" type="email" placeholder="Email" required Email__Input>
+          <div class="Input__Row__Wrapper">
+            <label for="File__Input" class="input" File__Label>Choose Image</label>
+            <input type="file" id="File__Input" accept="image/png,image/jpeg" File__Input hidden>
+            <input type="date" class="input" min="1970-01-01" Data__Input>
+          </div>
+          <textarea class="input Text__Area" Bio__Input placeholder="Enter Bio"></textarea>
+          <input class="input" type="text" placeholder="Secret key" required SecretKey__Input>
+          <div class="Input__Row__Wrapper">
+            <input class="input" type="password" placeholder="Password" required Password__input>
+            <input class="input" type="password" placeholder="Confirm password" required Confirm__Password__input>
+          </div>
+          <button type="button" class="btn" Btn__Continue>Continue</button>
+          <p>Already have an account? <a Btn__Login>Login</a></p>
+        </form>
+        <form action="#" class="form Sign__In">
+          <input class="input" type="email" placeholder="Email" required SignIn__Email__Input>
+          <input class="input" type="password" placeholder="Password" required SignIn__Password__Input>
+          <div class="Btn__Forgot__Password__Wrapper">
+            <p class="Forgot__Password" Btn__Forgot__Password>Forgot Password?</p>
+          </div>
+          <button type="button" class="btn" Btn__Submit>Submit</button>
+          <p>Don't have an account? <a Btn__SignUp>Sign up</a></p>
+        </form>
+        <form action="#" class="form Sign__Pass">
+          <div class="Input__Wrapper Check__Wrapper">
+            <input class="input" type="email" placeholder="Your Email" required Forgot__Email__Input>
+            <input class="input" type="text" placeholder="Your Secret key" required Forgot__SecretKey__Input>
+            <div class="Input__Row__Wrapper">
+              <button type="button" class="btn" Btn__Next>Next</button>
+            </div>
+          </div>
+          <div class="Input__Wrapper Change__Wrapper">
+            <input class="input" type="text" placeholder="Enter New Password" required NewPassword__input>
+            <input class="input" type="password" placeholder="Confirm Password" required Confirm__NewPassword__input>
+            <div class="Input__Row__Wrapper">
+              <button type="button" class="btn btn__outline" Btn__Back>Back</button>
+              <button type="button" class="btn" Btn__ChangePassword>Change Password</button>
+            </div>
+          </div>
+          <p>Do you remember the password? <a Btn__Login>Login Now</a></p>
+        </form>
+      </div>
+    </div>
+    <!-- <button class="btn delete" Delete__Users>Delete all users</button> -->
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBA9SOD0xFQsWpyyR4i3idtpXALvdWAXTY",
+      authDomain: "fe-50-87e53.firebaseapp.com",
+      projectId: "fe-50-87e53",
+      storageBucket: "fe-50-87e53.appspot.com",
+      messagingSenderId: "643514280227",
+      appId: "1:643514280227:web:64aefe20db92f69e6f0496",
+      measurementId: "G-30HKPKYTTH"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</body>
+
+</html>

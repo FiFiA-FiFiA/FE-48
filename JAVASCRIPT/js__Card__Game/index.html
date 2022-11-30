@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burra Game</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script src="./js/main.js" defer></script>
+</head>
+
+<body>
+  <div class="Conrainer">
+
+    <div class="GameBoard__Wrapper" GameBoard__Wrapper>
+      <img src="./Images/Game__Board.png" alt="" class="Board__Image">
+
+      <div class="Side Left__Side">
+
+        <div class="Second__Player Player__Info">
+          <div class="User__Image">
+            <img src="./Images/User.png" alt="">
+          </div>
+          <h1>Player 2</h1>
+
+          <h3>Score: <span>0</span> </h3>
+
+          <div class="Player__TakenCard__Container SP active" SP__TakenCards__Container>
+            <div class="Player__TakenCards__Count" SP__TakenCards__Count>0</div>
+            <div class="Player__TakenCard__Wrapper" SP__TakenCards></div>
+          </div>
+
+        </div>
+
+        <div class="First__Player Player__Info">
+          <div class="User__Image">
+            <img src="./Images/User.png" alt="">
+          </div>
+          <h1>Player 1</h1>
+
+          <h3>Score: <span>0</span> </h3>
+
+          <div class="Player__TakenCard__Container FP active" FP__TakenCards__Container>
+            <div class="Player__TakenCards__Count" FP__TakenCards__Count>0</div>
+            <div class="Player__TakenCard__Wrapper" FP__TakenCards></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="Side Right__Side">
+        <div class="All__Card__Counter" All__Card__Counter></div>
+        <div class="All__Cards__Wrapper" All__Cards__Wrapper></div>
+      </div>
+
+      <div class="Player__Cards__Top__Wrapper Player__MainCards__Wrapper">
+
+        <div class="Action__Btn__Wrapper" Second__Player__Action__Buttons>
+          <button class="Btn__FinishIt" SP__Btn__FinishIt>Finish</button>
+          <button class="Btn__Arrival disabled" SP__Btn__Arrival>Arrival</button>
+          <button class="Btn__CutIt disabled" SP__Btn__CutIt>Cut</button>
+        </div>
+
+        <div class="Player__Cards__Wrapper" Second__Player__Cards__Wrapper>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+        </div>
+
+      </div>
+
+      <div class="Player__Cards__Bottom__Wrapper Player__MainCards__Wrapper">
+        <div class="Player__Cards__Wrapper" First__Player__Cards__Wrapper>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+          <div class="Cards__Wrapper" Cards__Wrapper></div>
+        </div>
+
+        <div class="Action__Btn__Wrapper" First__Player__Action__Buttons>
+          <button class="Btn__FinishIt" FP__Btn__FinishIt>Finish</button>
+          <button class="Btn__Arrival disabled" FP__Btn__Arrival>Arrival</button>
+          <button class="Btn__CutIt disabled" FP__Btn__CutIt>Cut</button>
+        </div>
+      </div>
+
+      <div class="Arrival__Container">
+        <div class="Arrival__Wrapper Arrival__Top" SP__Arrival__Wrapper></div>
+        <div class="Arrival__Wrapper Arrival__Bottom" FP__Arrival__Wrapper></div>
+      </div>
+
+      <div class="Start__Btn__Container " Start__Btn__Container>
+        <button class="Btn__Start " Btn__Start></button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="Small__Screen__Alert">
+    <h1>Oops! not availible on small Screen!</h1>
+  </div>
+</body>
+
+</html>

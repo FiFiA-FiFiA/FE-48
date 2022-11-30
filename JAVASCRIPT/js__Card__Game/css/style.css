@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  /* font-family: 'Irish Grover', cursive; */
+}
+
+:root {
+  --White: #ffffff;
+  --Black: #000000;
+  --Transparent-white: #fff7;
+  --Transparent-Black: #0007;
+  --Clr__Primary: #fd8217;
+  --Shadow__Clr: #0009;
+  --Shadow: 0.1rem 0rem 0.8rem var(--Shadow__Clr);
+  --Card-Width: 70px;
+  --Card-Height: 100px;
+}
+
+body {
+  background: var(--Black);
+  min-height: 100vh;
+  user-select: none;
+  overflow: hidden;
+}
+
+img,
+div,
+span {
+  display: block;
+}
+
+img {
+  width: 100%;
+  pointer-events: none;
+}
+
+.Conrainer {
+  position: relative;
+  max-width: 1035px;
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 3rem;
+  margin: auto auto;
+  overflow: hidden;
+}
+
+.Conrainer .GameBoard__Wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  color: var(--Transparent-white);
+  overflow: hidden;
+}
+
+.Conrainer .Side {
+  position: absolute;
+  width: fit-content;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  top: 50%;
+  width: 180px;
+  background: url(../Images/Left__Side.png) no-repeat center;
+  background-size: cover;
+  transition: 0.5s ease-in;
+  transform: translateY(-50%);
+}
+
+.Conrainer .Side.Left__Side {
+  display: grid;
+  place-items: center;
+  left: -230px;
+  padding: 1rem 0;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  box-shadow: inset -0.5rem 0 2rem var(--Black);
+}
+
+.Conrainer .GameBoard__Wrapper.active .Side.Left__Side {
+  left: 0.5rem;
+}
+
+.Conrainer .Side.Right__Side {
+  right: -230px;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  box-shadow: inset 0.5rem 0 2rem var(--Black);
+}
+
+.Conrainer .Side.Right__Side .All__Card__Counter {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--Clr__Primary);
+  color: var(--Black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  align-self: flex-end;
+  pointer-events: none;
+  z-index: 31 !important;
+}
+
+.Conrainer .GameBoard__Wrapper.active .Side.Right__Side {
+  right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Conrainer .Side .Player__Info {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.Conrainer .Side .Second__Player {
+  border-bottom: 0.2rem solid var(--Transparent-Black);
+}
+
+.Conrainer .Side .Player__Info .User__Image {
+  width: 60px;
+  aspect-ratio: 1/1;
+}
+
+.Conrainer .Side .Player__Info h1 {
+  font-size: 1.5rem;
+  color: var(--White);
+}
+
+.Conrainer .Side .Player__Info h3 {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--Shadow__Clr);
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container {
+  position: absolute;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  right: -10px;
+  bottom: -30px;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container.active {
+  display: flex;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Player__TakenCards__Count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 5rem;
+  background: var(--Clr__Primary);
+  color: var(--Black);
+  font-size: 1.1rem;
+  font-weight: 600;
+  top: -10px;
+  right: -10px;
+  z-index: 20;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Player__TakenCard__Wrapper {
+  position: relative;
+  width: calc(var(--Card-Width) - 20px);
+  height: calc(var(--Card-Height) - 30px);
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Card {
+  width: calc(var(--Card-Width) - 20px);
+  height: calc(var(--Card-Height) - 30px);
+  top: 0;
+  left: 0;
+}
+
+.Conrainer .Side .Player__Info .Player__TakenCard__Container .Card .Card__Inner {
+  transform: rotateY(180deg);
+}
+
+.Conrainer .Side .All__Cards__Wrapper {
+  position: relative;
+  height: var(--Card-Height);
+  transition: 0.6s ease-in;
+}
+
+.Conrainer .Card {
+  position: absolute;
+  height: var(--Card-Height);
+  width: var(--Card-Width);
+  perspective: 1000px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+  border: 0.2rem solid transparent;
+  border-radius: 0.3rem;
+  z-index: 2 !important;
+}
+
+.Conrainer .Card .Card__Inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in;
+  transform-style: preserve-3d;
+}
+
+.Conrainer .Card .Card__Inner .Card__Front,
+.Conrainer .Card .Card__Inner .Card__Back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.Conrainer .Card .Card__Inner img {
+  height: 100%;
+}
+
+.Conrainer .Card .Card__Inner .Card__Back {
+  transform: rotateY(180deg);
+}
+
+.Conrainer .Card.flip .Card__Inner {
+  transform: rotateY(180deg);
+}
+
+.Conrainer .Card.rotate {
+  transform: rotateZ(-10deg) translate(-40px, -10px);
+  transform-origin: center;
+  z-index: -30 !important;
+}
+
+.Conrainer .Card.hidden {
+  position: relative;
+}
+
+.Conrainer .Player__MainCards__Wrapper {
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 300px;
+  height: fit-content;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: 0.6s ease-in;
+  z-index: 2;
+}
+
+.Conrainer .Player__Cards__Top__Wrapper {
+  top: -340px;
+}
+
+.Conrainer .GameBoard__Wrapper.active .Player__Cards__Top__Wrapper {
+  top: 0.5rem;
+}
+
+.Conrainer .Player__Cards__Bottom__Wrapper {
+  bottom: -340px;
+}
+
+.Conrainer .GameBoard__Wrapper.active .Player__Cards__Bottom__Wrapper {
+  bottom: 0.5rem;
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper .Cards__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--Card-Height) + 0.5rem);
+  width: calc(var(--Card-Width) + 0.5rem);
+  border: 0.15rem dashed var(--Transparent-white);
+  border-radius: 0.5rem;
+  background: var(--Transparent-Black);
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper .Cards__Wrapper .Card {
+  position: relative;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 1 !important;
+}
+
+.Conrainer .Player__Cards__Bottom__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card,
+.Conrainer .Player__Cards__Top__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card,
+.Conrainer .Player__Cards__Top__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip,
+.Conrainer .Player__Cards__Bottom__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip,
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card.flip .Card__Inner,
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper.Cards__Show .Cards__Wrapper .Card .Card__Inner {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+
+.Conrainer .Player__MainCards__Wrapper .Player__Cards__Wrapper .Cards__Wrapper .Card.rotate {
+  transform: rotateZ(180deg) translate(0px, 0px);
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 300px;
+  height: auto;
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container .Arrival__Wrapper {
+  position: relative;
+  width: auto;
+  min-height: var(--Card-Height);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container .Arrival__Wrapper .Card {
+  position: relative;
+  cursor: default;
+}
+
+.Conrainer .GameBoard__Wrapper .Arrival__Container .Arrival__Wrapper .Card.rotate {
+  transform: rotateZ(180deg) translate(0px, 0px);
+}
+
+.Conrainer .Cards__Wrapper .Card__Positons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--Card-Height) + 0.5rem);
+  width: calc(var(--Card-Width) + 0.5rem);
+  border: 0.15rem dashed var(--Transparent-white);
+  border-radius: 0.5rem;
+  background: var(--Transparent-Black);
+}
+
+.Conrainer .Player__Cards__Top__Wrapper .Card.selected {
+  transform: translateY(2px);
+  border-color: var(--Clr__Primary);
+}
+
+.Conrainer .Player__Cards__Bottom__Wrapper .Card.selected {
+  transform: translateY(-2px);
+  border-color: var(--Clr__Primary);
+}
+
+.Conrainer .Action__Btn__Wrapper {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+.Conrainer .Action__Btn__Wrapper.active {
+  display: flex;
+}
+
+.Conrainer .Action__Btn__Wrapper button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0.15rem solid var(--Transparent-Black);
+  color: var(--Black);
+  background: var(--Clr__Primary);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.Conrainer .Action__Btn__Wrapper .Btn__FinishIt {
+  display: none;
+}
+
+.Conrainer .Action__Btn__Wrapper .Btn__FinishIt.active {
+  display: flex;
+}
+
+.Conrainer .Action__Btn__Wrapper button.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+
+/*===================== */
+
+.Conrainer .Dav__Alert__Container {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Transparent-Black);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  transition: 0.3s ease-in;
+}
+
+.Conrainer .Dav__Alert__Container.active {
+  opacity: 1;
+  pointer-events: painted;
+  z-index: 6;
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper {
+  z-index: 1;
+  width: 90%;
+  max-width: 350px;
+  border: 0.2rem solid var(--Transparent-white);
+  border-radius: 1rem;
+  background: url(../Images/Left__Side.png) center no-repeat;
+  background-size: cover;
+  box-shadow: 0rem 1rem 1rem var(--Transparent-Black);
+}
+
+.Conrainer .Dav__Alert__Container .Alert__Text {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: var(--Black);
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper .Alert__Action__Buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper .Alert__Action__Buttons button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: 0.15rem solid var(--Transparent-Black);
+  color: var(--Black);
+  background: var(--Clr__Primary);
+  transition: 0.3s ease-in;
+  cursor: pointer;
+}
+
+.Conrainer .Dav__Alert__Container .Dav__Alert__Wrapper .Alert__Action__Buttons .Btn__Rejection {
+  background: var(--Transparent-Black);
+  color: var(--White);
+}
+
+
+/* ================== */
+
+.Conrainer .Start__Btn__Container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Transparent-Black);
+  opacity: 1;
+  pointer-events: painted;
+  z-index: 5;
+  transition: 0.3s ease-in;
+}
+
+.Conrainer .Start__Btn__Container.hidden {
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.Conrainer .Start__Btn__Container .Btn__Start {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 6;
+  width: 170px;
+  height: 75px;
+  border: none;
+  border-radius: 50px;
+  background: url(../Images/Start__Button__Image.png) center no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+  transform-origin: center;
+}
+
+.Conrainer .Start__Btn__Container .Btn__Start:active {
+  scale: 0.98;
+}
+
+.Small__Screen__Alert {
+  position: fixed;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--Transparent-Black);
+  z-index: 5;
+  transition: 0.3s ease-in;
+}
+
+.Small__Screen__Alert h1 {
+  color: var(--White);
+  font-size: 2rem;
+  padding: 0 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .Conrainer {
+    display: none;
+  }
+  .Small__Screen__Alert {
+    display: flex;
+  }
+}

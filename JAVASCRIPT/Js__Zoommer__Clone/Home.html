@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoommer</title>
+  <link rel="shortcut icon" href="./public/assets/image/Logo-small.svg" type="image/x-icon">
+  <!-- * Bootstrap link * -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- * Custom link * -->
+  <link rel="stylesheet" href="./public/css/All.css">
+  <link rel="stylesheet" href="./public/css/Home.css">
+  <!-- * Fontawesome link * -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+
+  <!-- * Swiper Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+  <!-- * Swiper script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <!-- * Custom script * -->
+  <script src="./src/Home.js" defer></script>
+  <script src="./src/Local.js" defer></script>
+  <!-- * Firebase Script * -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <div class="Container">
+      <div class="Left__Side">
+        <button class="Buttin__Menu__Open" Buttin-Menu__Open>
+          <i class="fa fa-bars"></i>
+        </button>
+        <img src="./public/assets/image/Logo-full-EN.svg" alt="" class="Logo">
+      </div>
+
+      <div class="Middle" Show__Main__Search="false">
+        <div class="Main__Search__Wrapper" Active__Search__Result="false">
+          <input type="text" placeholder="Search Store" class="Input__Main__Search" Input-Main__Search>
+
+          <button class="Buttin__Category__Dropdown" Buttin-Category__Dropdown Active__Dropdown="false">
+            <input type="text" class="Input__Category__Dropdown" placeholder="Category" Input-Category__Dropdown>
+            <i class="fa fa-caret-down"></i>
+
+            <div class="Custom__Dropdown__Menu__Wrapper">
+              <ul class="Custom__Dropdown__Menu" Custom__Dropdown__Menu>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+                <li class="Dropdown__Item">Item</li>
+              </ul>
+            </div>
+
+            <script>
+              const Buttin__Category__Dropdown = document.querySelector("[Buttin-Category__Dropdown]");
+
+              Buttin__Category__Dropdown.onclick = ()=> {
+                if(Buttin__Category__Dropdown.getAttribute("Active__Dropdown") == "true"){
+                  Buttin__Category__Dropdown.setAttribute("Active__Dropdown", "false");
+                } else {
+                  Buttin__Category__Dropdown.setAttribute("Active__Dropdown", "true");
+                }
+              }
+            </script>
+          </button>
+
+          <button class="Buttin__Main__Search" Buttin-Main__Search>
+            <i class="fa fa-search"></i>
+          </button>
+
+          <div class="Main__Search__Result__Block">
+            <div class="Result__Block__List" Search__Result__Block Product__NotFound="false">
+
+              <div class="Result__Item">
+                <div class="Result__Product__Image">
+                  <img src="https://img.zoommer.ge/zoommer-images/thumbs/0164352_xiaomi-12-5g-8256gb-gray_60.jpeg" alt="">
+                </div>
+                <div class="Result__Product__Title-Price">
+                  <h3>Xiaomi 12 5G 8/256GB Gray</h3>
+                  <div class="Result__Product__Prices">
+                    <span class="Old__Price">1899₾</span>
+                    <span class="New__Price">1699₾</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="Search__Text__Not__Found">We found <b>0 Product for</b> <span Search__Query></span></div>
+            </div>
+            <div class="Button__See__All__Wrapper">
+              <button class="Button__See__All" Button-See__All>See All</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="Search__Overlay" Search__Overlay></div>
+        <script>
+          const Input__Main__Search = document.querySelector("[Input-Main__Search]");
+          const Active__Search__Result = document.querySelector("[Active__Search__Result]");
+          const Search__Query = document.querySelector("[Search__Query]");
+          const Search__Overlay = document.querySelector("[Search__Overlay]");
+
+          Input__Main__Search.oninput = () => {
+            Search__Query.textContent = Input__Main__Search.value;
+            if (Input__Main__Search.value.trim() != "") {
+              Active__Search__Result.setAttribute("Active__Search__Result", "true");
+              document.body.style.overflow = "hidden";
+            } else {
+              Active__Search__Result.setAttribute("Active__Search__Result", "false");
+              document.body.style.overflow = "visible";
+            }
+          }
+          Input__Main__Search.onfocus = () => {
+            Search__Query.textContent = Input__Main__Search.value;
+            if (Input__Main__Search.value.trim() != "") {
+              Active__Search__Result.setAttribute("Active__Search__Result", "true");
+              document.body.style.overflow = "hidden";
+            } else {
+              Active__Search__Result.setAttribute("Active__Search__Result", "false");
+              document.body.style.overflow = "visible";
+            }
+          }
+          Search__Overlay.onclick = () => {
+            if (Active__Search__Result.getAttribute("Active__Search__Result") == "true") {
+              Active__Search__Result.setAttribute("Active__Search__Result", "false");
+              document.body.style.overflow = "visible";
+            } else {
+              Active__Search__Result.setAttribute("Active__Search__Result", "true");
+              document.body.style.overflow = "hidden";
+            }
+          }
+        </script>
+      </div>
+
+      <div class="Right__Side">
+        <button class="Buttin__Main__Search__Open" Buttin-Main__Search__Open>
+          <i class="fa fa-search"></i>
+          <i class="fa fa-times"></i>
+
+          <script>
+            const Buttin__Main__Search__Open = document.querySelector("[Buttin-Main__Search__Open]");
+
+            Buttin__Main__Search__Open.onclick = ()=> {
+              if(document.querySelector("[Show__Main__Search]").getAttribute("Show__Main__Search") == "true"){
+                document.querySelector("[Show__Main__Search]").setAttribute("Show__Main__Search", "false");
+              } else {
+                document.querySelector("[Show__Main__Search]").setAttribute("Show__Main__Search", "true");
+              }
+            }
+          </script>
+        </button>
+
+        <div class="User__Profile">
+          <button class="Buttin__User__Profile " Buttin-User__Profile Active__User__Profile="false">
+            <i class="far fa-user-large"></i>
+            <span>Profile info</span>
+          </button>
+
+          <div class="User__Profile__Dropdown__Menu" Header__Form Form__Active__Name="Sign__In">
+            <form action="#" class="Form Sign__In">
+              <div class="Form__Title">
+                <h4>Welcome, Please Sign In!</h4>
+              </div>
+
+              <label for="Sign__In__Email__Input" class="Label__Wrapper">
+                <input type="email" placeholder="Email" Input-Sign__In__Email id="Sign__In__Email__Input" Value__Required="Please enter your email" value="">
+                <div class="Icons">
+                  <i class="far fa-user"></i>
+                </div>
+              </label>
+
+              <label for="Sign__In__Password__Input" class="Label__Wrapper">
+                <input type="password" placeholder="Password" Input-Sign__In__Password id="Sign__In__Password__Input" Value__Required="Password is required." value="">
+                <div class="Icons">
+                  <i class="far fa-lock"></i>
+                </div>
+              </label>
+
+              <div class="Forgot__Password__Link">
+                <a class="Button__Forgot__Password" Button-Forgot__Password>Forgot Password?</a>
+              </div>
+
+              <div class="Buttons__Authorisation__Registration">
+                <button type="submit" class="Orange__Btn Button__Login js-Login__Btn" Button-Login>Log in</button>
+                <button class="Button__Registration__Link" Button-Registration__Link>Register</button>
+              </div>
+
+              <div class="Or">- or -</div>
+
+              <div class="Authorisation__Registration__With__FB">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                  <span>Authorization</span>
+                </a>
+              </div>
+            </form>
+            <form action="#" class="Form Sign__Up">
+              <div class="Form__Title">
+                <button class="Button__Back fa fa-angle-left" Button-Form__Back></button>
+                <h4>Register</h4>
+              </div>
+
+              <label for="Sign__Up__Email__Input" class="Label__Wrapper">
+                <input type="email" placeholder="Email" Input-Sign__Up__Email id="Sign__Up__Email__Input" Value__Required="Please enter your email" value="">
+                <div class="Icons">
+                  <i class="far fa-user"></i>
+                </div>
+              </label>
+
+              <label for="Sign__Up__Password__Input" class="Label__Wrapper">
+                <input type="password" placeholder="Password" Input-Sign__Up__Password id="Sign__Up__Password__Input" Value__Required="Password is required." value="">
+                <div class="Icons">
+                  <i class="far fa-lock"></i>
+                </div>
+              </label>
+
+              <label for="Sign__Up__Confirm__Password__Input" class="Label__Wrapper">
+                <input type="password" placeholder="Confirm Password" Input-Sign__Up__Confirm__Password id="Sign__Up__Confirm__Password__Input"  Value__Required="The password and confirmation password do not match." value="" >
+                <div class="Icons">
+                  <i class="far fa-lock"></i>
+                </div>
+              </label>
+
+              <label for="Agreed__Terms" class="Checkbox__Lable">
+                <input type="checkbox" Input-Agreed__Terms Value__Required="The Agree Terms And Conditions field is required." id="Agreed__Terms" Value="true" >
+                <a>Agree Terms And Conditions</a>
+              </label>
+
+              <div class="Buttons__Authorisation__Registration">
+                <button type="submit" class="Orange__Btn Button__Register js-Register__Btn">Register</button>
+              </div>
+
+              <div class="Or">- or -</div>
+
+              <div class="Authorisation__Registration__With__FB">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                  <span>Authorization</span>
+                </a>
+              </div>
+            </form>
+            <form action="#" class="Form Sign__Pass">
+              <div class="Form__Title">
+                <button class="Button__Back fa fa-angle-left" Button-Form__Back></button>
+                <h4>Password recovery</h4>
+              </div>
+
+              <label for="Recover__Email__Input" class="Label__Wrapper">
+                <input type="email" placeholder="Email" Input-Recover__Email id="Recover__Email__Input" Value__Required="Wrong email!" value="">
+                <div class="Icons">
+                  <i class="far fa-envelope"></i>
+                </div>
+              </label>
+
+              <div class="Buttons__Authorisation__Registration">
+                <button type="submit" class="Orange__Btn Button__Recover js-Recover__Btn">Recover</button>
+              </div>
+            </form>
+
+            <script>
+              const Header__Form = document.querySelector("[Header__Form]");
+              const Button__Form__Back = document.querySelectorAll("[Button-Form__Back]");
+              const Button__Registration__Link = document.querySelector("[Button-Registration__Link]");
+              const Button__Forgot__Password = document.querySelector("[Button-Forgot__Password]");
+
+              Button__Form__Back.forEach(button => {
+                button.onclick = () => Header__Form.setAttribute("Form__Active__Name", "Sign__In");
+              });
+              Button__Registration__Link.onclick = () => Header__Form.setAttribute("Form__Active__Name", "Sign__Up");
+              Button__Forgot__Password.onclick = () => Header__Form.setAttribute("Form__Active__Name", "Sign__Pass");
+            </script>
+          </div>
+
+          <div class="User__Profile__Overlay" User__Profile__Overlay></div>
+
+          <script>
+            const Buttin__User__Profile = document.querySelector("[Buttin-User__Profile]");
+            const Form__Active__Name = document.querySelector("[Form__Active__Name]");
+            const User__Profile__Overlay = document.querySelector("[User__Profile__Overlay]");
+
+            Buttin__User__Profile.onclick = () => {
+              if (Buttin__User__Profile.getAttribute("Active__User__Profile") == "true") {
+                Buttin__User__Profile.setAttribute("Active__User__Profile", "false");
+              } else {
+                Buttin__User__Profile.setAttribute("Active__User__Profile", "true");
+              }
+            }
+
+            User__Profile__Overlay.onclick = () => {
+              if (Buttin__User__Profile.getAttribute("Active__User__Profile") == "true") {
+                Buttin__User__Profile.setAttribute("Active__User__Profile", "false");
+              } else {
+                Buttin__User__Profile.setAttribute("Active__User__Profile", "true");
+              }
+            }
+          </script>
+        </div>
+
+        <button class="Button__Header__Basket Small-Screen" Button-Header__Basket Cart__Count="1">
+          <i class="far fa-shopping-cart"></i>
+        </button>
+
+        <div class="Button__Header__Basket Large-Screen" Button-Header__Basket Cart__Count="1">
+          <i class="far fa-shopping-cart"></i>
+          <span class="Cart__Price" Cart__Price>6 120 ₾</span>
+
+          <div class="User__Cart__Dropdown__Menu">
+            <div class="Cart__Dropdown__Title">
+              <h4>Shopping Cart</h4>
+            </div>
+
+            <div class="Cart__Dropdown__Product__Items">
+
+              <div class="Product__Item">
+                <div class="Product__Left__Side">
+                  <button class="Button__Product__Remove" Button-Cart__Product__Remove>
+                    <i class="fa fa-times"></i>
+                  </button>
+                  <div class="Product__Image">
+                    <img src="https://img.zoommer.ge/zoommer-images/thumbs/0174445_apple-iphone-14-pro-128gb-deep-purple_70.jpeg" alt="" class="Image">
+                  </div>
+                </div>
+                <div class="Product__Right__Side">
+                  <h6 class="Product__Name">Apple iPhone 14 Pro | 128GB Deep Purple</h6>
+                  <div class="Cart__Dropdown__Price__Wrapper">
+                    <div class="Cart__Dropdown__Quantity">
+                      <button>-</button>
+                      <input type="number" value="1" step="1" min="1">
+                      <button>+</button>
+                    </div>
+                    <span class="Cart__Dropdown__Price">2 299 ₾</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="Product__Item">
+                <div class="Product__Left__Side">
+                  <button class="Button__Product__Remove" Button-Cart__Product__Remove>
+                    <i class="fa fa-times"></i>
+                  </button>
+                  <div class="Product__Image">
+                    <img src="https://img.zoommer.ge/zoommer-images/thumbs/0174445_apple-iphone-14-pro-128gb-deep-purple_70.jpeg" alt="" class="Image">
+                  </div>
+                </div>
+                <div class="Product__Right__Side">
+                  <h6 class="Product__Name">Apple iPhone 14 Pro | 128GB Deep Purple</h6>
+                  <div class="Cart__Dropdown__Price__Wrapper">
+                    <div class="Cart__Dropdown__Quantity">
+                      <button>-</button>
+                      <input type="number" value="1" step="1" min="1">
+                      <button>+</button>
+                    </div>
+                    <span class="Cart__Dropdown__Price">2 299 ₾</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="Product__Item">
+                <div class="Product__Left__Side">
+                  <button class="Button__Product__Remove" Button-Cart__Product__Remove>
+                    <i class="fa fa-times"></i>
+                  </button>
+                  <div class="Product__Image">
+                    <img src="https://img.zoommer.ge/zoommer-images/thumbs/0174445_apple-iphone-14-pro-128gb-deep-purple_70.jpeg" alt="" class="Image">
+                  </div>
+                </div>
+                <div class="Product__Right__Side">
+                  <h6 class="Product__Name">Apple iPhone 14 Pro | 128GB Deep Purple</h6>
+                  <div class="Cart__Dropdown__Price__Wrapper">
+                    <div class="Cart__Dropdown__Quantity">
+                      <button>-</button>
+                      <input type="number" value="1" step="1" min="1">
+                      <button>+</button>
+                    </div>
+                    <span class="Cart__Dropdown__Price">2 299 ₾</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="Cart__Dropdown__Total__Price">
+              <h3 class="Total__Price">Sub-Total: <span Cart__Dropdown__Total__Price> 1 245 ₾</span></h3>
+            </div>
+
+            <button class="Button__GoTo__Cart" Button-GoTo__Cart>Go To Cart</button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      const Header = document.querySelector("header");
+      let Last__Scorll__Top = 0;
+
+      window.onscroll = () => {
+        let Scroll__Top = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (Scroll__Top > Last__Scorll__Top) {
+          Header.style.top = `-${Header.clientHeight + 20}px`;
+        } else {
+          Header.style.top = `0px`;
+        }
+
+        if (Scroll__Top > 135) {
+          Header.classList.add("Sticky");
+        } else {
+          Header.classList.remove("Sticky");
+        }
+
+        Last__Scorll__Top = Scroll__Top;
+      }
+    </script>
+  </header>
+
+  <aside></aside>
+
+  <main>
+    <section>
+      <div class="Navigation__Wrapper Container" Navigation__Wrapper>
+        <nav class="Navigation">
+          <div class="Navigation__Header">
+            <div class="Left__Side">
+              <i class="fa fa-list"></i>
+              <span>Navigation</span>
+            </div>
+            <div class="Right__Side">
+              <button class="Button__All" Button-Nav__All>All</button>
+            </div>
+          </div>
+
+          <div class="Navigation__Body">
+            <ul Navigation__List__Wrapper>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Mobile">
+                <i class="far fa-mobile"></i>
+                <span>Mobile Phones</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Accessories">
+                <i class="far fa-headphones"></i>
+                <span>Tabs | Accessories</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Laptops">
+                <i class="far fa-laptop"></i>
+                <span>IT | Laptops</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Audio">
+                <i class="far fa-music-note"></i>
+                <span>Audio Systems</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Gaming">
+                <i class="far fa-gamepad-modern"></i>
+                <span>Gaming</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Tv">
+                <i class="far fa-tv"></i>
+                <span>TV | Monitors</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Digitals">
+                <i class="far fa-camera"></i>
+                <span>Digitals | Camera</span>
+              </li>
+              <li Navigation__List Nav__List__Active="false" Category__Nav__Name="Home">
+                <i class="far fa-colon"></i>
+                <span>Smart Home</span>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Mobile">
+          <div class="Left__Side">
+            <ul class="Category__Column">
+              <li class="Category__Title">Mobile Brands</li>
+              <li>Apple</li>
+              <li>Samsung</li>
+              <li>Xiaomi</li>
+              <li>Vivo</li>
+              <li>Google</li>
+              <li>Nothing</li>
+              <li>OnePlus</li>
+              <li>Realme</li>
+              <li>Nokia</li>
+              <li>Honor</li>
+              <li>ZTE</li>
+              <li>Asus</li>
+              <li>SkinX</li>
+            </ul>
+            <ul class="Category__Column">
+              <li class="Category__Title">Accessories For Mobile</li>
+              <li>Apple</li>
+              <li>Google</li>
+              <li>Samsung</li>
+              <li>Xiaomi</li>
+              <li>Vivo</li>
+              <li>Google</li>
+            </ul>
+          </div>
+          <div class="Right__Side">
+            <img src="https://img.zoommer.ge/zoommer-images/thumbs/0168002_mobilurebi.png" alt="">
+          </div>
+        </div>
+
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Accessories">Accessories</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Laptops">Laptops</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Audio">Audio</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Gaming">Gaming</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Tv">Tv</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Digitals">Digitals</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Home">Home</div>
+
+        <script>
+          const Navigation__List = document.querySelectorAll("[Navigation__List]");
+          const Category__Name = document.querySelectorAll("[Category__Name]");
+          const Navigation__Wrapper = document.querySelector("[Navigation__Wrapper]");
+
+          Navigation__List.forEach((List) => {
+            List.addEventListener('mouseenter', () => {
+              let NavName = List.getAttribute("Category__Nav__Name");
+              Navigation__List.forEach(List => List.setAttribute("Nav__List__Active", "false"));
+              List.setAttribute("Nav__List__Active", "true");
+              Category__Name.forEach(Category => {
+                let CategoryName = Category.getAttribute("Category__Name");
+                if (NavName == CategoryName) {
+                  Category__Name.forEach(Name => Name.setAttribute("Category__Active", "false"));
+                  Category.setAttribute("Category__Active", "true");
+                }
+              });
+            });
+            Navigation__Wrapper.addEventListener('mouseleave', () => {
+              Category__Name.forEach(Name => Name.setAttribute("Category__Active", "false"));
+              Navigation__List.forEach(List => List.setAttribute("Nav__List__Active", "false"));
+            })
+          })
+        </script>
+      </div>
+
+      <div class="Main__Carousel__Wrapper Container">
+        <div class="swiper Main__Carousel" Main__Carousel>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181769.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181773.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181771.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181838.png" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181847.png" alt="">
+            </div>
+
+          </div>
+
+          <div class="Slider__Nav__Buttons">
+            <div class="Button-Main__Slider__Next Button__Main__Slider">
+              <i class="fa fa-angle-right"></i>
+            </div>
+            <div class="Button-Main__Slider__Prev Button__Main__Slider">
+              <i class="fa fa-angle-left"></i>
+            </div>
+          </div>
+          <div class="Main__Pagination"></div>
+        </div>
+
+        <script>
+          let swiper = new Swiper("[Main__Carousel]", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            slidesPerGroup: 1,
+            loop: true,
+            // rewind: true,
+            loopFillGroupWithBlank: true,
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".Main__Pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".Button-Main__Slider__Next",
+              prevEl: ".Button-Main__Slider__Prev",
+            },
+          });
+        </script>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="Footer__Top">
+      <div class="Fotter__Content Container">
+        <div class="Left__Side">
+          <div class="Footer__Mail__Input">
+            <input type="email" placeholder="Enter your email here...">
+            <button class="Button-Newsletter__Subscribe">
+            <i class="fa fa-send"></i>
+          </button>
+          </div>
+
+          <div class="Social__Media__Iocns Not__For__Mobile">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-youtube"></a>
+          </div>
+        </div>
+        <div class="Right__Side">
+          <div class="Social__Media__Iocns Only__For__Mobile">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-youtube"></a>
+          </div>
+
+          <div class="Language__Dropdown__Wrapper">
+            <div class="Left__Side">
+              <img src="https://zoommer.ge/images/flags/us.png" alt="">
+              <span>ENG</span>
+            </div>
+            <i class="Right__Side fa fa-angle-down"></i>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="Footer__Middle">
+      <div class="Fotter__Content Container">
+        <div class="Left__Side">
+          <ul>
+            <li class="Title">
+              <h3>Navigation</h3>
+            </li>
+            <li>
+              <a href="#">About us</a>
+            </li>
+            <li>
+              <a href="#">Vacancy</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="Title">
+              <h3>Payments</h3>
+            </li>
+            <li>
+              <a href="#">Payment methods</a>
+            </li>
+            <li>
+              <a href="#">Warranty</a>
+            </li>
+            <li>
+              <a href="#">Installment</a>
+            </li>
+          </ul>
+          <ul>
+            <li class="Title">
+              <h3>Account</h3>
+            </li>
+            <li>
+              <a href="#">Online installment</a>
+            </li>
+            <li>
+              <a href="#">Return item</a>
+            </li>
+            <li>
+              <a href="#">Conditions of Use</a>
+            </li>
+          </ul>
+        </div>
+        <div class="Right__Side">
+          <div class="Title__Wrapper">
+            <h3>Contact</h3>
+            <a href="#">Branches</a>
+          </div>
+
+          <div class="Footer__Map__Image">
+            <img src="https://zoommer.ge/Themes/Zoommer/assets/images/footer_map.png" class="Footer__Map__Image">
+          </div>
+
+          <div class="Footer__Contact__Info">
+            <a href="#">
+              <i class="far fa-envelope"></i>
+              <span>info@zoommer.ge</span>
+            </a>
+            <a href="#">
+              <i class="far fa-phone"></i>
+              <span>*7007 / +995 (32) 2 60 30 60</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="Footer__Bottom">
+      <div class="Footer__Content Container">
+        <div class="Footer__Copyright">Copyright © 2022 Zoommer.ge. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBA9SOD0xFQsWpyyR4i3idtpXALvdWAXTY",
+      authDomain: "fe-50-87e53.firebaseapp.com",
+      projectId: "fe-50-87e53",
+      storageBucket: "fe-50-87e53.appspot.com",
+      messagingSenderId: "643514280227",
+      appId: "1:643514280227:web:64aefe20db92f69e6f0496",
+      measurementId: "G-30HKPKYTTH"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+</body>
+
+</html>

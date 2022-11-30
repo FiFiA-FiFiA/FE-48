@@ -1,0 +1,1445 @@
+body {
+  min-height: var(--full-height-vh);
+}
+
+.Container {
+  position: relative;
+  height: var(--full-height-vh);
+  width: var(--full-width);
+  max-width: var(--containr-width);
+  margin: 0 auto;
+}
+
+.Container aside {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--aside-width-closed);
+  background: var(--color-white-default);
+  border-right: var(--size-01rem) solid var(--color-dark-gray-lighter);
+  overflow: hidden;
+}
+
+.Container aside.Open {
+  width: var(--aside-width-opened);
+}
+
+.Container aside .Logo {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  margin: var(--size-07rem) 0 var(--size-1rem);
+  width: var(--full-width);
+  padding: 0 var(--size-1rem);
+  max-height: 50px;
+  min-height: 50px;
+}
+
+.Container aside.Open .Logo {
+  padding: 0 var(--size-2rem);
+}
+
+.Container aside .Logo img {
+  max-width: 150px;
+  height: 100%;
+  display: none;
+}
+
+.Container aside.Open .Logo img:last-child,
+.Container aside .Logo img:first-child {
+  display: none;
+}
+
+.Container aside .Logo img:last-child,
+.Container aside.Open .Logo img:first-child {
+  display: block;
+  width: 100%;
+}
+
+.Container aside nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: var(--full-width);
+  height: var(--full-height);
+}
+
+.Container aside nav ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  width: var(--full-width);
+  height: var(--full-height);
+}
+
+.Container aside.Open nav ul {
+  align-items: flex-start;
+}
+
+.Container aside nav ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-items: center;
+  gap: var(--size-07rem);
+  width: var(--full-width);
+  padding: var(--size-1rem);
+  cursor: pointer;
+}
+
+.Container aside.Open nav ul li {
+  align-items: flex-start;
+  padding: var(--size-1rem) var(--size-1_5rem);
+}
+
+.Container aside nav ul li:hover {
+  background: var(--color-primary-transparent-hover);
+}
+
+.Container aside nav ul li.active {
+  background: var(--color-primary);
+}
+
+.Container aside nav ul li i {
+  min-width: 30px;
+  text-align: center;
+  font-size: var(--typography-size-large);
+  color: var(--color-illustration-gray-dark-500);
+}
+
+.Container aside nav ul li span {
+  text-align: start;
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-illustration-gray-dark-500);
+  opacity: 0;
+}
+
+.Container aside.Open nav ul li span {
+  opacity: 1;
+}
+
+.Container aside nav .Nav__Buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  gap: var(--size-1rem);
+  padding: var(--size-07rem) var(--size-03rem);
+  border-top: var(--size-01rem) solid var(--color-illustration-gray-dark-200);
+}
+
+.Container aside nav .Nav__Buttons button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-07rem);
+  width: var(--full-width);
+  padding: var(--size-03rem);
+  cursor: pointer;
+}
+
+.Container aside.Open nav .Nav__Buttons button {
+  justify-content: flex-start;
+}
+
+.Container aside nav .Nav__Buttons .Btn-Toggle__Theme,
+.Container aside.Open nav .Nav__Buttons .Btn-Toggle__Theme {
+  display: none;
+}
+
+.Container aside nav .Nav__Buttons button i {
+  min-width: 30px;
+  text-align: center;
+  font-size: var(--typography-size-large);
+  color: var(--color-illustration-gray-dark-500);
+}
+
+.Container aside nav .Nav__Buttons button span {
+  text-align: start;
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-illustration-gray-dark-500);
+  display: none;
+}
+
+.Container aside.Open nav .Nav__Buttons button span {
+  display: block;
+  white-space: nowrap;
+}
+
+
+/* * Aside Style End * */
+
+
+/* * Main Style Start * */
+
+.Container main {
+  position: relative;
+  left: var(--aside-width-closed);
+  height: var(--full-height);
+  min-height: var(--full-height-vh);
+  width: calc(var(--full-width) - var(--aside-width-closed));
+  overflow: auto;
+}
+
+.Container aside.Open~main {
+  left: var(--aside-width-opened);
+  width: calc(var(--full-width) - var(--aside-width-opened));
+}
+
+.Container main header {
+  position: sticky;
+  top: 0;
+  height: auto;
+  width: var(--full-width);
+  padding: var(--size-07rem);
+  background: var(--color-white-default);
+  box-shadow: var(--basicShadow);
+  border-bottom: var(--size-01rem) solid var(--color-dark-gray-lighter);
+  z-index: var(--zIndexHeader);
+}
+
+.Container main header .Nav__Main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-spacing-25px);
+}
+
+.Container main header .Nav__Main .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+  min-width: 160px;
+}
+
+.Container main header .Nav__Main .Left__Side button {
+  font-size: var(--typography-size-xl);
+  color: var(--color-illustration-gray-dark-400);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+}
+
+.Container main header .Nav__Main .Left__Side h2 {
+  font-size: var(--typography-size-xl);
+  color: var(--color-illustration-gray-dark-400);
+  cursor: default;
+}
+
+.Container main header .Nav__Main .Middle {
+  width: var(--full-width);
+  max-width: 400px;
+}
+
+.Container main header .Nav__Main .Middle .Search__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--colorOverlay);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Container main header .Nav__Main .Middle.active .Search__Overlay {
+  opacity: 1;
+  pointer-events: painted;
+}
+
+.Container main header .Nav__Main .Middle .Main__Search__Form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  max-width: 400px;
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--size-border-radius-small);
+}
+
+.Container main header .Nav__Main .Middle .Main__Search__Form input {
+  height: var(--full-height);
+  width: var(--full-width);
+  outline: 0;
+  border: 0;
+  background: var(--color-transparent-default);
+  font-size: var(--size-1rem);
+  font-weight: var(--mediumWeight);
+  padding: 0 var(--size-1rem);
+  color: var(--color-illustration-gray-dark-500);
+}
+
+.Container main header .Nav__Main .Middle .Main__Search__Form button {
+  position: relative;
+  margin-right: var(--size-03rem);
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  background: var(--color-primary);
+  text-align: center;
+  color: var(--color-white-default);
+  font-size: var(--typography-size-medium);
+  border-radius: var(--size-border-radius-small);
+  cursor: pointer;
+}
+
+.Container main header .Nav__Main .Right__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-1_5rem);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Search__Open {
+  position: relative;
+  display: none;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  text-align: center;
+  font-size: var(--typography-size-large);
+  color: var(--color-primary);
+  border-radius: var(--size-border-radius-full);
+  cursor: pointer;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Search__Open:hover {
+  background: var(--color-primary-transparent-hover);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Toggle__Theme {
+  position: relative;
+  height: 40px;
+  width: 40px;
+  min-width: 40px;
+  text-align: center;
+  font-size: var(--typography-size-xl);
+  color: var(--color-primary);
+  background: var(--color-primary-transparent);
+  border-radius: var(--size-border-radius-full);
+  cursor: pointer;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Toggle__Theme:hover {
+  background: var(--color-primary-transparent-hover);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--size-border-radius-full);
+  padding: 0 var(--size-03rem);
+  gap: var(--size-07rem);
+  cursor: pointer;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile img {
+  width: 100%;
+  min-width: 37px;
+  aspect-ratio: 1/1;
+  border-radius: var(--size-border-radius-full);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu {
+  position: absolute;
+  z-index: var(--zIndexHeader);
+  display: none;
+  flex-direction: column;
+  top: 110%;
+  right: 0;
+  min-width: 12rem;
+  padding: var(--size-03rem) 0;
+  font-size: var(--typography-size-medium);
+  color: var(--color-illustration-gray-dark-500);
+  text-align: left;
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  border-radius: var(--smallRadius);
+  background: var(--color-dark-third-party-github-dark);
+  box-shadow: var(--basicShadow);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu.active {
+  display: flex;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--size-spacing-10px);
+  width: var(--full-width);
+  padding: var(--size-05rem) var(--size-1rem);
+  font-weight: var(--medium);
+  font-size: var(--typography-size-medium);
+  color: var(--color-illustration-gray-dark-500);
+  text-align: left;
+  white-space: nowrap;
+  list-style: none;
+  background-color: var(--color-default-transparent);
+  border: 0;
+  cursor: pointer;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item:hover {
+  background: var(--color-dark-third-party-github);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item img {
+  max-width: 50px;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item i {
+  font-size: var(--typography-size-medium);
+  color: var(--color-gray-darkest);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item .Admin__Name__Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-01rem);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item .Admin__Name__Wrapper .Admin__Name {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-gray-darkest);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Item .Admin__Name__Wrapper .Admin__Text {
+  font-weight: var(--medium);
+  font-size: var(--typography-size-small);
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Dropdown__Menu .Dropdown__Line {
+  height: 0;
+  margin: var(--size-05rem) 0;
+  overflow: hidden;
+  border-top: var(--size-01rem) solid var(--color-dark-third-party-github);
+  cursor: default;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Menu__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: var(--colorOverlay); */
+  opacity: 0;
+  pointer-events: none;
+}
+
+.Container main header .Nav__Main .Right__Side .Btn-Profile .Profile__Menu__Overlay.active {
+  opacity: 1;
+  pointer-events: painted;
+}
+
+
+/* * Main Header End * */
+
+.Container main .Section__Wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.Container main .Section__Wrapper .Section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  padding: var(--size-1rem);
+}
+
+.Container main .Section__Wrapper[Section="Products"] .Section.Products,
+.Container main .Section__Wrapper[Section="Dashboard"] .Section.Dashboard,
+.Container main .Section__Wrapper[Section="Orders"] .Section.Orders,
+.Container main .Section__Wrapper[Section="Customers"] .Section.Customers {
+  display: flex;
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: var(--full-width);
+  gap: var(--size-spacing-25px);
+  cursor: default;
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--full-width) / 4);
+  min-width: fit-content;
+  background: var(--color-white-default);
+  gap: var(--size-1rem);
+  padding: var(--size-1_5rem);
+  border-radius: var(--bigRadius);
+  box-shadow: var(--strongShadow);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box .Box__Topic {
+  font-size: var(--typography-size-xl);
+  font-weight: var(--mediumWeight);
+  white-space: nowrap;
+  color: var(--color-third-party-github);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box .Row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--full-width);
+  margin-top: var(--size-05rem);
+  gap: var(--size-spacing-10px);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box .Row .Number {
+  display: inline-block;
+  font-size: var(--typography-size-xxl);
+  font-weight: var(--mediumWeight);
+  color: var(--color-third-party-github);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box .Row :is(.fa, .far) {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  line-height: 20px !important;
+  text-align: center;
+  border-radius: var(--size-border-radius-full);
+  color: var(--color-white-default);
+  background: var(--color-illustration-green-600);
+  font-size: var(--size-07rem);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box .Row .fa-arrow-down {
+  background: var(--color-illustration-red-600);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box .Row .Text {
+  font-size: var(--size-1rem);
+  white-space: nowrap;
+  color: var(--color-dark-gray-default);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box i {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: var(--cardRadius);
+  font-size: var(--typography-size-xxl);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box:nth-child(1) i {
+  background: var(--color-illustration-blue-400);
+  color: var(--color-illustration-blue-800);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box:nth-child(2) i {
+  background: var(--color-illustration-green-400);
+  color: var(--color-illustration-green-800);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box:nth-child(3) i {
+  background: var(--color-illustration-gold-400);
+  color: var(--color-illustration-gold-700);
+}
+
+.Container main .Section__Wrapper .Section .Overview__Boxes .Box:nth-child(4) i {
+  background: var(--color-illustration-red-200);
+  color: var(--color-third-party-gitlab);
+}
+
+
+/* * Overview Boxes End * */
+
+
+/* * Sales Boxes Start * */
+
+.Container main .Section__Wrapper .Section .Sales__Boxes {
+  width: var(--full-width);
+  cursor: default;
+  user-select: none;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: var(--size-1_5rem) 0;
+  background: var(--color-white-default);
+  padding: var(--size-1rem) var(--size-2rem);
+  border-radius: var(--bigRadius);
+  box-shadow: var(--strongShadow);
+  overflow: auto;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Title__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--size-07rem) 0;
+  gap: var(--size-spacing-12px);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Title__Wrapper i {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: var(--cardRadius);
+  font-size: var(--typography-size-xl);
+  background: var(--color-illustration-red-400);
+  color: var(--color-illustration-red-700);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Title__Wrapper h2 {
+  font-size: var(--typography-size-large);
+  color: var(--color-illustration-gray-dark-600);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper {
+  margin-top: var(--size-05rem);
+  display: flex;
+  flex-direction: column;
+  width: var(--full-width);
+  overflow: auto;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table {
+  width: var(--full-width);
+  height: var(--full-height);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr {
+  text-align: start;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr th {
+  padding: var(--size-07rem) var(--size-05rem);
+  text-align: start;
+  font-size: var(--typography-size-large);
+  font-weight: var(--bold);
+  color: var(--color-illustration-gray-dark-600);
+  white-space: nowrap;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr td {
+  padding: var(--size-05rem);
+  text-align: start;
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-illustration-gray-dark-600);
+  height: 50px;
+  white-space: nowrap;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr :is(td, th):last-child {
+  text-align: end;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr td span {
+  padding: var(--size-03rem) var(--size-05rem);
+  border-radius: var(--cardRadius);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr td.Delivered span {
+  background: var(--color-illustration-green-400);
+  color: var(--color-illustration-green-900);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr td.Pending span {
+  background: var(--color-illustration-gold-400);
+  color: var(--color-illustration-gold-800);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper table tr td.Return span {
+  background: var(--color-illustration-red-400);
+  color: var(--color-illustration-red-800);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: var(--size-spacing-12px);
+  gap: var(--size-2rem);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item:first-child {
+  margin: 0;
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item:last-child {
+  margin-bottom: var(--size-1rem);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-spacing-12px);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item .Left__Side img {
+  width: 50px;
+  min-width: 50px;
+  aspect-ratio: 1/1;
+  border-radius: var(--size-border-radius-small);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item .Left__Side .Customer__Info {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: var(--size-spacing-2px);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item .Left__Side .Customer__Name {
+  font-size: var(--typography-size-large);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item .Left__Side :is(h3, h4) {
+  color: var(--color-illustration-gray-dark-600);
+  font-weight: var(--mediumWeight);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item .Number {
+  padding: var(--size-03rem) var(--size-05rem);
+  border-radius: var(--cardRadius);
+  font-weight: var(--bold);
+  font-size: var(--typography-size-medium);
+  background: var(--color-illustration-gold-400);
+  color: var(--color-illustration-gold-900);
+}
+
+.Container main .Section__Wrapper .Section .Sales__Boxes .Box .Sales__Details__Wrapper .Customer__Item:first-child .Number {
+  background: var(--color-illustration-green-400);
+  color: var(--color-illustration-green-900);
+}
+
+
+/* * Sales Boxes End * */
+
+
+/* * Products Section Start * */
+
+.Container main .Section__Wrapper .Section .All__Product__Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--size-1_5rem);
+  background: var(--color-white-default);
+  padding: var(--size-1rem);
+  border-radius: var(--bigRadius);
+  box-shadow: var(--strongShadow);
+  width: var(--full-width);
+  overflow: auto;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-1rem);
+  height: 50px;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Left__Side i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  font-size: var(--typography-size-xl);
+  color: var(--color-white-default);
+  background: var(--color-primary);
+  border-radius: var(--cardRadius);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Left__Side h2 {
+  font-size: var(--typography-size-medium);
+  color: var(--color-illustration-gray-dark-400);
+  cursor: default;
+  white-space: nowrap;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Middle {
+  width: var(--full-width);
+  max-width: 400px;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Middle .Product__Search__Form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  max-width: 400px;
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--size-border-radius-small);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Middle .Product__Search__Form input {
+  height: var(--full-height);
+  width: var(--full-width);
+  outline: 0;
+  border: 0;
+  background: var(--color-transparent-default);
+  font-size: var(--size-1rem);
+  font-weight: var(--mediumWeight);
+  padding: 0 var(--size-1rem);
+  color: var(--color-illustration-gray-dark-500);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Right__Side .Btn-Create__Product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 45px;
+  gap: var(--size-05rem);
+  font-size: var(--typography-size-medium);
+  color: var(--color-white-default);
+  background: var(--color-primary);
+  border-radius: var(--cardRadius);
+  padding: var(--size-07rem) var(--size-1rem);
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: var(--mediumWeight);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-spacing-xxl), 1fr));
+  grid-gap: var(--size-spacing-25px);
+  grid-auto-flow: row dense;
+  justify-items: center;
+  margin-top: var(--size-1rem);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box {
+  padding: var(--size-07rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: var(--size-01rem) solid var(--color-dark-gray-lighter);
+  border-radius: var(--size-border-radius-big);
+  cursor: default;
+  width: 100%;
+  gap: var(--size-spacing-2px);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Image__Wrapper {
+  position: relative;
+  display: block;
+  width: var(--full-width);
+  height: var(--full-height);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Image__Wrapper img {
+  width: var(--full-width);
+  height: var(--full-height);
+  object-fit: cover;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Product__Info {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Product__Info h3 {
+  font-size: var(--typography-size-medium);
+  color: var(--color-dark-gray-light);
+  line-height: normal;
+  font-weight: var(--mediumWeight);
+  margin: var(--size-03rem) 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Product__Info span {
+  font-size: var(--typography-size-large);
+  color: var(--color-dark-gray-darkest);
+  line-height: normal;
+  font-weight: var(--bold);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Product__Action__Buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--size-05rem);
+  margin-top: var(--size-1rem);
+  width: var(--full-width);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Product__Action__Buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  flex: 1;
+  height: 35px;
+  gap: var(--size-05rem);
+  font-size: var(--typography-size-small);
+  background: var(--color-transparent-default);
+  border-radius: var(--smallRadius);
+  padding: var(--size-07rem) var(--size-1rem);
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: var(--bold);
+  color: var(--color-white-default);
+  background: var(--color-blue-default);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes .Product__Box .Product__Action__Buttons button:last-child {
+  color: var(--color-white-default);
+  background: var(--color-dark-red-default);
+  border-color: var(--color-transparent-default);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--size-1rem) auto;
+  margin-bottom: 0;
+  max-width: 90%;
+  padding: var(--size-03rem);
+  gap: var(--size-05rem);
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--smallRadius);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  padding: var(--size-03rem) var(--size-07rem);
+  border-radius: var(--smallRadius);
+  cursor: pointer;
+  color: var(--color-black-default);
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--smallRadius);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper button:hover {
+  border: var(--size-01rem) solid var(--color-primary);
+  color: var(--color-black-default);
+  background: var(--color-primary);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper .Pagination__Number__Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: var(--full-width);
+  gap: var(--size-03rem);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper .Pagination__Number__Wrapper button {
+  height: 35px;
+  width: 35px;
+  min-width: auto;
+  margin: 0;
+  text-align: center;
+  padding: var(--size-03rem) var(--size-07rem);
+  color: var(--color-black-default);
+  background: var(--color-default-transparent);
+  font-weight: var(--mediumWeight);
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--smallRadius);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper .Pagination__Number__Wrapper button:hover {
+  background: var(--color-dark-third-party-github);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper .Pagination__Number__Wrapper button.active {
+  border-color: var(--color-primary);
+  color: var(--color-white-default);
+  background: var(--color-primary);
+}
+
+.Container main .Section__Wrapper .Section .All__Product__Container .Product__Pagination__Wrapper :is(.Btn__Prev, .Btn__Next).disabled {
+  opacity: var(--opacity-50);
+  pointer-events: none;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--size-1_5rem);
+  background: var(--color-white-default);
+  padding: var(--size-1rem);
+  border-radius: var(--bigRadius);
+  box-shadow: var(--strongShadow);
+  width: var(--full-width);
+  overflow: auto;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-1rem);
+  height: 50px;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Left__Side i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  font-size: var(--typography-size-large);
+  color: var(--color-white-default);
+  background: var(--color-primary);
+  border-radius: var(--cardRadius);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Left__Side h2 {
+  font-size: var(--typography-size-medium);
+  color: var(--color-illustration-gray-dark-400);
+  cursor: default;
+  white-space: nowrap;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Right__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Right__Side button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: 45px;
+  gap: var(--size-05rem);
+  font-size: var(--typography-size-medium);
+  color: var(--color-white-default);
+  background: var(--color-illustration-blue-500);
+  border-radius: var(--cardRadius);
+  padding: var(--size-07rem) var(--size-1rem);
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: var(--mediumWeight);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Right__Side button:first-child {
+  background: var(--color-dark-red-default);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes {
+  display: flex;
+  width: var(--full-width);
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--size-spacing-25px);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  min-width: 250px;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Media__Info__Box {
+  width: var(--full-width);
+  flex: auto;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Input__Row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--full-width);
+  gap: var(--size-spacing-12px);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Description__Action__Buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--size-spacing-10px);
+  margin-top: var(--size-07rem);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Description__Action__Buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  flex: 1;
+  height: 35px;
+  gap: var(--size-05rem);
+  font-size: var(--typography-size-small);
+  color: var(--color-white-default);
+  background: var(--color-blue-default);
+  border-radius: var(--smallRadius);
+  padding: var(--size-07rem) var(--size-1rem);
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: var(--bold);
+  /* max-width: fit-content; */
+  flex: 1;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Description__Action__Buttons button:last-child {
+  background: var(--color-dark-red-default);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--size-03rem);
+  margin-top: var(--size-07rem);
+  width: var(--full-width);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box label span {
+  font-size: var(--typography-size-small);
+  color: var(--color-illustration-gray-dark-400);
+  cursor: default;
+  font-weight: var(--mediumWeight);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box label :is(input, textarea, select) {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: var(--full-width);
+  height: 45px;
+  /* max-width: 400px; */
+  border: var(--size-01rem) solid var(--color-dark-gray-lighter);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--size-border-radius-small);
+  font-size: var(--size-1rem);
+  font-weight: var(--mediumWeight);
+  padding: 0 var(--size-1rem);
+  color: var(--color-illustration-gray-dark-500);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box label textarea {
+  resize: vertical;
+  max-height: 200px;
+  padding-top: var(--size-05rem);
+  min-height: 100px;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Product__Image__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: var(--full-width);
+  margin-top: var(--size-1rem);
+  gap: var(--size-07rem);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Product__Image__Wrapper .image {
+  position: relative;
+  width: 100%;
+  max-width: 130px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--bigRadius);
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Product__Image__Wrapper .image img {
+  width: var(--full-width);
+  height: var(--full-height);
+  object-fit: cover;
+  object-position: center;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Product__Image__Wrapper .image button {
+  position: absolute;
+  min-width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: var(--colorOverlay);
+  color: #fff;
+  z-index: 1;
+  font-size: var(--typography-size-large);
+  top: var(--size-03rem);
+  right: var(--size-03rem);
+  border-radius: var(--size-border-radius-full);
+  cursor: pointer;
+  padding: 0;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Product__Image__Wrapper label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--full-width);
+  max-width: 130px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: var(--size-01rem) solid var(--color-dark-third-party-github);
+  background: var(--color-dark-third-party-github-dark);
+  border-radius: var(--size-border-radius-small);
+  font-size: var(--typography-size-xxl);
+  color: var(--color-illustration-gray-dark-300);
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.Container main .Section__Wrapper .Section .Create__Product__Container .Create__Product__Boxes .Box .Product__Image__Wrapper label input {
+  display: none;
+}
+
+.Container main .Section__Wrapper .Section .Product__Container {
+  display: none;
+}
+
+.Container main .Section__Wrapper .Section.Products[Product__ActiveTab__Name="All__Product"] .All__Product__Container,
+.Container main .Section__Wrapper .Section.Products[Product__ActiveTab__Name="Create__Product"] .Create__Product__Container {
+  display: flex;
+}
+
+
+/* * Products Section End * */
+
+
+/* * Oreders Section Start * */
+
+.Container main .Section__Wrapper .Section.Orders .Orders__Container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--size-1_5rem);
+  background: var(--color-white-default);
+  padding: var(--size-1rem);
+  border-radius: var(--bigRadius);
+  box-shadow: var(--strongShadow);
+  width: var(--full-width);
+  overflow: auto;
+}
+
+.Container main .Section__Wrapper .Section.Orders .Orders__Container h3 {
+  font-size: var(--typography-size-medium);
+  color: var(--color-illustration-gray-dark-500);
+  cursor: default;
+  margin: 0 auto;
+}
+
+
+/* * Oreders Section End * */
+
+
+/* * Media Query* */
+
+@media screen and (max-width: 1155px) {
+  .Container main .Section__Wrapper .Section .Overview__Boxes .Box {
+    flex: 1 1 calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .Container main header .Nav__Main .Right__Side {
+    gap: var(--size-07rem);
+  }
+  .Container main header .Nav__Main .Right__Side .Btn-Search__Open {
+    display: block;
+  }
+  .Container main header .Nav__Main .Middle {
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    max-width: none;
+  }
+  .Container main header .Nav__Main .Middle .Main__Search__Form {
+    max-width: none;
+  }
+  .Container main header .Nav__Main .Middle.active {
+    opacity: 1;
+    pointer-events: painted;
+  }
+}
+
+@media screen and (max-width: 650px) {
+   :root {
+    --aside-width-opened: 70px;
+    --aside-width-closed: -70px;
+  }
+  .Container aside {
+    left: var(--aside-width-closed);
+    width: var(--aside-width-opened);
+  }
+  .Container aside.Open {
+    --aside-width-opened: 70px;
+    --aside-width-closed: 0;
+    left: var(--aside-width-closed);
+    width: var(--aside-width-opened);
+  }
+  .Container main {
+    --aside-width-opened: 0px;
+    left: var(--aside-width-opened);
+    width: calc(var(--full-width) - var(--aside-width-opened));
+  }
+  .Container aside.Open~main {
+    --aside-width-opened: 70px;
+    left: var(--aside-width-opened);
+    width: calc(var(--full-width) - var(--aside-width-opened));
+  }
+  .Container aside.Open .Logo {
+    padding: 0;
+  }
+  .Container aside.Open nav .Nav__Buttons button span,
+  .Container aside.Open nav ul li span,
+  .Container aside .Logo img:first-child,
+  .Container aside.Open .Logo img:first-child {
+    display: none;
+  }
+  .Container aside .Logo img:last-child,
+  .Container aside.Open .Logo img:last-child {
+    display: block;
+  }
+  .Container aside.Open nav .Nav__Buttons button {
+    justify-content: center;
+  }
+  .Container aside.Open nav ul li {
+    padding: var(--size-1rem);
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .Container main .Section__Wrapper .Section .All__Product__Container .Product__Boxes {
+    --size-spacing-xxl: 10rem;
+    grid-template-columns: repeat(auto-fill, minmax(var(--size-spacing-xxl), 1fr));
+  }
+  .Container main .Section__Wrapper .Section .Create__Product__Container .Product__Header .Right__Side .Btn-Add__Product span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .Container aside.Open nav .Nav__Buttons .Btn-Toggle__Theme {
+    display: flex;
+  }
+  .Container main header .Nav__Main .Left__Side {
+    gap: 0;
+    min-width: 140px;
+  }
+  .Container main header .Nav__Main .Left__Side h2 {
+    font-size: var(--typography-size-large);
+  }
+  .Container main header .Nav__Main .Right__Side .Btn-Toggle__Theme {
+    display: none;
+  }
+  .Container main header .Nav__Main .Right__Side .Btn-Profile {
+    padding: 0;
+    height: 45px;
+    width: 45px;
+    justify-content: center;
+    border-radius: var(--size-border-radius-full);
+  }
+  .Container main header .Nav__Main .Right__Side .Btn-Profile img {
+    width: 38px;
+    min-width: 38px;
+    aspect-ratio: 1/1;
+    border-radius: var(--size-border-radius-full);
+  }
+  .Container main .Section__Wrapper .Section .All__Product__Container .Product__Header .Right__Side .Btn-Create__Product span {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1155px) {
+  .Container main .Section__Wrapper .Section .Overview__Boxes .Box {
+    flex: 1 1 calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1455px) {
+  .Container main .Section__Wrapper .Section .Overview__Boxes .Box {
+    flex: 1 1 calc(100% / 5);
+  }
+}

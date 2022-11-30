@@ -279,6 +279,8 @@ function Get__Api__Data() {
       Data__Array.push(data[i]);
     }
     Get__Data()
+  }).catch(err => {
+    console.log(err);
   });
 }
 Get__Api__Data();

@@ -1,0 +1,2309 @@
+:root {
+  --color-primary: #FF5000;
+  --color-primary-transparent: #ff51002e;
+  --color-primary-transparent-hover: #ff510044;
+  --color-darkBlue: #093251;
+  --color-darkBlue-hover: #051A29;
+  --color-text: #688093;
+  --color-body-background: #f5f7fa;
+  --color-link: #007bff;
+  --color-image-background: #FCFCFC;
+  --aside-width-opened: 250px;
+  --aside-width-closed: 70px;
+  --containr-width: auto;
+  --full-width: 100%;
+  --full-height: 100%;
+  --full-width-vw: 100vw;
+  --full-height-vh: 100vh;
+  --size-3rem: 3rem;
+  --size-2_5rem: 2.5rem;
+  --size-2rem: 2rem;
+  --size-1_5rem: 1.5rem;
+  --size-1rem: 1rem;
+  --size-07rem: 0.7rem;
+  --size-05rem: 0.5rem;
+  --size-03rem: 0.3rem;
+  --size-01rem: 0.1rem;
+  --size-border-width-default: 1px;
+  --size-border-width-light: 1px;
+  --size-border-radius-small: .4rem;
+  --size-border-radius-big: .8rem;
+  --size-border-radius-full: 100%;
+  --color-transparent-default: rgba(0, 0, 0, 0);
+  --color-transparent-01: rgba(0, 0, 0, 0.1);
+  --color-transparent-02: rgba(0, 0, 0, 0.2);
+  --color-transparent-03: rgba(0, 0, 0, 0.3);
+  --color-transparent-04: rgba(0, 0, 0, 0.4);
+  --color-transparent-06: rgba(0, 0, 0, 0.6);
+  --color-transparent-07: rgba(0, 0, 0, 0.7);
+  --color-transparent-08: rgba(0, 0, 0, 0.8);
+  --color-transparent-09: rgba(0, 0, 0, 0.9);
+  --color-transparent-white-01: rgba(255, 255, 255, 0.1);
+  --color-transparent-white-02: rgba(255, 255, 255, 0.2);
+  --color-transparent-white-03: rgba(255, 255, 255, 0.3);
+  --color-transparent-white-04: rgba(255, 255, 255, 0.4);
+  --color-transparent-white-06: rgba(255, 255, 255, 0.6);
+  --color-transparent-white-07: rgba(255, 255, 255, 0.7);
+  --color-transparent-white-08: rgba(255, 255, 255, 0.8);
+  --color-transparent-white-09: rgba(255, 255, 255, 0.9);
+  --color-black-default: #151a1e;
+  --color-white-default: #ffffff;
+  --color-gray-darkest: #34383c;
+  --color-gray-darker: #676c6f;
+  --color-gray-dark: #808589;
+  --color-gray-default: #a4a8ad;
+  --color-gray-light: #e8ebed;
+  --color-gray-lighter: #f2f5f8;
+  --color-gray-lightest: #f9fafa;
+  --color-teal-darkest: #054861;
+  --color-teal-darker: #139baa;
+  --color-teal-default: #5cebdf;
+  --color-teal-lighter: #9ff9e1;
+  --color-teal-lightest: #e1fef1;
+  --color-green-darkest: #12470b;
+  --color-green-darker: #1b7f28;
+  --color-green-default: #43fb36;
+  --color-green-lighter: #85ff8b;
+  --color-green-lightest: #bdffbe;
+  --color-blue-darkest: #061574;
+  --color-blue-darker: #112cb0;
+  --color-blue-default: #2451f5;
+  --color-blue-lighter: #799cfb;
+  --color-blue-lightest: #d2e0fe;
+  --color-gold-darkest: #7c4a04;
+  --color-gold-darker: #b7780b;
+  --color-gold-default: #ffb914;
+  --color-gold-lighter: #ffdd75;
+  --color-gold-lightest: #fff7d1;
+  --color-red-darkest: #78122d;
+  --color-red-darker: #b5303e;
+  --color-red-default: #ff6b61;
+  --color-red-lighter: #ffb59e;
+  --color-red-lightest: #ffece0;
+  --color-dark-black-darker: #070b0d;
+  --color-dark-black-default: #151a1e;
+  --color-dark-gray-darkest: #1c2126;
+  --color-dark-gray-darker: #22262a;
+  --color-dark-gray-dark: #2a2e32;
+  --color-dark-gray-default: #4c5257;
+  --color-dark-gray-light: #808589;
+  --color-dark-gray-lighter: #a4a8ad;
+  --color-dark-gray-lightest: #e8ebed;
+  --color-dark-teal-darkest: #032b3a;
+  --color-dark-teal-darker: #0f6980;
+  --color-dark-teal-default: #31c9c9;
+  --color-dark-teal-lighter: #86f3df;
+  --color-dark-teal-lightest: #9ff9e1;
+  --color-dark-blue-darkest: #040e4e;
+  --color-dark-blue-darker: #0a1e8f;
+  --color-dark-blue-default: #193ed2;
+  --color-dark-blue-lighter: #597ef8;
+  --color-dark-blue-lightest: #a5befd;
+  --color-dark-gold-darkest: #4f2f02;
+  --color-dark-gold-darker: #925a07;
+  --color-dark-gold-default: #e89c02;
+  --color-dark-gold-lighter: #ffd152;
+  --color-dark-gold-lightest: #ffeba3;
+  --color-dark-red-darkest: #470b1b;
+  --color-dark-red-darker: #7f1b2d;
+  --color-dark-red-default: #fb3636;
+  --color-dark-red-lighter: #ff8585;
+  --color-dark-red-lightest: #ffbdbd;
+  --color-dark-third-party-github: #d2d6db;
+  --color-dark-third-party-github-dark: #f5f7fa;
+  --color-dark-third-party-gitlab: #fc6e27;
+  --color-dark-third-party-gitlab-dark: #ff8547;
+  --color-dark-third-party-bitbucket: #4d9aff;
+  --color-dark-third-party-bitbucket-dark: #80b7ff;
+  --color-dark-third-party-azure: #4db2ff;
+  --color-dark-third-party-azure-dark: #80c8ff;
+  --color-gray-light-100: #f9fafa;
+  --color-gray-light-200: #f2f5f8;
+  --color-gray-light-300: #e8ebed;
+  --color-gray-light-400: #a4a8ad;
+  --color-gray-light-500: #808589;
+  --color-gray-light-600: #676c6f;
+  --color-gray-light-700: #34383c;
+  --color-gray-light-800: #151a1e;
+  --color-gray-light-000: #ffffff;
+  --color-gray-dark-100: #e8ebed;
+  --color-gray-dark-200: #a4a8ad;
+  --color-gray-dark-300: #808589;
+  --color-gray-dark-400: #4c5257;
+  --color-gray-dark-500: #2a2e32;
+  --color-gray-dark-600: #22262a;
+  --color-gray-dark-700: #1c2126;
+  --color-gray-dark-800: #151a1e;
+  --color-gray-dark-000: #ffffff;
+  --color-teal-050: #f1fef4;
+  --color-teal-100: #e1fef1;
+  --color-teal-200: #bffde7;
+  --color-teal-300: #9ff9e1;
+  --color-teal-400: #86f3df;
+  --color-teal-500: #5cebdf;
+  --color-teal-600: #31c9c9;
+  --color-teal-700: #139baa;
+  --color-teal-800: #0e6c81;
+  --color-teal-900: #054861;
+  --color-green-050: #f2fef1;
+  --color-green-100: #e4fee1;
+  --color-green-200: #c4fdbf;
+  --color-green-300: #9ff9a7;
+  --color-green-400: #86f386;
+  --color-green-500: #5ceb61;
+  --color-green-600: #36c931;
+  --color-green-700: #13aa25;
+  --color-green-800: #1f810e;
+  --color-green-900: #086105;
+  --color-blue-050: #e5eeff;
+  --color-blue-100: #d2e0fe;
+  --color-blue-200: #a5befd;
+  --color-blue-300: #799cfb;
+  --color-blue-400: #597ef8;
+  --color-blue-500: #2451f5;
+  --color-blue-600: #193ed2;
+  --color-blue-700: #112cb0;
+  --color-blue-800: #0a1e8f;
+  --color-blue-900: #061574;
+  --color-gold-100: #fff7d1;
+  --color-gold-200: #ffeba3;
+  --color-gold-300: #ffdd75;
+  --color-gold-400: #ffd152;
+  --color-gold-500: #ffb914;
+  --color-gold-600: #da9710;
+  --color-gold-700: #b7780b;
+  --color-gold-800: #925a07;
+  --color-gold-900: #7c4a04;
+  --color-gold-050: #fffceb;
+  --color-red-100: #ffece0;
+  --color-red-200: #ffd2bd;
+  --color-red-300: #ffb59e;
+  --color-red-400: #ff9785;
+  --color-red-500: #ff6b61;
+  --color-red-600: #db484a;
+  --color-red-700: #b5303e;
+  --color-red-800: #941e34;
+  --color-red-900: #78122d;
+  --color-red-050: #fff5eb;
+  --effect-opacity-0: 0;
+  --effect-opacity-10: 0.1;
+  --effect-opacity-20: 0.2;
+  --effect-opacity-30: 0.3;
+  --effect-opacity-40: 0.4;
+  --effect-opacity-50: 0.5;
+  --effect-opacity-60: 0.6;
+  --effect-opacity-70: 0.7;
+  --effect-opacity-80: 0.8;
+  --effect-opacity-90: 0.9;
+  --effect-opacity-100: 1;
+  --effect-shadow-basic: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .12);
+  --effect-shadow-hover: 0 .5rem .75rem 0 hsla(180, 5%, 92%, .16), 0 .125rem .5rem 0 hsla(0, 0%, 0%, .08);
+  --effect-shadow-strong: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .36), 0 .5rem 1.25rem 0 hsla(197, 43%, 13%, .08);
+  --effect-shadow-stronger: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .12), 0 .125rem 1rem 0 hsla(198, 45%, 10%, .32);
+  --effect-shadow-big: 0 0 5rem hsla(198, 45%, 10%, .08);
+  --effect-shadow-shallow: 0 1px .625rem 0 hsla(210, 7%, 22%, .06), 0 .125rem .25rem 0 hsla(210, 7%, 22%, .08);
+  --effect-shadow-deep: 0 1rem 1.5rem rgba(0, 0, 0, .07), 0 .375rem 1.875rem hsla(0, 0%, 0%, .06), 0 .5rem .625rem hsla(0, 0%, 0%, .1);
+  --size-spacing-0: 0px;
+  --size-spacing-px: 1px;
+  --size-spacing-2px: .125rem;
+  --size-spacing-3px: .1875rem;
+  --size-spacing-4px: .25rem;
+  --size-spacing-6px: .375rem;
+  --size-spacing-10px: .625rem;
+  --size-spacing-12px: .75rem;
+  --size-spacing-25px: 1.5625rem;
+  --size-spacing-32px: 2rem;
+  --size-spacing-micro: .5rem;
+  --size-spacing-tiny: 1rem;
+  --size-spacing-small: 1.5rem;
+  --size-spacing-medium: 2.5rem;
+  --size-spacing-large: 4rem;
+  --size-spacing-xl: 6.5rem;
+  --size-spacing-xxl: 13.5rem;
+  --size-spacing-3xl: 16.5rem;
+  --size-spacing-4xl: 26.5rem;
+  --size-spacing-5xl: 42.5rem;
+  --typography-size-tiny: .75rem;
+  --typography-size-small: .875rem;
+  --typography-size-medium: 1rem;
+  --typography-size-medium-xl: 1.15rem;
+  --typography-size-large: 1.225rem;
+  --typography-size-xl: 1.375rem;
+  --typography-size-xxl: 2.25rem;
+  --typography-size-xxxl: 4rem;
+  --typography-size-4xl: 6.5rem;
+  --typography-weight-thin: 100;
+  --typography-weight-light: 300;
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --typography-weight-black: 900;
+  --typography-letter-spacing-tight: -.025em;
+  --typography-letter-spacing-normal: 0;
+  --typography-letter-spacing-wide: 1.5px;
+  --fontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontMono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", Courier, monospace;
+  --colorBlack: var(--color-black-default);
+  --colorBlackDarker: var(--colorBlack);
+  --colorGrayDarkest: var(--color-gray-darkest);
+  --colorGrayDarker: var(--color-gray-darker);
+  --colorGrayDark: var(--color-gray-dark);
+  --colorGray: var(--color-gray-default);
+  --colorGrayLight: var(--color-gray-light);
+  --colorGrayLighter: var(--color-gray-lighter);
+  --colorGrayLightest: var(--color-gray-lightest);
+  --colorWhite: var(--color-white-default);
+  --colorDarkGrayDarker: var(--color-dark-gray-darker);
+  --colorListNeutral: colorBlack, colorBlackDarker, colorGrayDarkest, colorGrayDarker, colorGrayDark, colorGray, colorGrayLight, colorGrayLighter, colorGrayLightest, colorWhite;
+  --opacity-0: var(--effect-opacity-0);
+  --opacity-10: var(--effect-opacity-10);
+  --opacity-20: var(--effect-opacity-20);
+  --opacity-30: var(--effect-opacity-30);
+  --opacity-40: var(--effect-opacity-40);
+  --opacity-50: var(--effect-opacity-50);
+  --opacity-60: var(--effect-opacity-60);
+  --opacity-70: var(--effect-opacity-70);
+  --opacity-80: var(--effect-opacity-80);
+  --opacity-90: var(--effect-opacity-90);
+  --opacity-100: var(--effect-opacity-100);
+  --focusHoverShadow: var(--effect-shadow-focus-hover);
+  --basicShadow: var(--effect-shadow-basic);
+  --hoverShadow: var(--effect-shadow-hover);
+  --strongShadow: var(--effect-shadow-strong);
+  --strongerShadow: var(--effect-shadow-stronger);
+  --bigShadow: var(--effect-shadow-big);
+  --tealShadow: var(--effect-shadow-teal);
+  --whiteTealShadow: var(--effect-shadow-white-teal);
+  --blackTealShadow: var(--effect-shadow-black-teal);
+  --shallowShadow: var(--effect-shadow-shallow);
+  --deepShadow: var(--effect-shadow-deep);
+  --dropdownShadow: 0 .375rem .75rem rgba(0, 0, 0, .08);
+  --dragAndDropSiteShadow: 0 .25rem .5rem 0 rgba(19, 39, 48, .16), 0 0 0 62.5rem rgba(19, 39, 48, .5);
+  --thin: 100;
+  --light: 300;
+  --regular: 400;
+  --mediumWeight: 500;
+  --semibold: 600;
+  --bold: 700;
+  --black: 900;
+  --tightLetterSpacing: -.025em;
+  --normalLetterSpacing: 0;
+  --wideLetterSpacing: 1.5px;
+  --spacingList: borderWidth, micro, tiny, small, medium, large, xl, xxl, 3xl, 4xl, 5xl;
+  --micro: var(--size-spacing-micro);
+  --tiny: var(--size-spacing-tiny);
+  --small: var(--size-spacing-small);
+  --medium: var(--size-spacing-medium);
+  --large: var(--size-spacing-large);
+  --borderWidth: var(--size-border-width-default);
+  --lightBorderWidth: var(--size-border-width-light);
+  --smallRadius: var(--size-border-radius-small);
+  --bigRadius: var(--size-border-radius-big);
+  --listLoaderGradient: linear-gradient( to right, hsl(210, 25%, 97%) 8%, hsl(210, 25%, 95%) 18%, hsl(210, 25%, 97%) 33%);
+  --listLoaderGradientStatic: repeating-linear-gradient( 135deg, hsl(210, 25%, 97%) 1.25rem, hsl(210, 25%, 93%) 2.5rem, hsl(210, 25%, 97%) 3.75rem, hsl(210, 25%, 97%) 6.25rem);
+  --fadedGradient: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  --unreadFadeOutBgColorFrom: var(--colorGrayLight);
+  --unreadFadeOutBgColorTo: var(--colorWhite);
+  --stripesDark: repeating-linear-gradient( 112deg, transparent, transparent .9375rem, rgba(0, 0, 0, .1) 0, rgba(0, 0, 0, .1) 1.875rem);
+  --stripesLight: repeating-linear-gradient( 112deg, transparent, transparent .9375rem, rgba(255, 255, 255, .3) 0, rgba(255, 255, 255, .3) 1.875rem);
+  --colorAppBackground: hsl(0, 0%, 100%);
+  --colorBg: hsla(198, 45%, 10%, .02);
+  --colorBgHover: hsla(198, 45%, 10%, .03);
+  --colorBgInverse: var(--colorBlack);
+  --colorBgInverseDarker: hsl(198, 45%, 9%);
+  --colorBgApp: var(--colorAppBackground);
+  --colorOverlay: hsla(198, 45%, 10%, .6);
+  --colorOverlayInverse: hsla(197, 84%, 5%, .75);
+  --colorListBackground: colorBg, colorBgLight, colorBgInverse, colorBgHover, colorBgApp, colorOverlay;
+  --opacityDisabled: .38;
+  --opacityPlaceholder: .38;
+  --opacityMuted: .38;
+  --colorTextLoud: var(--colorBlack);
+  --colorText: var(--colorGrayDarkest);
+  --colorTextMuted: var(--colorGrayDarker);
+  --colorPlaceholder: var(--colorGrayDark);
+  --colorTextInverse: var(--colorWhite);
+  --colorTextMutedInverse: var(--colorGrayDark);
+  --colorHR: var(--colorGrayLightest);
+  --colorListText: colorTextLoud, colorText, colorTextMuted, colorPlaceholder, colorTextInverse, colorTextMuted, colorTextMutedInverse, colorHR;
+  --colorList: var(--colorListNeutral), var(--colorListPrimary), var(--colorListPlans), var(--colorListThirdParty), var(--colorListOther), var(--colorListBackground), var(--colorListText), var(--colorListLegacyNeutral), var(--colorListProviders), var(--colorListPlan);
+  --nano: .25rem;
+  --scrollbarWidth: .9375rem;
+  --videoWidth: 35rem;
+  --creditCardWidth: 23.25rem;
+  --widescreenRatio: 56.25%;
+  --screenshotRatio: 1.6;
+  --avatarSize: 2rem;
+  --cardPadding: var(--small);
+  --cardRadius: var(--bigRadius);
+  --scrollableDropdownMaxHeight: 40vh;
+  --scrollableDropdownMinHeight: var(--medium);
+  --transition: .15s ease;
+  --zIndexSticky: 99;
+  --zIndexHeader: 999;
+  --zIndexDropdown: 999;
+  --zIndexBanner: 9999;
+  --zIndexOverlay: 99999;
+  --zIndexSkipToMain: 99999
+}
+
+:root.Dark__Theme {
+  --color-primary: #FF5000;
+  --color-primary-transparent: #ff51002e;
+  --color-primary-transparent-hover: #ff510044;
+  --color-darkBlue: #d1e1ec;
+  --color-darkBlue-hover: #051A29;
+  --color-body-background: #0a0a0a;
+  --color-text: #688093;
+  --color-transparent-default: rgba(0, 0, 0, 0);
+  --color-transparent-01: rgba(0, 0, 0, 0.1);
+  --color-transparent-02: rgba(0, 0, 0, 0.2);
+  --color-transparent-03: rgba(0, 0, 0, 0.3);
+  --color-transparent-04: rgba(0, 0, 0, 0.4);
+  --color-transparent-06: rgba(0, 0, 0, 0.6);
+  --color-transparent-07: rgba(0, 0, 0, 0.7);
+  --color-transparent-08: rgba(0, 0, 0, 0.8);
+  --color-transparent-09: rgba(0, 0, 0, 0.9);
+  --color-black-default: #ffffff;
+  --color-white-default: #151a1e;
+  --color-gray-darkest: #acb8c5;
+  --color-gray-darker: #8e969a;
+  --color-gray-dark: #808589;
+  --color-gray-default: #6e7175;
+  --color-gray-light: #28292a;
+  --color-gray-lighter: #1a1a1b;
+  --color-gray-lightest: #141414;
+  --color-blue-darkest: #061574;
+  --color-blue-darker: #112cb0;
+  --color-blue-default: #2451f5;
+  --color-blue-lighter: #799cfb;
+  --color-blue-lightest: #d2e0fe;
+  --color-gold-darkest: #7c4a04;
+  --color-gold-darker: #b7780b;
+  --color-gold-default: #ffb914;
+  --color-gold-lighter: #ffdd75;
+  --color-gold-lightest: #fff7d1;
+  --color-red-darkest: #470b1b;
+  --color-red-darker: #7f1b2d;
+  --color-red-default: #fb3636;
+  --color-red-lighter: #ff8585;
+  --color-red-lightest: #ffbdbd;
+  --color-green-darkest: #12470b;
+  --color-green-darker: #1b7f28;
+  --color-green-default: #43fb36;
+  --color-green-lighter: #85ff8b;
+  --color-green-lightest: #bdffbe;
+  --color-dark-black-darker: #eff7fb;
+  --color-dark-black-default: #e4e8eb;
+  --color-dark-gray-darkest: #c8cdd3;
+  --color-dark-gray-darker: #e0e4e9;
+  --color-dark-gray-dark: #c1c5ca;
+  --color-dark-gray-default: #b9bec2;
+  --color-dark-gray-light: #808589;
+  --color-dark-gray-lighter: #686b6e;
+  --color-dark-gray-lightest: #424242;
+  --color-dark-teal-darkest: #032b3a;
+  --color-dark-teal-darker: #0f6980;
+  --color-dark-teal-default: #31c9c9;
+  --color-dark-teal-lighter: #86f3df;
+  --color-dark-teal-lightest: #9ff9e1;
+  --color-dark-blue-darkest: #040e4e;
+  --color-dark-blue-darker: #0a1e8f;
+  --color-dark-blue-default: #193ed2;
+  --color-dark-blue-lighter: #597ef8;
+  --color-dark-blue-lightest: #a5befd;
+  --color-dark-gold-darkest: #4f2f02;
+  --color-dark-gold-darker: #925a07;
+  --color-dark-gold-default: #e89c02;
+  --color-dark-gold-lighter: #ffd152;
+  --color-dark-gold-lightest: #ffeba3;
+  --color-dark-red-darkest: #470b1b;
+  --color-dark-red-darker: #7f1b2d;
+  --color-dark-red-default: #fb3636;
+  --color-dark-red-lighter: #ff8585;
+  --color-dark-red-lightest: #ffbdbd;
+  --color-gray-light-100: #111111;
+  --color-gray-light-200: #232424;
+  --color-gray-light-300: #393a3b;
+  --color-gray-light-400: #5e5f61;
+  --color-gray-light-500: #8d9397;
+  --color-gray-light-600: #676c6f;
+  --color-gray-light-700: #c6d1dc;
+  --color-gray-light-800: #e2ebf3;
+  --color-gray-light-000: #020202;
+  --color-gray-dark-100: #232324;
+  --color-gray-dark-200: #5a5c5f;
+  --color-gray-dark-300: #808589;
+  --color-gray-dark-400: #4c5257;
+  --color-gray-dark-500: #c0c8d1;
+  --color-gray-dark-600: #d4dae0;
+  --color-gray-dark-700: #e3e6e9;
+  --color-gray-dark-800: #f0f3f6;
+  --color-gray-dark-000: #ffffff;
+  --color-teal-050: #f1fef4;
+  --color-teal-100: #e1fef1;
+  --color-teal-200: #bffde7;
+  --color-teal-300: #9ff9e1;
+  --color-teal-400: #86f3df;
+  --color-teal-500: #5cebdf;
+  --color-teal-600: #31c9c9;
+  --color-teal-700: #139baa;
+  --color-teal-800: #0e6c81;
+  --color-teal-900: #054861;
+  --color-green-050: #f2fef1;
+  --color-green-100: #e4fee1;
+  --color-green-200: #c4fdbf;
+  --color-green-300: #9ff9a7;
+  --color-green-400: #86f386;
+  --color-green-500: #5ceb61;
+  --color-green-600: #36c931;
+  --color-green-700: #13aa25;
+  --color-green-800: #1f810e;
+  --color-green-900: #086105;
+  --color-blue-050: #e5eeff;
+  --color-blue-100: #d2e0fe;
+  --color-blue-200: #a5befd;
+  --color-blue-300: #799cfb;
+  --color-blue-400: #597ef8;
+  --color-blue-500: #2451f5;
+  --color-blue-600: #193ed2;
+  --color-blue-700: #112cb0;
+  --color-blue-800: #0a1e8f;
+  --color-blue-900: #061574;
+  --color-gold-100: #fff7d1;
+  --color-gold-200: #ffeba3;
+  --color-gold-300: #ffdd75;
+  --color-gold-400: #ffd152;
+  --color-gold-500: #ffb914;
+  --color-gold-600: #da9710;
+  --color-gold-700: #b7780b;
+  --color-gold-800: #925a07;
+  --color-gold-900: #7c4a04;
+  --color-gold-050: #fffceb;
+  --color-red-100: #ffece0;
+  --color-red-200: #ffd2bd;
+  --color-red-300: #ffb59e;
+  --color-red-400: #ff9785;
+  --color-red-500: #ff6b61;
+  --color-red-600: #db484a;
+  --color-red-700: #b5303e;
+  --color-red-800: #941e34;
+  --color-red-900: #78122d;
+  --color-red-050: #fff5eb;
+  --effect-shadow-basic: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .12);
+  --effect-shadow-hover: 0 .5rem .75rem 0 hsla(180, 5%, 92%, .16), 0 .125rem .5rem 0 hsla(0, 0%, 0%, .08);
+  --effect-shadow-strong: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .36), 0 .5rem 1.25rem 0 hsla(197, 43%, 13%, .08);
+  --effect-shadow-stronger: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .12), 0 .125rem 1rem 0 hsla(198, 45%, 10%, .32);
+  --effect-shadow-big: 0 0 5rem hsla(198, 45%, 10%, .08);
+  --effect-shadow-shallow: 0 1px .625rem 0 hsla(210, 7%, 22%, .06), 0 .125rem .25rem 0 hsla(210, 7%, 22%, .08);
+  --effect-shadow-deep: 0 1rem 1.5rem rgba(0, 0, 0, .07), 0 .375rem 1.875rem hsla(0, 0%, 0%, .06), 0 .5rem .625rem hsla(0, 0%, 0%, .1);
+  --colorBlack: var(--color-black-default);
+  --colorGrayDarkest: var(--color-gray-darkest);
+  --colorGrayDarker: var(--color-gray-darker);
+  --colorGrayDark: var(--color-gray-dark);
+  --colorGray: var(--color-gray-default);
+  --colorGrayLight: var(--color-gray-light);
+  --colorGrayLighter: var(--color-gray-lighter);
+  --colorGrayLightest: var(--color-gray-lightest);
+  --colorWhite: var(--color-white-default);
+  --colorDarkGrayDarker: var(--color-dark-gray-darker);
+  --focusHoverShadow: var(--effect-shadow-focus-hover);
+  --basicShadow: var(--effect-shadow-basic);
+  --hoverShadow: var(--effect-shadow-hover);
+  --strongShadow: var(--effect-shadow-strong);
+  --strongerShadow: var(--effect-shadow-stronger);
+  --bigShadow: var(--effect-shadow-big);
+  --tealShadow: var(--effect-shadow-teal);
+  --whiteTealShadow: var(--effect-shadow-white-teal);
+  --blackTealShadow: var(--effect-shadow-black-teal);
+  --shallowShadow: var(--effect-shadow-shallow);
+  --deepShadow: var(--effect-shadow-deep);
+  --dropdownShadow: 0 .375rem .75rem rgba(0, 0, 0, .08);
+  --dragAndDropSiteShadow: 0 .25rem .5rem 0 rgba(19, 39, 48, .16), 0 0 0 62.5rem rgba(19, 39, 48, .5);
+  --listLoaderGradient: linear-gradient( to right, hsl(210, 25%, 97%) 8%, hsl(210, 25%, 95%) 18%, hsl(210, 25%, 97%) 33%);
+  --listLoaderGradientStatic: repeating-linear-gradient( 135deg, hsl(210, 25%, 97%) 1.25rem, hsl(210, 25%, 93%) 2.5rem, hsl(210, 25%, 97%) 3.75rem, hsl(210, 25%, 97%) 6.25rem);
+  --fadedGradient: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  --unreadFadeOutBgColorFrom: var(--colorGrayLight);
+  --unreadFadeOutBgColorTo: var(--colorWhite);
+  --stripesDark: repeating-linear-gradient( 112deg, transparent, transparent .9375rem, rgba(0, 0, 0, .1) 0, rgba(0, 0, 0, .1) 1.875rem);
+  --stripesLight: repeating-linear-gradient( 112deg, transparent, transparent .9375rem, rgba(255, 255, 255, .3) 0, rgba(255, 255, 255, .3) 1.875rem);
+  --colorAppBackground: hsl(0, 0%, 100%);
+  --colorBg: hsla(198, 45%, 10%, .02);
+  --colorBgHover: hsla(198, 45%, 10%, .03);
+  --colorBgInverse: var(--colorBlack);
+  --colorBgInverseDarker: hsl(198, 45%, 9%);
+  --colorBgApp: var(--colorAppBackground);
+  --colorOverlay: hsla(198, 45%, 10%, .6);
+  --colorOverlayInverse: hsla(197, 84%, 5%, .75);
+  --colorListBackground: colorBg, colorBgLight, colorBgInverse, colorBgHover, colorBgApp, colorOverlay;
+  --colorTextLoud: var(--colorBlack);
+  --colorText: var(--colorGrayDarkest);
+  --colorTextMuted: var(--colorGrayDarker);
+  --colorPlaceholder: var(--colorGrayDark);
+  --colorTextInverse: var(--colorWhite);
+  --colorTextMutedInverse: var(--colorGrayDark);
+  --colorHR: var(--colorGrayLightest);
+  --colorListText: colorTextLoud, colorText, colorTextMuted, colorPlaceholder, colorTextInverse, colorTextMuted, colorTextMutedInverse, colorHR;
+  --colorList: var(--colorListNeutral), var(--colorListPrimary), var(--colorListPlans), var(--colorListThirdParty), var(--colorListOther), var(--colorListBackground), var(--colorListText), var(--colorListLegacyNeutral), var(--colorListProviders), var(--colorListPlan);
+}
+
+body {
+  min-height: var(--full-height-vh);
+  color: var(--color-black-default);
+  position: relative;
+  width: var(--full-width);
+  background: var(--color-body-background) !important;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  background: var(--color-white-default);
+  padding: var(--size-2rem) 0;
+  z-index: var(--zIndexHeader);
+}
+
+header.Sticky {
+  box-shadow: var(--basicShadow);
+  /* padding: var(--size-05rem) 0 !important; */
+}
+
+.Container {
+  position: relative;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+header .Container {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-spacing-25px);
+}
+
+header .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-1rem);
+}
+
+header .Left__Side .Buttin__Menu__Open {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+header .Left__Side .Buttin__Menu__Open i {
+  color: var(--color-black-default);
+  font-size: var(--typography-size-large);
+  cursor: pointer;
+}
+
+header .Left__Side .Logo {
+  position: relative;
+  width: auto;
+  max-width: 150px;
+}
+
+header .Middle {
+  max-width: 500px;
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+header .Middle .Main__Search__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: var(--size-03rem) var(--size-07rem);
+  padding-right: var(--size-03rem);
+  gap: var(--size-03rem);
+  border: var(--size-01rem) solid var(--color-gray-dark-200);
+  border-radius: var(--smallRadius);
+  z-index: 3;
+  background: var(--color-white-default);
+}
+
+header .Middle .Main__Search__Wrapper[Active__Search__Result="true"] {
+  border: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+header .Middle[Show__Main__Search="true"] {
+  overflow: visible;
+}
+
+header .Middle .Search__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background: var(--colorOverlay);
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .Middle .Main__Search__Wrapper[Active__Search__Result="true"]~.Search__Overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+header .Middle .Main__Search__Wrapper .Input__Main__Search {
+  width: var(--full-width);
+  height: 40px;
+  font-size: var(--typography-size-small);
+  color: var(--color-darkBlue);
+  background-color: transparent;
+  padding-left: var(--size-03rem);
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-body-background);
+  min-width: 130px;
+  border-radius: var(--smallRadius);
+  flex: 1;
+  cursor: pointer;
+  z-index: 1;
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown input {
+  width: var(--full-width);
+  height: var(--full-height);
+  font-size: var(--typography-size-small);
+  color: var(--color-gray-dark-300);
+  background: transparent;
+  pointer-events: none;
+  font-weight: var(--mediumWeight);
+  text-align: start;
+  padding-left: var(--size-05rem);
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: var(--full-height);
+  font-size: var(--typography-size-small);
+  color: var(--color-gray-dark-300);
+  transform-origin: center;
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown[Active__Dropdown="true"] i {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Main__Search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 40px;
+  font-size: var(--typography-size-medium);
+  color: var(--color-darkBlue);
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown .Custom__Dropdown__Menu__Wrapper {
+  position: absolute;
+  padding-right: var(--size-03rem);
+  top: calc(var(--full-height));
+  left: 0;
+  height: auto;
+  max-height: 200px;
+  min-width: 170px;
+  width: auto;
+  background: var(--color-white-default);
+  border-radius: var(--smallRadius);
+  cursor: default;
+  padding: var(--size-03rem);
+  box-shadow: var(--basicShadow);
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown[Active__Dropdown="true"] .Custom__Dropdown__Menu__Wrapper {
+  visibility: visible;
+  opacity: 1;
+  top: calc(var(--full-height) + var(--size-03rem));
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown .Custom__Dropdown__Menu__Wrapper .Custom__Dropdown__Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: var(--full-height);
+  width: var(--full-width);
+  max-height: 190px;
+  overflow-y: scroll;
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown .Custom__Dropdown__Menu__Wrapper .Custom__Dropdown__Menu::-webkit-scrollbar {
+  width: var(--size-03rem);
+  border-radius: var(--bigRadius);
+  background: var(--color-white-default);
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown .Custom__Dropdown__Menu__Wrapper .Custom__Dropdown__Menu::-webkit-scrollbar-thumb {
+  background: var(--color-gray-dark-100);
+}
+
+header .Middle .Main__Search__Wrapper .Buttin__Category__Dropdown .Custom__Dropdown__Menu__Wrapper .Custom__Dropdown__Menu .Dropdown__Item {
+  color: #688093;
+  background: none;
+  width: var(--full-width);
+  font-size: var(--typography-size-small);
+  white-space: nowrap;
+  padding: var(--size-03rem) var(--size-03rem) var(--size-03rem) 0;
+  cursor: pointer;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: var(--full-height);
+  left: 0;
+  width: var(--full-width);
+  height: auto;
+  background: var(--color-white-default);
+  border-radius: var(--smallRadius);
+  padding: var(--size-03rem);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  /* border-top: 0.2rem solid var(--color-gray-dark-100); */
+  box-shadow: var(--basicShadow);
+  cursor: default;
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .Middle .Main__Search__Wrapper[Active__Search__Result="true"] .Main__Search__Result__Block {
+  opacity: 1;
+  visibility: visible;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--full-width);
+  height: var(--full-height);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Search__Text__Not__Found {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+  margin: var(--size-1rem) auto;
+  color: var(--color-text);
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  display: none;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List[Product__NotFound="true"] .Search__Text__Not__Found {
+  display: flex;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Search__Text__Not__Found span {
+  color: var(--color-primary);
+  font-weight: var(--bold);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+  width: var(--full-width);
+  margin-bottom: var(--size-1rem);
+  padding: var(--size-03rem);
+  padding-right: var(--size-07rem);
+  border-bottom: var(--size-01rem) solid var(--color-gray-dark-100);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Image {
+  position: relative;
+  width: 60px;
+  max-width: 60px;
+  min-width: 60px;
+  aspect-ratio: 1/1;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Title-Price {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--size-07rem);
+  width: var(--full-width);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Title-Price h3 {
+  font-size: var(--typography-size-small);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: var(--mediumWeight);
+  height: 60px;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Title-Price .Result__Product__Prices {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  padding-top: var(--size-07rem);
+  text-align: right;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Title-Price .Result__Product__Prices span {
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  font-weight: var(--bold);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Title-Price .Result__Product__Prices .Old__Price {
+  color: var(--color-text);
+  font-size: 10px;
+  text-decoration: line-through;
+  text-align: right;
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Result__Block__List .Result__Item .Result__Product__Title-Price .Result__Product__Prices .New__Price {
+  font-size: var(--typography-size-medium);
+  color: var(--color-primary);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Button__See__All__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  padding-right: var(--size-07rem);
+  margin-bottom: var(--size-05rem);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Button__See__All__Wrapper .Button__See__All {
+  color: var(--color-darkBlue);
+  font-size: var(--typography-size-small);
+  font-weight: var(--bold);
+}
+
+header .Middle .Main__Search__Wrapper .Main__Search__Result__Block .Button__See__All__Wrapper .Button__See__All:hover {
+  color: var(--color-primary);
+}
+
+header .Right__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0;
+  gap: var(--size-2rem);
+}
+
+header .Right__Side .User__Profile {
+  position: relative;
+}
+
+header .Right__Side .User__Profile .Buttin__User__Profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: var(--size-05rem);
+  cursor: pointer;
+  height: 40px;
+  font-size: var(--typography-size-medium);
+  color: var(--color-darkBlue);
+  font-weight: var(--bold);
+  z-index: 7;
+}
+
+header .Right__Side .User__Profile .Buttin__User__Profile i {
+  font-size: var(--typography-size-large);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu {
+  position: absolute;
+  top: calc(var(--full-height) + var(--size-05rem));
+  left: 50%;
+  transform: translate(-50%, -1rem);
+  opacity: 0;
+  visibility: hidden;
+  width: 270px;
+  max-width: 270px;
+  min-width: 270px;
+  height: auto;
+  border-radius: var(--smallRadius);
+  box-shadow: var(--strongShadow);
+  background: var(--color-white-default);
+  padding: var(--size-1rem);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 7;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 9px solid #0000;
+  border-right: 9px solid #0000;
+  border-bottom: 9px solid #f5f5f5;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px;
+  right: inherit;
+  z-index: -1;
+}
+
+header .Right__Side .User__Profile .User__Profile__Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 6;
+  background: var(--colorOverlay);
+  opacity: 0;
+  visibility: hidden;
+}
+
+header .Right__Side .User__Profile .Buttin__User__Profile[Active__User__Profile="true"]~.User__Profile__Overlay {
+  opacity: 0;
+  visibility: visible;
+}
+
+header .Right__Side .User__Profile .Buttin__User__Profile[Active__User__Profile="true"]~.User__Profile__Dropdown__Menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0rem);
+  pointer-events: painted;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form {
+  position: absolute;
+  right: -100%;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05rem);
+  width: 100%;
+  z-index: -1;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form.Sign__In {
+  position: absolute;
+  right: 100%;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu[Form__Active__Name="Sign__In"] .Form.Sign__In {
+  position: relative;
+  right: 0;
+  z-index: 1;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu[Form__Active__Name="Sign__Up"] .Form.Sign__Up {
+  position: relative;
+  right: 0;
+  z-index: 1;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu[Form__Active__Name="Sign__Pass"] .Form.Sign__Pass {
+  position: relative;
+  right: 0;
+  z-index: 1;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Form__Title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+  width: var(--full-width);
+  margin-bottom: var(--size-1rem);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Form__Title .Button__Back {
+  position: relative;
+  background: var(--color-gray-dark-100);
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--size-border-radius-full);
+  color: var(--color-darkBlue);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Form__Title h4 {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--bold);
+  color: var(--color-darkBlue);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form label {
+  position: relative;
+  width: var(--full-width);
+  height: 45px;
+  min-height: 45px;
+  width: 100%;
+  height: 100%;
+  border: solid 1px var(--color-gray-dark-200);
+  padding: var(--size-03rem);
+  border-radius: var(--smallRadius);
+  padding-left: var(--size-07rem);
+  display: flex;
+  align-items: center;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form label.warn {
+  border-color: var(--color-dark-red-default);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Checkbox__Lable {
+  position: relative;
+  width: var(--full-width);
+  height: auto;
+  min-height: none;
+  border: none;
+  padding: var(--size-03rem);
+  border-radius: 0;
+  padding-left: 0;
+  justify-content: flex-start;
+  gap: var(--size-05rem);
+  padding-left: var(--size-03rem);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Checkbox__Lable input {
+  accent-color: var(--color-primary);
+  width: 15px;
+  height: 15px;
+  background: var(--color-transparent-default);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Checkbox__Lable {
+  font-size: var(--typography-size-tiny);
+  color: var(--color-link);
+  text-decoration: underline;
+  font-weight: var(--mediumWeight);
+  line-height: normal;
+  cursor: pointer;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form label input {
+  width: var(--full-width);
+  height: 35px;
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-darkBlue);
+  background: var(--color-transparent-default);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form label .Icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 35px;
+  border-left: var(--size-01rem) solid var(--color-gray-dark-200);
+  font-size: var(--typography-size-medium);
+  color: var(--color-gray-dark-200);
+  transform-origin: center;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Forgot__Password__Link {
+  position: relative;
+  width: var(--full-width);
+  text-align: right;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Forgot__Password__Link a {
+  font-size: var(--typography-size-tiny);
+  color: var(--color-link);
+  text-decoration: underline;
+  font-weight: var(--mediumWeight);
+  line-height: normal;
+  cursor: pointer;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Buttons__Authorisation__Registration {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: var(--full-width);
+  gap: var(--size-05rem);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Buttons__Authorisation__Registration button {
+  height: 40px;
+  width: 100px;
+  border-radius: var(--smallRadius);
+  border: none;
+  outline: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--bold);
+  font-size: var(--typography-size-small);
+  text-align: center;
+  color: var(--color-white-default);
+  cursor: pointer;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Buttons__Authorisation__Registration .Orange__Btn {
+  background-color: var(--color-primary);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form.Sign__Pass .Buttons__Authorisation__Registration .Orange__Btn {
+  margin-top: var(--size-07rem);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Buttons__Authorisation__Registration .Orange__Btn:hover {
+  opacity: var(--opacity-80);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Buttons__Authorisation__Registration .Button__Registration__Link {
+  color: var(--color-darkBlue);
+  width: 90px;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Buttons__Authorisation__Registration .Button__Registration__Link:hover {
+  color: var(--color-primary);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Or {
+  position: relative;
+  width: var(--full-width);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--typography-size-small);
+  text-align: center;
+  color: var(--color-gray-dark-200);
+  font-weight: var(--bold);
+  padding: var(--size-07rem) 0;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Or::after,
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Or::before {
+  content: "";
+  position: absolute;
+  top: calc(50% + 3px);
+  transform: translateY(-50%);
+  right: 0;
+  width: calc(50% - 20px);
+  border-top: var(--size-01rem) solid var(--color-gray-dark-200);
+  transform: translateY(-50%);
+  border-radius: var(--smallRadius);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Or::before {
+  right: inherit;
+  left: 0;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Authorisation__Registration__With__FB {
+  position: relative;
+  width: var(--full-width);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Authorisation__Registration__With__FB a {
+  font-size: var(--typography-size-small);
+  color: var(--color-white-default);
+  font-weight: var(--bold);
+  text-decoration: none;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--full-width);
+  height: 40px;
+  border-radius: var(--smallRadius);
+  text-align: center;
+  background: var(--color-blue-500);
+  overflow: hidden;
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Authorisation__Registration__With__FB a:hover {
+  opacity: var(--opacity-80);
+}
+
+header .Right__Side .User__Profile .User__Profile__Dropdown__Menu .Form .Authorisation__Registration__With__FB a i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-blue-400);
+  height: var(--full-height);
+  width: 50px;
+  border-top-left-radius: var(--smallRadius);
+  border-bottom-left-radius: var(--smallRadius);
+}
+
+header .Right__Side .Buttin__Main__Search__Open {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+header .Right__Side .Buttin__Main__Search__Open i {
+  color: var(--color-black-default);
+  font-size: var(--typography-size-large);
+  cursor: pointer;
+}
+
+header .Right__Side .Buttin__Main__Search__Open i.fa-times,
+header .Middle[Show__Main__Search="true"]~.Right__Side .Buttin__Main__Search__Open i.fa-search {
+  display: none;
+}
+
+header .Right__Side .Buttin__Main__Search__Open i.fa-search,
+header .Middle[Show__Main__Search="true"]~.Right__Side .Buttin__Main__Search__Open i.fa-times {
+  display: block;
+}
+
+header .Right__Side .Button__Header__Basket {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+header .Right__Side .Button__Header__Basket i {
+  color: var(--color-black-default);
+  font-size: var(--typography-size-large);
+  cursor: pointer;
+}
+
+header .Right__Side .Button__Header__Basket::after {
+  content: attr(Cart__Count);
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 22px;
+  height: 15px;
+  font-size: var(--typography-size-tiny);
+  color: var(--color-white-default);
+  background: var(--color-primary);
+  border-radius: var(--bigRadius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .Right__Side .Button__Header__Basket.Small-Screen {
+  display: none;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen::after {
+  top: 0;
+  right: 40%;
+  transform: translateX(50%);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen {
+  width: auto;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .Cart__Price {
+  white-space: nowrap;
+  font-weight: var(--bold);
+  color: var(--color-darkBlue);
+  font-size: var(--typography-size-medium);
+  margin-left: var(--size-03rem);
+  margin-top: var(--size-03rem);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu {
+  position: absolute;
+  top: calc(var(--full-height) + var(--size-05rem));
+  right: 0;
+  transform: translateY( -1rem);
+  opacity: 0;
+  visibility: hidden;
+  width: 270px;
+  max-width: 270px;
+  min-width: 270px;
+  height: auto;
+  border-radius: var(--smallRadius);
+  box-shadow: var(--strongShadow);
+  background: var(--color-white-default);
+  padding: var(--size-1rem) var(--size-05rem);
+  overflow: hidden;
+  cursor: default;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen:hover .User__Cart__Dropdown__Menu {
+  transform: translateY(0px);
+  opacity: 1;
+  visibility: visible;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+  width: var(--full-width);
+  margin-bottom: var(--size-1rem);
+  padding: var(--size-03rem) var(--size-07rem);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Title h4 {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--bold);
+  color: var(--color-darkBlue);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: var(--full-height);
+  width: var(--full-width);
+  max-height: 160px;
+  overflow-y: scroll;
+  padding: var(--size-05rem);
+  margin-bottom: var(--size-07rem);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items::-webkit-scrollbar {
+  width: var(--size-03rem);
+  border-radius: var(--bigRadius);
+  background: var(--color-white-default);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items::-webkit-scrollbar-thumb {
+  background: var(--color-gray-dark-100);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--full-width);
+  margin-bottom: var(--size-1rem);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item:last-child {
+  margin-bottom: var(--size-03rem);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Left__Side .Button__Product__Remove {
+  min-width: 18px;
+  cursor: pointer;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Left__Side .Button__Product__Remove i {
+  font-size: var(--typography-size-medium);
+  color: var(--color-text);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Left__Side .Product__Image {
+  position: relative;
+  width: 60px;
+  max-width: 60px;
+  min-width: 60px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Left__Side .Product__Image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Product__Name {
+  position: relative;
+  display: block;
+  width: var(--full-width);
+  color: var(--color-text);
+  font-size: var(--typography-size-small);
+  margin-bottom: var(--size-05rem);
+  cursor: pointer;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Cart__Dropdown__Price__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--full-width);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Cart__Dropdown__Price__Wrapper .Cart__Dropdown__Price__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: var(--full-width);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Cart__Dropdown__Price__Wrapper .Cart__Dropdown__Quantity {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Cart__Dropdown__Price__Wrapper .Cart__Dropdown__Quantity button {
+  width: 20px;
+  height: var(--full-height);
+  font-size: var(--typography-size-large);
+  color: var(--color-gray-dark-300);
+  background: transparent;
+  font-weight: var(--bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Cart__Dropdown__Price__Wrapper .Cart__Dropdown__Quantity input {
+  width: 30px;
+  height: fit-content;
+  padding-top: var(--size-01rem);
+  font-size: var(--typography-size-small);
+  color: var(--color-gray-dark-300);
+  background: transparent;
+  font-weight: var(--bold);
+  border-left: var(--size-01rem) solid var(--color-gray-dark-200);
+  border-right: var(--size-01rem) solid var(--color-gray-dark-200);
+  text-align: center;
+  pointer-events: none;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Product__Items .Product__Item .Product__Right__Side .Cart__Dropdown__Price__Wrapper .Cart__Dropdown__Price {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--bold);
+  color: var(--color-text);
+  height: 25px;
+  line-height: 27px;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Total__Price {
+  position: relative;
+  width: var(--full-width);
+  text-align: right;
+  margin: var(--size-1_5rem) 0;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Total__Price h3 {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-text);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Cart__Dropdown__Total__Price h3 span {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--bold);
+  color: var(--color-gray-dark-400);
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Button__GoTo__Cart {
+  height: 40px;
+  width: var(--full-width);
+  border-radius: var(--smallRadius);
+  border: none;
+  outline: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--bold);
+  background: var(--color-darkBlue);
+  font-size: var(--typography-size-small);
+  text-align: center;
+  color: var(--color-white-default);
+  cursor: pointer;
+}
+
+header .Right__Side .Button__Header__Basket.Large-Screen .User__Cart__Dropdown__Menu .Button__GoTo__Cart:hover {
+  background: var(--color-primary);
+}
+
+
+/* * Header End */
+
+
+/* * Main Section Start*/
+
+main section {
+  position: relative;
+  width: var(--full-width);
+}
+
+main section .Navigation__Wrapper {
+  position: relative;
+  width: 90%;
+  height: var(--full-height);
+  display: flex;
+}
+
+main section .Navigation__Wrapper nav {
+  position: relative;
+  width: 240px;
+  max-width: 240px;
+  display: flex;
+  flex-direction: column;
+  height: var(--full-height);
+  background: var(--color-white-default);
+  z-index: 2;
+}
+
+main section .Navigation__Wrapper nav .Navigation__Header {
+  position: relative;
+  width: var(--full-width);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-primary);
+  cursor: default;
+  padding: var(--size-05rem);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Header .Left__Side {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+main section .Navigation__Wrapper nav .Navigation__Header .Left__Side i {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--typography-size-large);
+  color: var(--color-white-default);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Header .Left__Side span {
+  font-size: var(--typography-size-medium);
+  color: var(--color-white-default);
+  font-weight: var(--bold);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Header .Right__Side .Button__All {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 30px;
+  color: var(--color-white-default);
+  font-size: var(--typography-size-small);
+  font-weight: var(--bold);
+  border-radius: var(--smallRadius);
+  background: var(--color-transparent-01);
+  cursor: pointer;
+}
+
+main section .Navigation__Wrapper nav .Navigation__Header .Right__Side .Button__All:hover {
+  background: var(--color-transparent-02);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body {
+  position: relative;
+  height: var(--full-height);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+  gap: var(--size-01rem);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body ul li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--size-spacing-12px);
+  padding: var(--size-05rem) var(--size-07rem);
+  border-bottom: var(--size-01rem) solid var(--color-gray-dark-100);
+  cursor: pointer;
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body ul li[Nav__List__Active="true"] {
+  background: var(--color-image-background);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body ul li:last-child {
+  border-bottom: none;
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body ul li i {
+  width: 25px;
+  min-width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--typography-size-small);
+  color: var(--color-darkBlue);
+  aspect-ratio: 1/1;
+  border-radius: var(--smallRadius);
+  background: var(--color-gray-dark-100);
+}
+
+main section .Navigation__Wrapper nav .Navigation__Body ul li span {
+  font-size: var(--typography-size-small);
+  font-weight: var(--bold);
+  color: var(--color-text);
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories {
+  position: relative;
+  display: none;
+  align-items: flex-start;
+  flex: 1;
+  background: var(--color-image-background);
+  z-index: -1;
+  font-size: var(--typography-size-medium);
+  font-weight: var(--bold);
+  color: var(--color-text);
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories[Category__Active="true"] {
+  display: flex !important;
+  z-index: 2;
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Left__Side {
+  position: relative;
+  display: flex;
+  flex: 1;
+  gap: var(--size-2rem);
+  padding: var(--size-1rem) var(--size-2rem);
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Left__Side .Category__Column {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Left__Side .Category__Column li {
+  position: relative;
+  font-size: var(--typography-size-small);
+  font-weight: var(--mediumWeight);
+  color: var(--color-text);
+  cursor: pointer;
+  padding: var(--size-01rem) 0;
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Left__Side .Category__Column li:hover {
+  color: var(--color-primary);
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Left__Side .Category__Column li.Category__Title {
+  font-size: var(--typography-size-medium);
+  font-weight: var(--bold);
+  padding: var(--size-03rem) 0;
+  border-bottom: 0.15rem solid var(--color-text);
+  white-space: nowrap;
+  margin-bottom: var(--size-05rem);
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Left__Side .Category__Column li.Category__Title:hover {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+main section .Navigation__Wrapper .Navigation__Full__Categories .Right__Side {
+  flex: 1;
+  max-width: 300px;
+  height: var(--full-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main section .Main__Carousel__Wrapper {
+  position: absolute;
+  width: var(--full-width);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel {
+  position: relative;
+  height: var(--full-height);
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .swiper-wrapper {
+  position: relative;
+  height: var(--full-height);
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .swiper-wrapper .swiper-slide {
+  position: relative;
+  height: var(--full-height);
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .swiper-wrapper .swiper-slide img {
+  position: relative;
+  height: var(--full-height);
+  object-fit: cover;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Main__Pagination {
+  position: absolute;
+  bottom: var(--size-1rem);
+  right: var(--size-2rem);
+  width: fit-content;
+  display: flex;
+  left: inherit;
+  align-items: center;
+  gap: var(--size-spacing-10px);
+  z-index: 1;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Main__Pagination .swiper-pagination-bullet {
+  --smallRadius: 0.2rem;
+  width: 10px;
+  height: 10px;
+  background: var(--color-white-default) !important;
+  border-radius: var(--smallRadius);
+  opacity: 1;
+  cursor: pointer;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Main__Pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--color-primary) !important;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Button__Main__Slider {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: var(--color-transparent-03) !important;
+  margin: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--smallRadius);
+  outline: none !important;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+
+main section .Main__Carousel__Wrapper:hover .Main__Carousel .Button__Main__Slider {
+  opacity: 1;
+  visibility: visible;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Button__Main__Slider:hover {
+  background: var(--color-primary) !important;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Button__Main__Slider i {
+  font-size: var(--typography-size-small);
+  color: var(--color-white-default);
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Button-Main__Slider__Next {
+  right: 0;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Slider__Nav__Buttons {
+  position: absolute;
+  max-width: 1200px;
+  width: 92%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+main section .Main__Carousel__Wrapper .Main__Carousel .Button-Main__Slider__Prev {
+  left: calc(250px + var(--size-2rem));
+}
+
+
+/* * Main Section End*/
+
+
+/* * Footer Start*/
+
+footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--full-width);
+}
+
+footer .Footer__Top {
+  width: var(--full-width);
+  background: var(--color-darkBlue);
+  padding: var(--size-07rem) 0;
+}
+
+footer .Footer__Top .Fotter__Content,
+footer .Footer__Top .Fotter__Content .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-1rem);
+  flex: 1;
+}
+
+footer .Footer__Top .Fotter__Content .Left__Side .Footer__Mail__Input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: var(--size-03rem) var(--size-07rem);
+  padding-right: var(--size-03rem);
+  gap: var(--size-03rem);
+  border: var(--size-01rem) solid var(--color-gray-dark-200);
+  border-radius: var(--smallRadius);
+  background: var(--color-white-default);
+  flex: 1;
+  max-width: 450px;
+}
+
+footer .Footer__Top .Fotter__Content .Left__Side .Footer__Mail__Input input {
+  width: var(--full-width);
+  height: 40px;
+  font-size: var(--typography-size-small);
+  color: var(--color-darkBlue);
+  background-color: var(--color-transparent-default);
+  padding-left: var(--size-03rem);
+}
+
+footer .Footer__Top .Fotter__Content .Left__Side .Footer__Mail__Input button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 35px;
+  border-left: var(--size-01rem) solid var(--color-gray-dark-200);
+  font-size: var(--typography-size-medium);
+  color: var(--color-darkBlue);
+  transform-origin: center;
+  cursor: pointer;
+}
+
+footer .Footer__Top .Fotter__Content .Social__Media__Iocns {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-1rem);
+  margin-left: var(--size-1rem);
+}
+
+footer .Footer__Top .Fotter__Content .Social__Media__Iocns a {
+  width: 50px;
+  height: 50px;
+  border: var(--size-01rem) solid var(--color-gray-dark-100);
+  border-radius: 50%;
+  color: var(--color-white-default);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .Footer__Top .Fotter__Content .Social__Media__Iocns a:hover {
+  color: var(--color-darkBlue);
+  background: var(--color-white-default);
+}
+
+footer .Footer__Top .Fotter__Content .Social__Media__Iocns a.fa-youtube:hover {
+  color: var(--color-primary);
+}
+
+footer .Footer__Top .Fotter__Content .Right__Side .Social__Media__Iocns {
+  visibility: hidden;
+}
+
+footer .Footer__Top .Fotter__Content .Right__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-2rem);
+}
+
+footer .Footer__Top .Fotter__Content .Right__Side .Language__Dropdown__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-1rem);
+  height: 50px;
+  width: 150px;
+  border: var(--size-01rem) solid var(--color-gray-dark-200);
+  border-radius: var(--smallRadius);
+  padding: var(--size-05rem) var(--size-07rem);
+  cursor: pointer;
+}
+
+footer .Footer__Top .Fotter__Content .Right__Side .Language__Dropdown__Wrapper .Left__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-05rem);
+}
+
+footer .Footer__Top .Fotter__Content .Right__Side .Language__Dropdown__Wrapper .Left__Side span {
+  font-size: var(--typography-size-small);
+  font-weight: var(--bold);
+  color: var(--color-white-default);
+}
+
+footer .Footer__Top .Fotter__Content .Right__Side .Language__Dropdown__Wrapper i {
+  font-size: var(--typography-size-small);
+  color: var(--color-white-default);
+}
+
+footer .Footer__Middle {
+  width: var(--full-width);
+  padding: var(--size-07rem) 0;
+}
+
+footer .Footer__Middle .Fotter__Content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: var(--size-1_5rem) 0;
+  gap: var(--size-3rem);
+}
+
+footer .Footer__Middle .Fotter__Content .Left__Side {
+  position: relative;
+  display: flex;
+  flex: 1;
+  gap: var(--size-1rem);
+  min-width: 380px;
+}
+
+footer .Footer__Middle .Fotter__Content .Left__Side ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-03rem);
+  width: var(--full-width);
+}
+
+footer .Footer__Middle .Fotter__Content .Left__Side ul li {
+  width: var(--full-width);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper,
+footer .Footer__Middle .Fotter__Content .Left__Side ul li.Title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--size-03rem);
+  width: var(--full-width);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper h3,
+footer .Footer__Middle .Fotter__Content .Left__Side ul li.Title h3 {
+  position: relative;
+  font-size: var(--typography-size-medium-xl);
+  color: var(--color-darkBlue);
+  font-weight: var(--bold);
+  width: var(--full-width);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper h3::before,
+footer .Footer__Middle .Fotter__Content .Left__Side ul li.Title h3::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: -30px;
+  background: var(--color-primary);
+  border-radius: var(--smallRadius);
+  transform: skew(-10deg);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper a,
+footer .Footer__Middle .Fotter__Content .Left__Side ul li a {
+  font-size: var(--typography-size-small);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--medium);
+  line-height: normal;
+  cursor: pointer;
+  width: var(--full-width);
+  word-spacing: nowrap;
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper a:hover,
+footer .Footer__Middle .Fotter__Content .Left__Side ul li a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper {
+  margin-bottom: var(--size-07rem);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Title__Wrapper a {
+  width: fit-content;
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Footer__Map__Image {
+  width: var(--full-width);
+  overflow: hidden;
+  border-radius: var(--smallRadius);
+  min-width: 350px;
+  margin-bottom: var(--size-05rem);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Footer__Contact__Info {
+  display: flex;
+  align-items: center;
+  gap: var(--size-07rem);
+  width: var(--full-width);
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Footer__Contact__Info a {
+  font-size: var(--typography-size-small);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: var(--medium);
+  line-height: normal;
+  cursor: pointer;
+  word-spacing: nowrap;
+}
+
+footer .Footer__Middle .Fotter__Content .Right__Side .Footer__Contact__Info a span:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+footer .Footer__Bottom .Footer__Content {
+  border-top: var(--size-01rem) solid var(--color-gray-dark-200);
+  padding: var(--size-1_5rem) 0;
+  cursor: default;
+}
+
+footer .Footer__Bottom .Footer__Content .Footer__Copyright {
+  font-size: var(--typography-size-small);
+  color: var(--color-text);
+  font-weight: var(--mediumWeight);
+}
+
+
+/* * Footer End*/
+
+@media screen and (max-width: 880px) {
+  header {
+    padding: var(--size-1rem) var(--size-01rem) !important;
+  }
+  header .Middle {
+    position: absolute;
+    max-width: none;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: var(--full-height);
+    background: var(--color-white-default);
+    padding: 0 var(--size-1_5rem) !important;
+    overflow: hidden;
+    height: 0px;
+  }
+  header .Middle[Show__Main__Search="true"] {
+    height: auto;
+  }
+  header .Middle .Main__Search__Wrapper {
+    margin: var(--size-05rem) auto;
+  }
+  header .Middle .Main__Search__Wrapper header .Right__Side,
+  header .Right__Side {
+    gap: var(--size-01rem);
+  }
+  header .Right__Side .Button__Header__Basket.Small-Screen,
+  header .Right__Side .Buttin__Main__Search__Open {
+    display: flex;
+  }
+  header .Right__Side .User__Profile .User__Profile__Dropdown__Menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -1rem);
+    z-index: 7;
+    width: 90%;
+    max-width: 300px;
+  }
+  header .Right__Side .User__Profile .Buttin__User__Profile {
+    z-index: 5;
+  }
+  header .Right__Side .User__Profile .Buttin__User__Profile[Active__User__Profile="true"]~.User__Profile__Overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  header .Right__Side .User__Profile .Buttin__User__Profile[Active__User__Profile="true"]~.User__Profile__Dropdown__Menu {
+    transform: translate(-50%, -50%);
+  }
+  header .Right__Side .User__Profile .Buttin__User__Profile {
+    width: 40px;
+    justify-content: center;
+  }
+  header .Right__Side .Button__Header__Basket.Large-Screen,
+  header .Right__Side .User__Profile .Buttin__User__Profile span,
+  main section .Navigation__Wrapper,
+  footer .Footer__Top .Fotter__Content .Left__Side .Social__Media__Iocns {
+    display: none;
+  }
+  main section,
+  main section .Main__Carousel__Wrapper {
+    min-height: 300px;
+  }
+  main section .Main__Carousel__Wrapper .Main__Carousel .Button-Main__Slider__Prev {
+    left: 0;
+  }
+  main section .Main__Carousel__Wrapper .Main__Carousel .Main__Pagination {
+    width: var(--full-width);
+    display: flex;
+    right: 0;
+    justify-content: center;
+    gap: var(--size-spacing-10px);
+  }
+  main section .Main__Carousel__Wrapper .Main__Carousel .Main__Pagination .swiper-pagination-bullet {
+    width: 15px;
+    height: 8px;
+  }
+  footer .Footer__Top .Fotter__Content {
+    flex-wrap: wrap;
+  }
+  footer .Footer__Top .Fotter__Content .Left__Side,
+  footer .Footer__Top .Fotter__Content .Right__Side {
+    width: var(--full-width);
+  }
+  footer .Footer__Top .Fotter__Content .Right__Side .Social__Media__Iocns {
+    visibility: visible;
+    margin: 0;
+  }
+  footer .Footer__Top .Fotter__Content .Left__Side .Footer__Mail__Input {
+    max-width: none;
+  }
+  footer .Footer__Top .Fotter__Content .Right__Side .Language__Dropdown__Wrapper i {
+    width: fit-content;
+  }
+  footer .Footer__Middle .Fotter__Content .Left__Side {
+    flex-wrap: wrap;
+    gap: var(--size-3rem);
+  }
+  footer .Footer__Middle .Fotter__Content .Left__Side ul {
+    width: auto;
+  }
+  footer .Footer__Middle .Fotter__Content {
+    padding: var(--size-01rem) var(--size-1_5rem);
+    justify-content: center;
+  }
+  footer .Footer__Middle .Fotter__Content .Left__Side,
+  footer .Footer__Middle .Fotter__Content .Right__Side .Footer__Map__Image {
+    min-width: fit-content;
+  }
+  footer .Footer__Middle .Fotter__Content .Right__Side .Footer__Contact__Info {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  header {
+    padding: var(--size-07rem) var(--size-03rem) !important;
+  }
+  header .Container {
+    padding: 0 var(--size-05rem) !important;
+  }
+  header .Middle {
+    padding: 0 var(--size-1rem) !important;
+  }
+  main section,
+  main section .Main__Carousel__Wrapper {
+    min-height: 200px;
+  }
+}
