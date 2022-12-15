@@ -1,0 +1,497 @@
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="shortcut icon" href="../assets/icon/favicon.svg" type="image/x-icon">
+  <!-- * Custom link * -->
+  <link rel="stylesheet" href="../src/css/All.css">
+  <link rel="stylesheet" href="./css/Admin.css">
+  <!-- * Fontawesome link * -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
+  <!-- * Custom script * -->
+  <script src="./js/Admin.js" defer></script>
+  <script src=".././src/js/Local.js" defer></script>
+  <!-- * Firebase Script * -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+</head>
+
+<body>
+
+  <div class="Container">
+
+    <aside class="Aside" Aside>
+      <div class="Logo">
+        <img src="../assets/image/Logo-full-EN.svg" alt="">
+        <img src="../assets/image/Logo-small.svg" alt="">
+      </div>
+      <nav class="Nav__Aside">
+        <ul class="Nav__Tabs">
+          <li class="Nav__Tab active" TabName="Dashboard" Nav__Tab>
+            <i class="fa fa-grid-2"></i>
+            <span class="Tab__Name">Dashboard</span>
+          </li>
+          <li class="Nav__Tab" TabName="Products" Nav__Tab>
+            <i class="fa fa-box"></i>
+            <span class="Tab__Name">Products</span>
+          </li>
+          <li class="Nav__Tab" TabName="Orders" Nav__Tab>
+            <i class="fa fa-cart-flatbed-boxes"></i>
+            <span class="Tab__Name">Orders</span>
+          </li>
+          <li class="Nav__Tab" TabName="Customers" Nav__Tab>
+            <i class="fa fa-users"></i>
+            <span class="Tab__Name">Customers</span>
+          </li>
+        </ul>
+
+        <div class="Nav__Buttons">
+          <button class="Nav__Button" Btn-LogOut>
+            <i class="fa fa-sign-out "></i>
+            <span>Log out</span>
+          </button>
+          <button class="Nav__Button Btn-Toggle__Theme" Btn-Toggle__Theme>
+            <i class="fa fa-brightness"></i>
+          </button>
+        </div>
+
+      </nav>
+    </aside>
+
+    <main class="Main">
+      <header>
+        <nav class="Nav__Main">
+          <div class="Left__Side">
+            <button class="Btn-Aside__OpanClose fa fa-bars" Btn-Aside__OpanClose></button>
+            <h2 class="Section__Title" Section__Title>Dashboard</h2>
+          </div>
+
+          <div class="Middle" Header__Middle>
+            <div class="Search__Overlay" Search__Overlay></div>
+            <form class="Main__Search__Form">
+              <input type="text" placeholder="Search..." Main__Search>
+              <button type="button" class="Btn-Search" Btn-Search>
+              <i class="fa fa-search"></i>
+            </button>
+            </form>
+          </div>
+
+          <div class="Right__Side">
+
+            <button class="Btn-Search__Open Btn-Icon" Btn-Search__Open>
+              <i class="fa fa-search"></i>
+            </button>
+
+            <button class="Btn-Toggle__Theme Btn-Icon" Btn-Toggle__Theme>
+              <i class="fa fa-brightness"></i>
+            </button>
+
+            <button class="Btn-Profile" Btn-Profile>
+              <img src="../assets/image/profile-2.jpg" alt="">
+
+              <ul class="Profile__Dropdown__Menu" Profile__Dropdown__Menu>
+                <li class="Dropdown__Item">
+                  <div class="Admin__Avatar">
+                    <img src="../assets/image/profile-2.jpg" alt="">
+                  </div>
+                  <div class="Admin__Name__Wrapper">
+                    <span class="Admin__Name">John Doe</span>
+                    <small class="Admin__Text">Admin</small>
+                  </div>
+                </li>
+                <li class="Dropdown__Line"></li>
+                <li class="Dropdown__Item">
+                    <i class="fa fa-user"></i>
+                    <span class="align-middle">My Profile</span>
+                </li>
+                <li class="Dropdown__Item">
+                    <i class="fa fa-gear"></i>
+                    <span class="align-middle">Settings</span>
+                </li>
+                <li class="Dropdown__Line"></li>
+                <li class="Dropdown__Item">
+                      <i class="fa fa-sign-out"></i>
+                      <span class="align-middle">Log Out</span>
+                </li>
+              </ul>
+
+              <div class="Profile__Menu__Overlay" Profile__Menu__Overlay></div>
+            </button>
+
+          </div>
+
+        </nav>
+      </header>
+
+      <div class="Section__Wrapper" Section__Wrapper Section="Dashboard">
+        <section class="Section Dashboard">
+          <div class="Overview__Boxes">
+            <div class="Box">
+              <div class="Right__Side">
+                <h1 class="Box__Topic">Total Order</h1>
+                <div class="Row">
+                  <h3 class="Number">40,876</h3>
+                </div>
+                <div class="Row">
+                  <i class="fa fa-arrow-up"></i>
+                  <span class="Text">Up from yesterday</span>
+                </div>
+              </div>
+              <i class="far fa-cart-shopping"></i>
+            </div>
+
+            <div class="Box">
+              <div class="Right__Side">
+                <h1 class="Box__Topic">Total Sales</h1>
+                <div class="Row">
+                  <h3 class="Number">38,876</h3>
+                </div>
+                <div class="Row">
+                  <i class="fa fa-arrow-up"></i>
+                  <span class="Text">Up from yesterday</span>
+                </div>
+              </div>
+              <i class="far fa-cart-plus"></i>
+            </div>
+
+            <div class="Box">
+              <div class="Right__Side">
+                <h1 class="Box__Topic">Total Profit</h1>
+                <div class="Row">
+                  <h3 class="Number">$12,876</h3>
+                </div>
+                <div class="Row">
+                  <i class="fa fa-arrow-up"></i>
+                  <span class="Text">Up from yesterday</span>
+                </div>
+              </div>
+              <i class="far fa-cart-arrow-up"></i>
+            </div>
+
+            <div class="Box">
+              <div class="Right__Side">
+                <h1 class="Box__Topic">Total Return</h1>
+                <div class="Row">
+                  <h3 class="Number">11,086</h3>
+                </div>
+                <div class="Row">
+                  <i class="far fa-arrow-down"></i>
+                  <span class="Text">Down From Today</span>
+                </div>
+              </div>
+              <i class="far fa-cart-arrow-down"></i>
+            </div>
+          </div>
+
+          <div class="Sales__Boxes">
+            <div class="Recent__Sales__Boxes Box">
+              <div class="Title__Wrapper">
+                <i class="fa fa-fire"></i>
+                <h2>Recent Sales</h2>
+              </div>
+
+              <div class="Sales__Details__Wrapper">
+                <table>
+                  <tr>
+                    <th>Product Name</th>
+                    <th>Date</th>
+                    <th>price</th>
+                    <th>Status</th>
+                  </tr>
+                  <tr>
+                    <td>David Mart</td>
+                    <td>02 Jan 2021</td>
+                    <td>$204.98</td>
+                    <td class="Delivered"><span>Delivered</span></td>
+                  </tr>
+                  <tr>
+                    <td>David Mart</td>
+                    <td>02 Jan 2021</td>
+                    <td>$204.98</td>
+                    <td class="Pending"><span>Pending</span></td>
+                  </tr>
+                  <tr>
+                    <td>David Mart</td>
+                    <td>02 Jan 2021</td>
+                    <td>$204.98</td>
+                    <td class="Return"><span>Return</span></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="Top__Seling__Boxes Box">
+              <div class="Title__Wrapper">
+                <i class="fas fa-users"></i>
+                <h2>Recent Customers</h2>
+              </div>
+
+              <div class="Sales__Details__Wrapper">
+                <div class="Customer__Item">
+                  <div class="Left__Side">
+                    <img src="../assets/image/profile-1.jpg" alt="">
+                    <div class="Customer__Info">
+                      <h3 class="Customer__Name">Gabriel pipia</h3>
+                      <h4 class="Customer__Email">Gabrielpipia@gmail.com</h4>
+                    </div>
+                  </div>
+
+                  <span class="Number">$129.53</span>
+                </div>
+                <div class="Customer__Item">
+                  <div class="Left__Side">
+                    <img src="../assets/image/profile-2.jpg" alt="">
+                    <div class="Customer__Info">
+                      <h3 class="Customer__Name">Gabriel pipia</h3>
+                      <h4 class="Customer__Email">Gabrielpipia@gmail.com</h4>
+                    </div>
+                  </div>
+
+                  <span class="Number">$129.53</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="Section Products" Section__Products Product__ActiveTab__Name="All__Product">
+          <div class="All__Product__Container Product__Container">
+
+            <div class="Product__Header">
+              <div class="Left__Side">
+                <i class="far fa-box"></i>
+                <h2>All Products</h2>
+              </div>
+              <div class="Right__Side">
+                <button class="Btn-Create__Product" Btn-Create__Product Product__TabBtn__Name="Create__Product">
+                  <i class="fa fa-add"></i>
+                  <span>Create New</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="Product__Boxes">
+
+              <div class="Product__Box">
+                <div class="Image__Wrapper">
+                  <img src="../assets/image/profile-1.jpg" alt="">
+                </div>
+
+                <div class="Product__Info">
+                  <h3 class="Product__Name">gggad fadfaew ad</h3>
+                  <span class="Product__Price">$123.23</span>
+                </div>
+
+                <div class="Product__Action__Buttons">
+                  <button class="Btn-Product__Edit">
+                    <i class="fa fa-pencil"></i>
+                    <span>Edit</span>
+                  </button>
+                  <button class="Btn-Product__Delete">
+                    <i class="fas fa-trash"></i>
+                    <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+              <div class="Product__Box">
+                <div class="Image__Wrapper">
+                  <img src="../assets/image/profile-1.jpg" alt="">
+                </div>
+
+                <div class="Product__Info">
+                  <h3 class="Product__Name">gggad fadfaew ad</h3>
+                  <span class="Product__Price">$123.23</span>
+                </div>
+
+                <div class="Product__Action__Buttons">
+                  <button class="Btn-Product__Edit">
+                    <i class="fa fa-pencil"></i>
+                    <span>Edit</span>
+                  </button>
+                  <button class="Btn-Product__Delete">
+                    <i class="fas fa-trash"></i>
+                    <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+              <div class="Product__Box">
+                <div class="Image__Wrapper">
+                  <img src="../assets/image/profile-1.jpg" alt="">
+                </div>
+
+                <div class="Product__Info">
+                  <h3 class="Product__Name">gggad fadfaew ad</h3>
+                  <span class="Product__Price">$123.23</span>
+                </div>
+
+                <div class="Product__Action__Buttons">
+                  <button class="Btn-Product__Edit">
+                    <i class="fa fa-pencil"></i>
+                    <span>Edit</span>
+                  </button>
+                  <button class="Btn-Product__Delete">
+                    <i class="fas fa-trash"></i>
+                    <span>Delete</span>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="Product__Pagination__Wrapper">
+              <button class="Btn__Prev Btn__Icon disabled" btn__pagination__prev>
+                  <i class="fa fa-angle-left"></i>
+                </button>
+              <div class="Pagination__Number__Wrapper" pagination__number__wrapper>
+                <button class="Pagination__Number active" Page__Index="1">1</button>
+                <button class="Pagination__Number" Page__Index="2">2</button>
+                <button class="Pagination__Number" Page__Index="3">3</button>
+              </div>
+              <button class="Btn__Next Btn__Icon" btn__pagination__next>
+                  <i class="fa fa-angle-right"></i>
+                </button>
+            </div>
+
+          </div>
+
+          <div class="Create__Product__Container Product__Container">
+            <div class="Product__Header">
+              <div class="Left__Side">
+                <i class="far fa-cart-plus"></i>
+                <h2>Add Product</h2>
+              </div>
+
+              <div class="Right__Side">
+                <button class="Btn-Cancel__Product" Btn-Cancel__Product Product__TabBtn__Name="All__Product">
+                  <span>Cancel</span>
+                </button>
+                <button class="Btn-Add__Product" Btn-Add__Product Product__TabBtn__Name="All__Product">
+                  <i class="fa fa-add"></i>
+                  <span>Add Product</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="Create__Product__Boxes">
+
+              <div class="General__Info__Box Box">
+                <label for="Prduct__Title__Input">
+                  <span class="Title">Product Title</span>
+                  <input type="text" class="Prduct__Input" id="Prduct__Title__Input" Input__Prduct__Title>
+                </label>
+
+                <div class="Input__Row">
+                  <label for="Prduct__Brend__Input">
+                  <span class="Title">Brend Name</span>
+                  <input type="text" class="Prduct__Input" id="Prduct__Brend__Input" Input__Prduct__Brend>
+                  </label>
+
+                  <label for="Prduct__Category__Input">
+                  <span class="Title">Category</span>
+                  <select id="Prduct__Category__Input" class="Prduct__Input" Input__Prduct__Category>
+                    <option selected value="Mobail Phones">Mobail Phones</option>
+                    <option value="Tabs | Accessories">Tabs | Accessories</option>
+                    <option value="IT | Laptops">IT | Laptops</option>
+                    <option value="Audio Systems">Audio Systems</option>
+                    <option value="Gaming">Gaming</option>
+                    <option value="TV | Monitors">TV | Monitors</option>
+                    <option value="Digital | Camera">Digital | Camera</option>
+                    <option value="Smart Home">Smart Home</option>
+                  </select>
+                  </label>
+                </div>
+
+                <div class="Input__Row">
+                  <label for="Prduct__Price__Input">
+                    <span class="Title">Price</span>
+                    <input type="number" class="Prduct__Input" id="Prduct__Price__Input" Input__Prduct__Price>
+                  </label>
+
+                  <label for="Prduct__Currency__Input">
+                    <span class="Title">Currency</span>
+                    <input type="text" class="Prduct__Input" id="Prduct__Currency__Input" Input__Prduct__Currency>
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="General__Info__Box Box">
+                <div class="Input__Description__Wrapper" Input__Description__Wrapper>
+                  <div class="Input__Row">
+                    <label>
+                    <span class="Title">Description Title</span>
+                    <input type="text" class="Prduct__Input" id="Prduct__Input" Input__Product__Description__Title>
+                  </label>
+
+                    <label>
+                    <span class="Title">Description</span>
+                    <input type="text" class="Prduct__Input" id="Prduct__Input" Input__Product__Description>
+                  </label>
+                  </div>
+                </div>
+
+                <div class="Description__Action__Buttons">
+                  <button class="Btn-Add__Input__Item" Btn-Add__Description__Input>
+                    <i class="fa fa-add"></i>
+                    <span>Add another Description</span>
+                </button>
+                  <button class="Btn-Remove__Input__Item" Btn-Remove__Description__Input>
+                  <span>Remove</span>
+                </button>
+                </div>
+              </div>
+
+              <div class="Media__Info__Box Box">
+
+                <div class="Product__Image__Wrapper">
+                  <div class="image">
+                    <img src="../assets/image/profile-1.jpg" alt="">
+                    <button class="Btn-Remove__Image fa fa-times"></button>
+                  </div>
+
+                  <label for="Prduct__Image__Input">
+                    <i class="fa fa-cloud-arrow-up"></i>
+                    <span class="Title">Upload</span>
+                    <input type="file" id="Prduct__Image__Input" accept="image/png, image/jpg, image/jpeg, image/gif" Input__Product__File>
+                  </label>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+        <section class="Section Orders">
+          <div class="Orders__Container">
+            <h3>Orders are Empty!</h3>
+          </div>
+        </section>
+        <section class="Section Customers">
+
+        </section>
+      </div>
+    </main>
+
+  </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBA9SOD0xFQsWpyyR4i3idtpXALvdWAXTY ",
+      authDomain: "fe-50-87e53.firebaseapp.com ",
+      projectId: "fe-50-87e53 ",
+      storageBucket: "fe-50-87e53.appspot.com ",
+      messagingSenderId: "643514280227 ",
+      appId: "1:643514280227:web:64aefe20db92f69e6f0496 ",
+      measurementId: "G-30HKPKYTTH "
+    };
+
+    const App = firebase.initializeApp(firebaseConfig);
+  </script>
+</body>
+
+</html>

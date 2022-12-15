@@ -1,0 +1,12 @@
+<div class="Card">
+  <div class="User__Image" Image="Man">
+    <img src="../assets/Images/Users/{{user.Gender == 'Male' ? 'Man': 'Woman'}}.png" alt="">
+  </div>
+
+  <h2 class="User__Name">{{user.FirstName}} {{user.LastName}}</h2>
+
+  <div class="User__Info">
+    <h3>Age: <span>{{user.Age}}</span></h3>
+    <h3>Gender: <span>{{user.Gender}}</span></h3>
+  </div>
+</div>

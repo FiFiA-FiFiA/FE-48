@@ -1,0 +1,7 @@
+<ul *ngIf="server" class="row text-start border-bottom p-0 py-2 w-100">
+  <li class="col col-sm-1">{{server.ServerId}}</li>
+  <li class="col col-md-3">{{server.ServerName}}</li>
+  <li class="col col-sm-3">{{server.Port}}</li>
+  <li class="col "><span class="bg-{{server.Status == 'Enabled' ? 'success' : 'danger'}} fs-6 p-1 d-flex align-items-center justify-content-center bg-opacity-25 border fw-bold text-{{server.Status == 'Enabled' ? 'success' : 'danger'}} border-opacity-50 border-{{server.Status == 'Enabled' ? 'success' : 'danger'}} rounded-1">{{server.Status == 'Enabled' ? 'Enabled' : 'Disabled'}}</span></li>
+  <li class="col text-end"><button type="button" (click)="ChangeStatus()" class="btn btn-{{server.Status == 'Enabled' ? 'danger' : 'success'}} px-3">{{server.Status == 'Enabled' ? 'Off' : 'On'}}</button></li>
+</ul>

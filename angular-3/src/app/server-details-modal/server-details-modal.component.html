@@ -1,0 +1,30 @@
+<div class="Server__Details__Modal {{ clicked ? 'active' : '' }}">
+  <div class="Server__Details__Overlay" (click)="Close__Modal()"></div>
+
+  <div class="Server__Details__Container">
+    <div class="Modal__Header">
+      <h3>Server Details</h3>
+      <button (click)="Close__Modal()">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+    <ul class="Modal__Body">
+      <li>
+        Name: <span>{{ ServerInfo.ServerName }}</span>
+      </li>
+      <li>
+        Port: <span>{{ ServerInfo.Port }}</span>
+      </li>
+      <li>
+        Staus: <span>{{ ServerInfo.Status }}</span>
+      </li>
+    </ul>
+    <div class="Modal__Button__Wrapper">
+      <button (click)="ChangeStatus()">Turn {{ ChangeButtonText }}</button>
+      <div class="Modal__Button__row">
+        <button (click)="EditServer()">Edit</button>
+        <button (click)="DeleteServer()">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

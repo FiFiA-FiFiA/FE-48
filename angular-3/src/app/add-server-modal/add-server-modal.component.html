@@ -1,0 +1,40 @@
+<div class="Add__Server__Modal {{ clicked ? 'active' : '' }}">
+  <div class="Add__Server__Overlay" (click)="Close__Modal()"></div>
+
+  <div class="Add__Server__Container">
+    <div class="Modal__Header">
+      <h3>Add Server</h3>
+      <button (click)="Close__Modal()">
+        <i class="fa fa-times"></i>
+      </button>
+    </div>
+    <form class="Modal__Body">
+      <div class="FormAlert" AlertWrapper></div>
+      <div class="Input__Wrapper">
+        <label for="InputName" class="Input__Label">Server Name</label>
+        <input type="text" class="Input" id="InputName" [(ngModel)]="Server.ServerName" [ngModelOptions]="{ standalone: true }" />
+      </div>
+      <div class="Input__Wrapper">
+        <label for="InputPort" class="Input__Label">Port</label>
+        <input type="number" class="Input" id="InputPort" [(ngModel)]="Server.Port" [ngModelOptions]="{ standalone: true }" />
+      </div>
+      <div class="Input__Wrapper">
+        <label for="InputStatus" class="Input__Label">Status</label>
+        <select class="Input" [(ngModel)]="Server.Status" [ngModelOptions]="{ standalone: true }">
+          <option value="Enabled" selected>Enabled</option>
+          <option value="Disabled">Disabled</option>
+        </select>
+      </div>
+      <div class="Modal__Button__Wrapper">
+        <button type="button" class="Button-AddServer" *ngIf="ButtonsStatus" (click)="AddServer()">
+          Add Now
+        </button>
+        <button type="button" class="Button-AddServer" *ngIf="!ButtonsStatus" (click)="EditServer()">
+          Save Changes
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- [ngModelOptions]="{standalone: true}" -->

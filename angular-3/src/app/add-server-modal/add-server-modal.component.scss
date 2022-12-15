@@ -1,0 +1,124 @@
+@import "../../scss/Variable";
+@import "../../scss/Mixin";
+.Add__Server__Modal {
+  position: fixed;
+  @include display-flex(row, center, center, 0);
+  inset: 0;
+  z-index: $z-index-overlay;
+  transition: $transition;
+  opacity: 0;
+  visibility: hidden;
+  .Add__Server__Overlay {
+    position: absolute;
+    inset: 0;
+    background: $color-overlay;
+  }
+  .Add__Server__Container {
+    position: relative;
+    @include display-flex(column, flex-start, flex-start, 0);
+    background: $color-white-default;
+    border-radius: $big-radius;
+    z-index: 1;
+    box-shadow: $shadow-shallow;
+    width: 90%;
+    max-width: 400px;
+    padding-bottom: $size-05rem;
+    transform: scale(0.5);
+    transition: $transition;
+    overflow: hidden;
+    .Modal__Header {
+      position: relative;
+      padding: $size-05rem $size-1rem;
+      border-bottom: $size-01rem solid $color-gray-200;
+      @include display-flex(row, space-between, center, 0);
+      background: $color-gray-100;
+      width: $full-width;
+      h3 {
+        color: $color-gray-600;
+        font-size: $fs-medium;
+      }
+      button {
+        height: 40px;
+        width: 40px;
+      }
+    }
+    .Modal__Body {
+      position: relative;
+      padding: $size-05rem $size-1rem;
+      width: $full-width;
+      @include display-flex(column, stretch, stretch, $size-07rem);
+      .FormAlert {
+        position: relative;
+        width: $full-width;
+        .AlertBody {
+          position: inherit;
+          @include display-flex(row, space-between, center, $size-1rem);
+          width: $full-width;
+          border-radius: $small-radius;
+          padding: $size-03rem $size-05rem;
+          padding-left: $size-08rem;
+          min-height: 45px;
+          &.Success {
+            background: $color-green-200;
+            color: $color-green-600;
+            border: $size-01rem solid $color-green-600;
+          }
+          &.Error {
+            background: $color-red-200;
+            color: $color-red-600;
+            border: $size-01rem solid $color-red-600;
+          }
+          span {
+            color: inherit;
+            font-size: $fs-small-xl;
+            font-weight: $fw-medium;
+          }
+          .Button-AlertClose {
+            background: $color-transparent-default;
+            font-size: $fs-medium;
+            box-shadow: none;
+            width: auto;
+            height: auto;
+            color: inherit;
+          }
+        }
+      }
+      .Input__Wrapper {
+        @include display-flex(column, flex-start, flex-start, $size-02rem);
+        .Input__Label {
+          color: $color-gray-500;
+          font-size: $fs-small;
+          margin-left: $size-03rem;
+        }
+        .Input {
+          width: $full-width;
+          padding: $size-07rem $size-1rem;
+          color: $color-gray-700;
+          font-size: $fs-medium;
+          border: 0;
+          outline: $size-01rem solid $color-gray-400;
+          border-radius: $small-radius;
+          transition: $transition;
+          &:focus {
+            outline-color: $color-primary;
+            outline-width: 0.15rem;
+          }
+        }
+      }
+      .Modal__Button__Wrapper {
+        margin-top: $size-07rem;
+        button {
+          width: $full-width;
+          height: 45px;
+        }
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .Add__Server__Container {
+      transform: scale(1);
+    }
+  }
+}

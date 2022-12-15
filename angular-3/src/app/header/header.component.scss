@@ -1,0 +1,16 @@
+@import "../../scss/Variable";
+@import "../../scss/Mixin";
+header {
+  position: relative;
+  @include display-flex(row, space-between, center, $size-1rem);
+  padding: $size-05rem 0;
+  .Left__Side h1 {
+    font-weight: $fw-bold;
+    font-size: $fs-large;
+    color: $color-primary-900;
+  }
+  .Right__Side button {
+    @include primary-button(auto, 40px, (0 0), ($size-02rem $size-08rem), $small-radius, $fs-small, $fw-medium, $color-white-default, $color-primary);
+    box-shadow: $shadow-basic;
+  }
+}

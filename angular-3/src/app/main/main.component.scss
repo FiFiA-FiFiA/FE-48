@@ -1,0 +1,30 @@
+@import "../../scss/Variable";
+@import "../../scss/Mixin";
+.Main__Container {
+  position: relative;
+  overflow: auto;
+  @include screen-sm {
+    overflow: hidden;
+  }
+  .Header__Content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 5% 30% 15% 30% 20%;
+    padding: $size-05rem;
+    min-width: 400px;
+    .Collumn {
+      @include display-flex(row, flex-start, center, 0);
+      padding: $size-05rem 0;
+      font-weight: $fw-bold;
+      font-size: $fs-small;
+      color: $color-gray-500;
+      &:last-child {
+        justify-content: flex-end;
+      }
+    }
+  }
+  .Server__Exist {
+    position: sticky;
+    left: 0;
+  }
+}

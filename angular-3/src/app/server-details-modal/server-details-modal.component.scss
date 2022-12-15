@@ -1,0 +1,86 @@
+@import "../../scss/Variable";
+@import "../../scss/Mixin";
+.Server__Details__Modal {
+  position: fixed;
+  @include display-flex(row, center, center, 0);
+  inset: 0;
+  z-index: $z-index-overlay;
+  transition: $transition;
+  opacity: 0;
+  visibility: hidden;
+  .Server__Details__Overlay {
+    position: absolute;
+    inset: 0;
+    background: $color-overlay;
+  }
+  .Server__Details__Container {
+    position: relative;
+    @include display-flex(column, flex-start, flex-start, 0);
+    background: $color-white-default;
+    border-radius: $big-radius;
+    z-index: 1;
+    box-shadow: $shadow-shallow;
+    width: 90%;
+    max-width: 400px;
+    padding-bottom: $size-05rem;
+    transform: scale(0.5);
+    transition: $transition;
+    overflow: hidden;
+    .Modal__Header {
+      position: relative;
+      padding: $size-07rem $size-1rem;
+      @include display-flex(row, space-between, center, 0);
+      background: $color-gray-100;
+      border-bottom: $size-01rem solid $color-gray-200;
+      width: $full-width;
+      h3 {
+        color: $color-gray-600;
+        font-size: $fs-medium;
+      }
+      button {
+        height: 40px;
+        width: 40px;
+      }
+    }
+    .Modal__Body {
+      position: relative;
+      padding: $size-05rem $size-1rem;
+      @include display-flex(column, stretch, stretch, $size-05rem);
+      li {
+        color: $color-gray-600;
+        font-size: $fs-medium;
+        span {
+          font-weight: $fw-bold;
+        }
+      }
+    }
+    .Modal__Button__Wrapper {
+      padding: $size-05rem $size-1rem;
+      width: $full-width;
+      button {
+        width: $full-width;
+      }
+      .Modal__Button__row {
+        margin-top: $size-05rem;
+        width: $full-width;
+        @include display-flex(row, space-between, center, $size-1rem);
+        button {
+          width: $full-width;
+          &:first-child {
+            background: $color-blue-500;
+          }
+          &:last-child {
+            background: $color-red-500;
+          }
+        }
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .Server__Details__Container {
+      transform: scale(1);
+    }
+  }
+}

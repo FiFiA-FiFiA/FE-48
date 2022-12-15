@@ -1,0 +1,19 @@
+<div class="Add__User__Form__Container" Add__User__Container Active__AddUser__Container="false">
+  <div class="Form__Overlay" Form__Overlay (click)="Active__AddUser__Container(false)"></div>
+  <div class="Add__User__Form">
+    <h3 class="Form__Title">Add User</h3>
+
+    <div class="Form__Wrapper">
+      <input type="text" placeholder="First Name" [(ngModel)]="User__Arr.FirstName" class="Input">
+      <input type="text" placeholder="Last Name" [(ngModel)]="User__Arr.LastName" class="Input">
+      <input type="number" placeholder="Age" [(ngModel)]="User__Arr.Age" class="Input">
+      <select [(ngModel)]="User__Arr.Gender" class="Input">
+      <option value="">Gender</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+    </select>
+    </div>
+
+    <button class="Button__Add__User" (click)="AddUser()" Button-Add__User>Add User</button>
+  </div>
+</div>

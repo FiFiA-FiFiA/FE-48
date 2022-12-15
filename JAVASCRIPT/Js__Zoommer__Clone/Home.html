@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zoommer</title>
-  <link rel="shortcut icon" href="./public/assets/image/Logo-small.svg" type="image/x-icon">
+  <title>Zoommer.ge</title>
+  <link rel="shortcut icon" href="./assets/icon/favicon.svg" type="image/x-icon">
   <!-- * Bootstrap link * -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <!-- * Custom link * -->
-  <link rel="stylesheet" href="./public/css/All.css">
-  <link rel="stylesheet" href="./public/css/Home.css">
+  <link rel="stylesheet" href="./src/css/All.css">
+  <link rel="stylesheet" href="./src/css/Home.css">
   <!-- * Fontawesome link * -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.1/css/all.css">
@@ -21,8 +21,8 @@
   <!-- * Swiper script -->
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
   <!-- * Custom script * -->
-  <script src="./src/Home.js" defer></script>
-  <script src="./src/Local.js" defer></script>
+  <script src="./src/js/Home.js" defer></script>
+  <script src="./src/js/Local.js" defer></script>
   <!-- * Firebase Script * -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
@@ -37,7 +37,7 @@
         <button class="Buttin__Menu__Open" Buttin-Menu__Open>
           <i class="fa fa-bars"></i>
         </button>
-        <img src="./public/assets/image/Logo-full-EN.svg" alt="" class="Logo">
+        <img src="./assets/image/Logo-full-EN.svg" alt="" class="Logo">
       </div>
 
       <div class="Middle" Show__Main__Search="false">
@@ -195,7 +195,7 @@
 
               <div class="Buttons__Authorisation__Registration">
                 <button type="submit" class="Orange__Btn Button__Login js-Login__Btn" Button-Login>Log in</button>
-                <button class="Button__Registration__Link" Button-Registration__Link>Register</button>
+                <button type="button" class="Button__Registration__Link" Button-Registration__Link>Register</button>
               </div>
 
               <div class="Or">- or -</div>
@@ -209,7 +209,7 @@
             </form>
             <form action="#" class="Form Sign__Up">
               <div class="Form__Title">
-                <button class="Button__Back fa fa-angle-left" Button-Form__Back></button>
+                <button type="button" class="Button__Back fa fa-angle-left" Button-Form__Back></button>
                 <h4>Register</h4>
               </div>
 
@@ -254,7 +254,7 @@
             </form>
             <form action="#" class="Form Sign__Pass">
               <div class="Form__Title">
-                <button class="Button__Back fa fa-angle-left" Button-Form__Back></button>
+                <button type="button" class="Button__Back fa fa-angle-left" Button-Form__Back></button>
                 <h4>Password recovery</h4>
               </div>
 
@@ -404,28 +404,6 @@
       </div>
     </div>
 
-    <script>
-      const Header = document.querySelector("header");
-      let Last__Scorll__Top = 0;
-
-      window.onscroll = () => {
-        let Scroll__Top = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (Scroll__Top > Last__Scorll__Top) {
-          Header.style.top = `-${Header.clientHeight + 20}px`;
-        } else {
-          Header.style.top = `0px`;
-        }
-
-        if (Scroll__Top > 135) {
-          Header.classList.add("Sticky");
-        } else {
-          Header.classList.remove("Sticky");
-        }
-
-        Last__Scorll__Top = Scroll__Top;
-      }
-    </script>
   </header>
 
   <aside></aside>
@@ -511,17 +489,17 @@
             </ul>
           </div>
           <div class="Right__Side">
-            <img src="https://img.zoommer.ge/zoommer-images/thumbs/0168002_mobilurebi.png" alt="">
+            <img src="./assets/image/Navigation/Image-Mobile.png" alt="">
           </div>
         </div>
 
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Accessories">Accessories</div>
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Laptops">Laptops</div>
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Audio">Audio</div>
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Gaming">Gaming</div>
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Tv">Tv</div>
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Digitals">Digitals</div>
-        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Home">Home</div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Accessories"><img src="./assets/image/Navigation/Image-Tab.png" alt=""></div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Laptops"><img src="./assets/image/Navigation/Image-Laptop.png" alt=""></div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Audio"><img src="./assets/image/Navigation/Image-Audio.png" alt=""></div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Gaming"><img src="./assets/image/Navigation/Image-Gaming.png" alt=""></div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Tv"><img src="./assets/image/Navigation/Image-TV.png" alt=""></div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Digitals"><img src="./assets/image/Navigation/Image-Digital.png" alt=""></div>
+        <div class="Navigation__Full__Categories" Category__Active="false" Category__Name="Home"><img src="./assets/image/Navigation/Image-Home.png" alt=""></div>
 
         <script>
           const Navigation__List = document.querySelectorAll("[Navigation__List]");
@@ -553,19 +531,19 @@
         <div class="swiper Main__Carousel" Main__Carousel>
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181769.png" alt="">
+              <img src="./assets/image/Main__Slide/slide-Image-1.png" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181773.png" alt="">
+              <img src="./assets/image/Main__Slide/slide-Image-2.png" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181771.png" alt="">
+              <img src="./assets/image/Main__Slide/slide-Image-3.png" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181838.png" alt="">
+              <img src="./assets/image/Main__Slide/slide-Image-4.png" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://img.zoommer.ge/zoommer-images/thumbs/0181847.png" alt="">
+              <img src="./assets/image/Main__Slide/slide-Image-5.png" alt="">
             </div>
 
           </div>
@@ -603,6 +581,493 @@
             },
           });
         </script>
+      </div>
+    </section>
+
+    <section>
+      <div class="Container">
+
+        <div class="Section__Header">
+          <div class="Section__Header__Left__Side">
+            <div class="Section__Header__title__Icon">
+              <i class="far fa-fire"></i>
+            </div>
+
+            <h2 class="Section__Title">Hot Offers</h2>
+          </div>
+          <div class="Section__Header__Right__Side">
+            <button class="Button-All__Promotions">Promotions</button>
+          </div>
+        </div>
+
+        <div class="Section__Content HotOffers__Product__Container">
+
+          <div class="Product">
+            <div class="Product__Block">
+              <div class="Product__Top__Content">
+
+                <div class="Product__Label__Outside" Label__Color="LightBlue">
+                  <div class="Product__Label">Zoommer Prices</div>
+                </div>
+
+                <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                  <div class="swiper-wrapper Product__Image__Slider">
+                    <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                  </div>
+
+                  <div class="Product__Carusel__Buttons">
+                    <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                      <i class="fa fa-angle-right"></i>
+                    </div>
+                    <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                      <i class="fa fa-angle-left"></i>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                <div class="product__Price__Wrapper" Has__Old__Price="true">
+                  <div class="Product__New__Price">2 799 ₾</div>
+                  <div class="Product__Old__Price">2 999 ₾</div>
+                  <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                </div>
+              </div>
+              <div class="Product__Bottom__Content">
+                <button class="Buttin-Add__Cart Only__For__Mobile">
+                  <i class="far fa-cart-shopping"></i>
+                  <span>Add To Cart</span>
+                </button>
+
+                <div class="Product__Time__Progressbar">
+                  <div class="Time__Counter" Start__Time="1669716000" Carent__Time="1670198400">
+                    <i class="far fa-clock"></i>
+                    <span class="Time__Counter__Text" Countdown="2022/12/05 00:00" DayText="Day" HourText="Hour" MinuteText="Min">00 Day 08 Hour 46 Min</span>
+                  </div>
+                  <div class="Progressbar__Wrapper">
+                    <div class="Progressbar__Inner"></div>
+                  </div>
+                </div>
+
+                <button class="Buttin-Add__Cart Not__For__Mobile">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="Container">
+
+        <div class="Section__Header">
+          <div class="Section__Header__Left__Side">
+            <div class="Section__Header__title__Icon">
+              <i class="far fa-compass"></i>
+            </div>
+
+            <div class="Title__Wrapper">
+              <h2 class="Section__Title">Online Price</h2>
+              <span>It is possible to use the indicated price only online</span>
+            </div>
+          </div>
+          <div class="Section__Header__Right__Side">
+
+            <div class="Product__Carusel__Buttons">
+              <div class="Button-Product__Slider__Prev Button__Product__Slider">
+                <i class="fa fa-angle-left"></i>
+              </div>
+              <div class="Button-Product__Slider__Next Button__Product__Slider">
+                <i class="fa fa-angle-right"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="Section__Content OnlinePrice__Product__Container swiper" Product__Slider__Wrapper>
+
+          <div class="Product__Slider__Wrapper swiper-wrapper">
+
+            <div class="Product swiper-slide">
+              <div class="Product__Block">
+                <div class="Product__Top__Content">
+
+                  <div class="Product__Label__Outside" Label__Color="Orange">
+                    <div class="Product__Label">Online Price</div>
+                  </div>
+
+                  <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                    <div class="swiper-wrapper Product__Image__Slider">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    </div>
+
+                    <div class="Product__Image__Carusel__Buttons">
+                      <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                        <i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                </div>
+                <div class="Product__Bottom__Content">
+                  <div class="product__Price__Wrapper" Has__Old__Price="true">
+                    <div class="Product__New__Price">2 799 ₾</div>
+                    <div class="Product__Old__Price">2 999 ₾</div>
+                    <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                  </div>
+
+                  <div class="Product__CartCompare">
+                    <button class="Buttin-Add__Cart">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+                    <button class="Button-Product__Compare">
+                  <i class="far fa-arrow-right-arrow-left"></i>
+                </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Product swiper-slide">
+              <div class="Product__Block">
+                <div class="Product__Top__Content">
+
+                  <div class="Product__Label__Outside" Label__Color="Orange">
+                    <div class="Product__Label">Online Price</div>
+                  </div>
+
+                  <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                    <div class="swiper-wrapper Product__Image__Slider">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    </div>
+
+                    <div class="Product__Image__Carusel__Buttons">
+                      <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                        <i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                </div>
+                <div class="Product__Bottom__Content">
+                  <div class="product__Price__Wrapper" Has__Old__Price="true">
+                    <div class="Product__New__Price">2 799 ₾</div>
+                    <div class="Product__Old__Price">2 999 ₾</div>
+                    <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                  </div>
+
+                  <div class="Product__CartCompare">
+                    <button class="Buttin-Add__Cart">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+                    <button class="Button-Product__Compare">
+                  <i class="far fa-arrow-right-arrow-left"></i>
+                </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Product swiper-slide">
+              <div class="Product__Block">
+                <div class="Product__Top__Content">
+
+                  <div class="Product__Label__Outside" Label__Color="Orange">
+                    <div class="Product__Label">Online Price</div>
+                  </div>
+
+                  <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                    <div class="swiper-wrapper Product__Image__Slider">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    </div>
+
+                    <div class="Product__Image__Carusel__Buttons">
+                      <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                        <i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                </div>
+                <div class="Product__Bottom__Content">
+                  <div class="product__Price__Wrapper" Has__Old__Price="true">
+                    <div class="Product__New__Price">2 799 ₾</div>
+                    <div class="Product__Old__Price">2 999 ₾</div>
+                    <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                  </div>
+
+                  <div class="Product__CartCompare">
+                    <button class="Buttin-Add__Cart">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+                    <button class="Button-Product__Compare">
+                  <i class="far fa-arrow-right-arrow-left"></i>
+                </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Product swiper-slide">
+              <div class="Product__Block">
+                <div class="Product__Top__Content">
+
+                  <div class="Product__Label__Outside" Label__Color="Orange">
+                    <div class="Product__Label">Online Price</div>
+                  </div>
+
+                  <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                    <div class="swiper-wrapper Product__Image__Slider">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    </div>
+
+                    <div class="Product__Image__Carusel__Buttons">
+                      <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                        <i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                </div>
+                <div class="Product__Bottom__Content">
+                  <div class="product__Price__Wrapper" Has__Old__Price="true">
+                    <div class="Product__New__Price">2 799 ₾</div>
+                    <div class="Product__Old__Price">2 999 ₾</div>
+                    <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                  </div>
+
+                  <div class="Product__CartCompare">
+                    <button class="Buttin-Add__Cart">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+                    <button class="Button-Product__Compare">
+                  <i class="far fa-arrow-right-arrow-left"></i>
+                </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Product swiper-slide">
+              <div class="Product__Block">
+                <div class="Product__Top__Content">
+
+                  <div class="Product__Label__Outside" Label__Color="Orange">
+                    <div class="Product__Label">Online Price</div>
+                  </div>
+
+                  <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                    <div class="swiper-wrapper Product__Image__Slider">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    </div>
+
+                    <div class="Product__Image__Carusel__Buttons">
+                      <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                        <i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                </div>
+                <div class="Product__Bottom__Content">
+                  <div class="product__Price__Wrapper" Has__Old__Price="true">
+                    <div class="Product__New__Price">2 799 ₾</div>
+                    <div class="Product__Old__Price">2 999 ₾</div>
+                    <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                  </div>
+
+                  <div class="Product__CartCompare">
+                    <button class="Buttin-Add__Cart">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+                    <button class="Button-Product__Compare">
+                  <i class="far fa-arrow-right-arrow-left"></i>
+                </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="Product swiper-slide">
+              <div class="Product__Block">
+                <div class="Product__Top__Content">
+
+                  <div class="Product__Label__Outside" Label__Color="Orange">
+                    <div class="Product__Label">Online Price</div>
+                  </div>
+
+                  <div class="swiper Product__Image__Carousel" Product__Image__Carousel>
+                    <div class="swiper-wrapper Product__Image__Slider">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174218_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174219_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                      <img class="swiper-slide" src="https://img.zoommer.ge/zoommer-images/thumbs/0174221_apple-iphone-14-128gb-starlight_157.jpeg" alt="">
+                    </div>
+
+                    <div class="Product__Image__Carusel__Buttons">
+                      <div class="Button-Product__Image__Slider__Prev Button__Product__Slider">
+                        <i class="fa fa-angle-left"></i>
+                      </div>
+                      <div class="Button-Product__Image__Slider__Next Button__Product__Slider">
+                        <i class="fa fa-angle-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <h4 class="Product__Name">Apple iPhone 14 | 128GB Starlight</h4>
+                </div>
+                <div class="Product__Bottom__Content">
+                  <div class="product__Price__Wrapper" Has__Old__Price="true">
+                    <div class="Product__New__Price">2 799 ₾</div>
+                    <div class="Product__Old__Price">2 999 ₾</div>
+                    <div class="Product__Price__In__Month">Monthly: <span>88 ₾</span> - From</div>
+                  </div>
+
+                  <div class="Product__CartCompare">
+                    <button class="Buttin-Add__Cart">
+                  <i class="far fa-cart-shopping"></i>
+                </button>
+                    <button class="Button-Product__Compare">
+                  <i class="far fa-arrow-right-arrow-left"></i>
+                </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="Container">
+
+        <div class="Section__Header">
+          <div class="Section__Header__Left__Side">
+            <div class="Section__Header__title__Icon">
+              <i class="far fa-shield-check"></i>
+            </div>
+            <h2 class="Section__Title">Manufacturers</h2>
+          </div>
+          <div class="Section__Header__Right__Side">
+
+            <div class="Product__Carusel__Buttons">
+              <div class="Button-Manufacturer__Slider__Prev Button__Product__Slider">
+                <i class="fa fa-angle-left"></i>
+              </div>
+              <div class="Button-Manufacturer__Slider__Next Button__Product__Slider">
+                <i class="fa fa-angle-right"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="Section__Content Manufacturers__Container swiper" Manufacturer__Slider__Wrapper>
+
+          <div class="Manufacturer__Slider__Wrapper swiper-wrapper">
+
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-1.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-2.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-3.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-4.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-5.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-6.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-7.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-8.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-9.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-10.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-11.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-12.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-13.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-14.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-15.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-16.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-17.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-18.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-19.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-20.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-21.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-22.png" alt="">
+            </div>
+            <div class="Manufacturer swiper-slide">
+              <img src="./assets/image/Manufacturers/Manufacturer-23.png" alt="">
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   </main>
@@ -724,6 +1189,86 @@
     };
 
     firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script>
+    let Product__Image__Carousel = new Swiper("[Product__Image__Carousel]", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".Button-Product__Image__Slider__Next",
+        prevEl: ".Button-Product__Image__Slider__Prev",
+      },
+    });
+
+    let Product__Slider__Wrapper = new Swiper("[Product__Slider__Wrapper]", {
+      slidesPerView: 2,
+      spaceBetween: 0,
+      slidesPerGroup: 2,
+      loop: false,
+      loopFillGroupWithBlank: false,
+      navigation: {
+        nextEl: ".Button-Product__Slider__Next",
+        prevEl: ".Button-Product__Slider__Prev",
+      },
+      breakpoints: {
+        "@0.00": {
+          slidesPerView: 2,
+          spaceBetween: 0,
+          slidesPerGroup: 2,
+        },
+        "@0.75": {
+          slidesPerView: 3,
+          spaceBetween: 0,
+          slidesPerGroup: 3,
+
+        },
+        "@1.10": {
+          slidesPerView: 3,
+          spaceBetween: 0,
+          slidesPerGroup: 3,
+
+        },
+        "@1.45": {
+          slidesPerView: 4,
+          spaceBetween: 0,
+          slidesPerGroup: 4,
+        },
+      },
+    });
+
+    let Manufacturer__Slider__Wrapper = new Swiper("[Manufacturer__Slider__Wrapper]", {
+      slidesPerView: 2,
+      spaceBetween: 10,
+      slidesPerGroup: 2,
+      loop: false,
+      loopFillGroupWithBlank: false,
+      navigation: {
+        nextEl: ".Button-Manufacturer__Slider__Next",
+        prevEl: ".Button-Manufacturer__Slider__Prev",
+      },
+      breakpoints: {
+        "@0.00": {
+          slidesPerView: 2,
+          spaceBetween: 0,
+          slidesPerGroup: 2,
+        },
+        "@0.75": {
+          slidesPerView: 3,
+          spaceBetween: 0,
+          slidesPerGroup: 3,
+        },
+        "@1.00": {
+          slidesPerView: 4,
+          spaceBetween: 0,
+          slidesPerGroup: 4,
+        },
+        "@1.35": {
+          slidesPerView: 5,
+          spaceBetween: 0,
+          slidesPerGroup: 5,
+        },
+      },
+    });
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>

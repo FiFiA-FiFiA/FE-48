@@ -1,0 +1,241 @@
+* {
+  transition: var(--transition);
+}
+
+picture {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+picture img {
+  min-height: 100vh;
+  inset: 0;
+  object-fit: cover;
+}
+
+.Container {
+  position: relative;
+  max-width: var(--containr-width);
+  width: 90%;
+  margin: 0 auto;
+}
+
+header {
+  box-shadow: var(--basicShadow);
+  position: sticky;
+  top: 0;
+  width: var(--full-width);
+  background: var(--color-transparent-04);
+  border-bottom: var(--size-01rem) solid var(--color-primary-transparent-hover);
+  padding: var(--size-1rem) 0;
+  z-index: 1;
+  backdrop-filter: blur(1rem);
+}
+
+header .Container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--size-2rem);
+}
+
+header .Container .Logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-1rem);
+  color: var(--color-white-default);
+}
+
+header .Container .Logo i {
+  font-size: var(--typography-size-xl);
+}
+
+header .Container .Logo span {
+  font-size: var(--typography-size-large);
+  font-weight: var(--mediumWeight);
+}
+
+header .Container .Right__Side {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--size-1rem);
+}
+
+header .Container .Right__Side .Button-Add__User,
+header .Container .Right__Side .Button-Sort__User {
+  background: var(--color-transparent-01);
+  border: var(--size-01rem) solid var(--color-primary-transparent-hover);
+  border-radius: var(--largeRadius-xxl);
+  padding: var(--size-05rem) var(--size-1rem);
+  color: var(--color-white-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-07rem);
+  cursor: pointer;
+  outline: var(--size-01rem) solid var(--color-transparent-default);
+  height: 45px;
+  font-weight: var(--mediumWeight);
+  font-size: var(--typography-size-medium);
+}
+
+header .Container .Right__Side .Button-Sort__User:hover,
+header .Container .Right__Side .Button-Add__User:hover {
+  background: var(--color-primary-transparent-hover);
+  outline: var(--size-01rem) solid var(--color-primary-transparent-hover);
+}
+
+header .Container .Right__Side .Button-Sort__User {
+  border-radius: var(--smallRadius);
+}
+
+header .Container .Right__Side .Button-Sort__User[Active__Dropdown__Manu="true"] {
+  background: var(--color-primary-transparent-hover);
+  outline: var(--size-01rem) solid var(--color-primary-transparent-hover);
+}
+
+header .Container .Right__Side .Button-Sort__User .Input__Wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--full-width);
+  height: var(--full-height);
+  pointer-events: none;
+}
+
+header .Container .Right__Side .Button-Sort__User .Input__Wrapper input {
+  background: var(--color-transparent-default);
+  width: var(--full-width);
+  color: var(--color-white-default);
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  max-width: 110px;
+}
+
+header .Container .Right__Side .Button-Sort__User .Input__Wrapper input::placeholder {
+  color: inherit;
+}
+
+header .Container .Right__Side .Button-Sort__User .Input__Wrapper i {
+  font-size: var(--typography-size-medium);
+  color: var(--color-white-default);
+}
+
+header .Container .Right__Side .Button-Sort__User[Active__Dropdown__Manu="true"] .Input__Wrapper i {
+  rotate: 180deg;
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper {
+  position: absolute;
+  top: calc(var(--full-height));
+  right: 0;
+  height: auto;
+  max-height: 200px;
+  min-width: 170px;
+  width: auto;
+  background: var(--color-transparent-02);
+  border-radius: var(--smallRadius);
+  cursor: default;
+  padding: var(--size-03rem);
+  box-shadow: var(--basicShadow);
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(var(--size-03rem));
+  border: var(--size-01rem) solid var(--color-primary-transparent-hover);
+  pointer-events: none;
+}
+
+header .Container .Right__Side .Button-Sort__User[Active__Dropdown__Manu="true"] .Dropdown__Menu__Wrapper {
+  visibility: visible;
+  opacity: 1;
+  top: calc(var(--full-height) + var(--size-03rem));
+  pointer-events: painted;
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: var(--full-height);
+  width: var(--full-width);
+  max-height: 190px;
+  overflow-y: scroll;
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu::-webkit-scrollbar {
+  width: var(--size-03rem);
+  border-radius: var(--bigRadius);
+  background: var(--color-transparent-white-01);
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu::-webkit-scrollbar-thumb {
+  background: var(--color-transparent-05);
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu .Item {
+  color: var(--color-white-default);
+  background: none;
+  width: var(--full-width);
+  font-size: var(--typography-size-medium);
+  white-space: nowrap;
+  padding: var(--size-05rem) var(--size-05rem);
+  cursor: pointer;
+  text-align: left;
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu .Item:first-child {
+  --smallRadius: 0.2rem;
+  border-top-left-radius: var(--smallRadius);
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu .Item:last-child {
+  --smallRadius: 0.2rem;
+  border-bottom-left-radius: var(--smallRadius);
+}
+
+header .Container .Right__Side .Button-Sort__User .Dropdown__Menu__Wrapper .Dropdown__Menu .Item:hover {
+  background: var(--color-primary-transparent-hover);
+}
+
+main {
+  width: var(--full-width);
+  height: var(--full-height);
+  margin-top: var(--size-1rem);
+}
+
+main .Container .Users__Content__Wrapper {
+  width: var(--full-width);
+  height: var(--full-height);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--size-spacing-xxl), 1fr));
+  grid-gap: var(--size-spacing-25px);
+  grid-auto-flow: row dense;
+  justify-items: center;
+}
+
+main .Container .Users__Content__Wrapper .Card {
+  width: var(--full-width);
+}
+
+@media screen and (max-width: 500px) {
+  header .Container .Right__Side .Button-Sort__User,
+  header .Container .Right__Side .Button-Add__User {
+    width: 45px;
+    min-width: 45px;
+    padding: var(--size-03rem);
+  }
+  header .Container .Right__Side .Button-Sort__User .Input__Wrapper input,
+  header .Container .Right__Side .Button-Add__User span {
+    display: none;
+  }
+  header .Container .Right__Side .Button-Add__User {
+    border-radius: var(--smallRadius);
+  }
+}

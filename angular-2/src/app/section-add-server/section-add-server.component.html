@@ -1,0 +1,23 @@
+<section Section__Index="2" Section__Active="false">
+  <div id="liveAlertPlaceholder"></div>
+  <form autocomplete="off" class="col g-3">
+    <div class="col-auto mt-2">
+      <label for="staticEmail2" class="form-label ms-2 mb-1 text-muted">Server Name</label>
+      <input type="text" class="form-control" id="staticEmail2" [(ngModel)]="server.ServerName" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-auto mt-2">
+      <label for="inputPort" class="form-label ms-2 mb-1 text-muted">Port</label>
+      <input type="number" class="form-control" id="inputPort" [(ngModel)]="server.Port" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="col-auto mt-2">
+      <label for="inputStatus" class="form-label ms-2 mb-1 text-muted">Status</label>
+      <select class="form-select" [(ngModel)]="server.Status" [ngModelOptions]="{standalone: true}">
+      <option value="Enabled" selected>Enabled</option>
+      <option value="Disabled">Disabled</option>
+    </select>
+    </div>
+    <div class="col-auto mt-3">
+      <button type="button" (click)="SaveServer()" class="btn btn-primary px-4 mb-2">Add</button>
+    </div>
+  </form>
+</section>

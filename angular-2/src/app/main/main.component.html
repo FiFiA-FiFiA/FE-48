@@ -1,0 +1,4 @@
+<main class="card p-4 overflow-auto mh">
+  <app-section-server [ServerArr]="ServerArr"></app-section-server>
+  <app-section-add-server (addServerEmitter)="SaveServerSubscriber($event)"></app-section-add-server>
+</main>

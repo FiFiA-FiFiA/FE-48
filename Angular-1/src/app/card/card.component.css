@@ -1,0 +1,52 @@
+.Card {
+  border-radius: var(--cardRadius);
+  background: var(--color-transparent-white-01);
+  width: var(--full-width);
+  height: var(--full-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--size-07rem);
+  border: var(--size-03rem) solid var(--color-transparent-white-04);
+  box-shadow: var(--deepShadow);
+  cursor: default;
+  backdrop-filter: blur(1rem);
+}
+
+.Card .User__Image {
+  max-width: 150px;
+  width: var(--full-width);
+  aspect-ratio: 1/1;
+  border-radius: var(--fullRadius);
+  border: var(--size-03rem) solid var(--color-primary);
+  overflow: hidden;
+}
+
+.Card .User__Image img {
+  width: var(--full-width);
+  height: var(--full-height);
+  object-fit: cover;
+}
+
+.Card .User__Name {
+  white-space: nowrap;
+  font-size: var(--typography-size-large);
+  font-weight: var(--mediumWeight);
+  color: var(--color-white-default);
+  margin: var(--size-05rem) 0;
+}
+
+.Card .User__Info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05rem);
+}
+
+.Card .User__Info h3 {
+  white-space: nowrap;
+  font-size: var(--typography-size-medium);
+  font-weight: var(--mediumWeight);
+  color: var(--color-teal-200);
+  text-align: center;
+}

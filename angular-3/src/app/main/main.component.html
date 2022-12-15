@@ -1,0 +1,11 @@
+<main class="Main__Container">
+  <ul class="Header__Content Content__Row">
+    <li class="Collumn">#</li>
+    <li class="Collumn">Name</li>
+    <li class="Collumn">Port</li>
+    <li class="Collumn">Status</li>
+    <li class="Collumn">Action</li>
+  </ul>
+  <app-server *ngFor="let Server of ServerArr" [ServerInfo]="Server"></app-server>
+  <app-server-exist *ngIf="ServerArr.length == 0" class="Server__Exist"></app-server-exist>
+</main>

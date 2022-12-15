@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+:root {
+  --color-primary: #2bd1ce;
+  --color-primary-transparent: #2bbed118;
+  --color-primary-transparent-hover: #2bc6d141;
+  --color-text: #526d83;
+  --containr-width: 1300px;
+  --full-width: 100%;
+  --full-height: 100%;
+  --full-width-vw: 100vw;
+  --full-height-vh: 100vh;
+  --size-3rem: 3rem;
+  --size-2_5rem: 2.5rem;
+  --size-2rem: 2rem;
+  --size-1_5rem: 1.5rem;
+  --size-1rem: 1rem;
+  --size-07rem: 0.7rem;
+  --size-05rem: 0.5rem;
+  --size-03rem: 0.3rem;
+  --size-01rem: 0.1rem;
+  --size-border-width-default: 1px;
+  --size-border-width-light: 1px;
+  --size-border-radius-small: .4rem;
+  --size-border-radius-big: .8rem;
+  --size-border-radius-large: 1.2rem;
+  --size-border-radius-large-xl: 1.6rem;
+  --size-border-radius-large-xxl: 2rem;
+  --size-border-radius-full: 100%;
+  --color-transparent-default: rgba(0, 0, 0, 0);
+  --color-transparent-01: rgba(0, 0, 0, 0.1);
+  --color-transparent-02: rgba(0, 0, 0, 0.2);
+  --color-transparent-03: rgba(0, 0, 0, 0.3);
+  --color-transparent-04: rgba(0, 0, 0, 0.4);
+  --color-transparent-06: rgba(0, 0, 0, 0.6);
+  --color-transparent-07: rgba(0, 0, 0, 0.7);
+  --color-transparent-08: rgba(0, 0, 0, 0.8);
+  --color-transparent-09: rgba(0, 0, 0, 0.9);
+  --color-transparent-white-01: rgba(255, 255, 255, 0.1);
+  --color-transparent-white-02: rgba(255, 255, 255, 0.2);
+  --color-transparent-white-03: rgba(255, 255, 255, 0.3);
+  --color-transparent-white-04: rgba(255, 255, 255, 0.4);
+  --color-transparent-white-06: rgba(255, 255, 255, 0.6);
+  --color-transparent-white-07: rgba(255, 255, 255, 0.7);
+  --color-transparent-white-08: rgba(255, 255, 255, 0.8);
+  --color-transparent-white-09: rgba(255, 255, 255, 0.9);
+  --color-black-default: #151a1e;
+  --color-white-default: #ffffff;
+  --color-gray-darkest: #34383c;
+  --color-gray-darker: #676c6f;
+  --color-gray-dark: #808589;
+  --color-gray-default: #a4a8ad;
+  --color-gray-light: #e8ebed;
+  --color-gray-lighter: #f2f5f8;
+  --color-gray-lightest: #f9fafa;
+  --color-teal-darkest: #054861;
+  --color-teal-darker: #139baa;
+  --color-teal-default: #5cebdf;
+  --color-teal-lighter: #9ff9e1;
+  --color-teal-lightest: #e1fef1;
+  --color-green-darkest: #12470b;
+  --color-green-darker: #1b7f28;
+  --color-green-default: #43fb36;
+  --color-green-lighter: #85ff8b;
+  --color-green-lightest: #bdffbe;
+  --color-blue-darkest: #061574;
+  --color-blue-darker: #112cb0;
+  --color-blue-default: #2451f5;
+  --color-blue-lighter: #799cfb;
+  --color-blue-lightest: #d2e0fe;
+  --color-gold-darkest: #7c4a04;
+  --color-gold-darker: #b7780b;
+  --color-gold-default: #ffb914;
+  --color-gold-lighter: #ffdd75;
+  --color-gold-lightest: #fff7d1;
+  --color-red-darkest: #78122d;
+  --color-red-darker: #b5303e;
+  --color-red-default: #ff6b61;
+  --color-red-lighter: #ffb59e;
+  --color-red-lightest: #ffece0;
+  --color-dark-black-darker: #070b0d;
+  --color-dark-black-default: #151a1e;
+  --color-dark-gray-darkest: #1c2126;
+  --color-dark-gray-darker: #22262a;
+  --color-dark-gray-dark: #2a2e32;
+  --color-dark-gray-default: #4c5257;
+  --color-dark-gray-light: #808589;
+  --color-dark-gray-lighter: #a4a8ad;
+  --color-dark-gray-lightest: #e8ebed;
+  --color-dark-teal-darkest: #032b3a;
+  --color-dark-teal-darker: #0f6980;
+  --color-dark-teal-default: #31c9c9;
+  --color-dark-teal-lighter: #86f3df;
+  --color-dark-teal-lightest: #9ff9e1;
+  --color-dark-blue-darkest: #040e4e;
+  --color-dark-blue-darker: #0a1e8f;
+  --color-dark-blue-default: #193ed2;
+  --color-dark-blue-lighter: #597ef8;
+  --color-dark-blue-lightest: #a5befd;
+  --color-dark-gold-darkest: #4f2f02;
+  --color-dark-gold-darker: #925a07;
+  --color-dark-gold-default: #e89c02;
+  --color-dark-gold-lighter: #ffd152;
+  --color-dark-gold-lightest: #ffeba3;
+  --color-dark-red-darkest: #470b1b;
+  --color-dark-red-darker: #7f1b2d;
+  --color-dark-red-default: #fb3636;
+  --color-dark-red-lighter: #ff8585;
+  --color-dark-red-lightest: #ffbdbd;
+  --color-dark-third-party-github: #d2d6db;
+  --color-dark-third-party-github-dark: #f5f7fa;
+  --color-dark-third-party-gitlab: #fc6e27;
+  --color-dark-third-party-gitlab-dark: #ff8547;
+  --color-dark-third-party-bitbucket: #4d9aff;
+  --color-dark-third-party-bitbucket-dark: #80b7ff;
+  --color-dark-third-party-azure: #4db2ff;
+  --color-dark-third-party-azure-dark: #80c8ff;
+  --color-gray-light-100: #f9fafa;
+  --color-gray-light-200: #f2f5f8;
+  --color-gray-light-300: #e8ebed;
+  --color-gray-light-400: #a4a8ad;
+  --color-gray-light-500: #808589;
+  --color-gray-light-600: #676c6f;
+  --color-gray-light-700: #34383c;
+  --color-gray-light-800: #151a1e;
+  --color-gray-light-000: #ffffff;
+  --color-gray-dark-100: #e8ebed;
+  --color-gray-dark-200: #a4a8ad;
+  --color-gray-dark-300: #808589;
+  --color-gray-dark-400: #4c5257;
+  --color-gray-dark-500: #2a2e32;
+  --color-gray-dark-600: #22262a;
+  --color-gray-dark-700: #1c2126;
+  --color-gray-dark-800: #151a1e;
+  --color-gray-dark-000: #ffffff;
+  --color-teal-050: #f1fef4;
+  --color-teal-100: #e1fef1;
+  --color-teal-200: #bffde7;
+  --color-teal-300: #9ff9e1;
+  --color-teal-400: #86f3df;
+  --color-teal-500: #5cebdf;
+  --color-teal-600: #31c9c9;
+  --color-teal-700: #139baa;
+  --color-teal-800: #0e6c81;
+  --color-teal-900: #054861;
+  --color-green-050: #f2fef1;
+  --color-green-100: #e4fee1;
+  --color-green-200: #c4fdbf;
+  --color-green-300: #9ff9a7;
+  --color-green-400: #86f386;
+  --color-green-500: #5ceb61;
+  --color-green-600: #36c931;
+  --color-green-700: #13aa25;
+  --color-green-800: #1f810e;
+  --color-green-900: #086105;
+  --color-blue-050: #e5eeff;
+  --color-blue-100: #d2e0fe;
+  --color-blue-200: #a5befd;
+  --color-blue-300: #799cfb;
+  --color-blue-400: #597ef8;
+  --color-blue-500: #2451f5;
+  --color-blue-600: #193ed2;
+  --color-blue-700: #112cb0;
+  --color-blue-800: #0a1e8f;
+  --color-blue-900: #061574;
+  --color-gold-100: #fff7d1;
+  --color-gold-200: #ffeba3;
+  --color-gold-300: #ffdd75;
+  --color-gold-400: #ffd152;
+  --color-gold-500: #ffb914;
+  --color-gold-600: #da9710;
+  --color-gold-700: #b7780b;
+  --color-gold-800: #925a07;
+  --color-gold-900: #7c4a04;
+  --color-gold-050: #fffceb;
+  --color-red-100: #ffece0;
+  --color-red-200: #ffd2bd;
+  --color-red-300: #ffb59e;
+  --color-red-400: #ff9785;
+  --color-red-500: #ff6b61;
+  --color-red-600: #db484a;
+  --color-red-700: #b5303e;
+  --color-red-800: #941e34;
+  --color-red-900: #78122d;
+  --color-red-050: #fff5eb;
+  --effect-opacity-0: 0;
+  --effect-opacity-10: 0.1;
+  --effect-opacity-20: 0.2;
+  --effect-opacity-30: 0.3;
+  --effect-opacity-40: 0.4;
+  --effect-opacity-50: 0.5;
+  --effect-opacity-60: 0.6;
+  --effect-opacity-70: 0.7;
+  --effect-opacity-80: 0.8;
+  --effect-opacity-90: 0.9;
+  --effect-opacity-100: 1;
+  --effect-shadow-basic: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .12);
+  --effect-shadow-hover: 0 .5rem .75rem 0 hsla(180, 5%, 92%, .16), 0 .125rem .5rem 0 hsla(0, 0%, 0%, .08);
+  --effect-shadow-strong: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .36), 0 .5rem 1.25rem 0 hsla(197, 43%, 13%, .08);
+  --effect-shadow-stronger: 0 .125rem .25rem 0 hsla(198, 45%, 10%, .12), 0 .125rem 1rem 0 hsla(198, 45%, 10%, .32);
+  --effect-shadow-big: 0 0 5rem hsla(198, 45%, 10%, .08);
+  --effect-shadow-shallow: 0 1px .625rem 0 hsla(210, 7%, 22%, .06), 0 .125rem .25rem 0 hsla(210, 7%, 22%, .08);
+  --effect-shadow-deep: 0 1rem 1.5rem rgba(0, 0, 0, .07), 0 .375rem 1.875rem hsla(0, 0%, 0%, .06), 0 .5rem .625rem hsla(0, 0%, 0%, .1);
+  --size-spacing-0: 0px;
+  --size-spacing-px: 1px;
+  --size-spacing-2px: .125rem;
+  --size-spacing-3px: .1875rem;
+  --size-spacing-4px: .25rem;
+  --size-spacing-6px: .375rem;
+  --size-spacing-10px: .625rem;
+  --size-spacing-12px: .75rem;
+  --size-spacing-25px: 1.5625rem;
+  --size-spacing-32px: 2rem;
+  --size-spacing-micro: .5rem;
+  --size-spacing-tiny: 1rem;
+  --size-spacing-small: 1.5rem;
+  --size-spacing-medium: 2.5rem;
+  --size-spacing-large: 4rem;
+  --size-spacing-xl: 6.5rem;
+  --size-spacing-xxl: 13.5rem;
+  --size-spacing-3xl: 16.5rem;
+  --size-spacing-4xl: 26.5rem;
+  --size-spacing-5xl: 42.5rem;
+  --typography-size-tiny: .75rem;
+  --typography-size-small: .875rem;
+  --typography-size-medium: 1rem;
+  --typography-size-medium-xl: 1.15rem;
+  --typography-size-large: 1.225rem;
+  --typography-size-xl: 1.375rem;
+  --typography-size-xxl: 2.25rem;
+  --typography-size-xxxl: 4rem;
+  --typography-size-4xl: 6.5rem;
+  --typography-weight-thin: 100;
+  --typography-weight-light: 300;
+  --typography-weight-regular: 400;
+  --typography-weight-medium: 500;
+  --typography-weight-semibold: 600;
+  --typography-weight-bold: 700;
+  --typography-weight-black: 900;
+  --typography-letter-spacing-tight: -.025em;
+  --typography-letter-spacing-normal: 0;
+  --typography-letter-spacing-wide: 1.5px;
+  --fontFamily: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --fontMono: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", Courier, monospace;
+  --colorBlack: var(--color-black-default);
+  --colorBlackDarker: var(--colorBlack);
+  --colorGrayDarkest: var(--color-gray-darkest);
+  --colorGrayDarker: var(--color-gray-darker);
+  --colorGrayDark: var(--color-gray-dark);
+  --colorGray: var(--color-gray-default);
+  --colorGrayLight: var(--color-gray-light);
+  --colorGrayLighter: var(--color-gray-lighter);
+  --colorGrayLightest: var(--color-gray-lightest);
+  --colorWhite: var(--color-white-default);
+  --colorDarkGrayDarker: var(--color-dark-gray-darker);
+  --colorListNeutral: colorBlack, colorBlackDarker, colorGrayDarkest, colorGrayDarker, colorGrayDark, colorGray, colorGrayLight, colorGrayLighter, colorGrayLightest, colorWhite;
+  --opacity-0: var(--effect-opacity-0);
+  --opacity-10: var(--effect-opacity-10);
+  --opacity-20: var(--effect-opacity-20);
+  --opacity-30: var(--effect-opacity-30);
+  --opacity-40: var(--effect-opacity-40);
+  --opacity-50: var(--effect-opacity-50);
+  --opacity-60: var(--effect-opacity-60);
+  --opacity-70: var(--effect-opacity-70);
+  --opacity-80: var(--effect-opacity-80);
+  --opacity-90: var(--effect-opacity-90);
+  --opacity-100: var(--effect-opacity-100);
+  --focusHoverShadow: var(--effect-shadow-focus-hover);
+  --basicShadow: var(--effect-shadow-basic);
+  --hoverShadow: var(--effect-shadow-hover);
+  --strongShadow: var(--effect-shadow-strong);
+  --strongerShadow: var(--effect-shadow-stronger);
+  --bigShadow: var(--effect-shadow-big);
+  --tealShadow: var(--effect-shadow-teal);
+  --whiteTealShadow: var(--effect-shadow-white-teal);
+  --blackTealShadow: var(--effect-shadow-black-teal);
+  --shallowShadow: var(--effect-shadow-shallow);
+  --deepShadow: var(--effect-shadow-deep);
+  --dropdownShadow: 0 .375rem .75rem rgba(0, 0, 0, .08);
+  --dragAndDropSiteShadow: 0 .25rem .5rem 0 rgba(19, 39, 48, .16), 0 0 0 62.5rem rgba(19, 39, 48, .5);
+  --thin: 100;
+  --light: 300;
+  --regular: 400;
+  --mediumWeight: 500;
+  --semibold: 600;
+  --bold: 700;
+  --black: 900;
+  --tightLetterSpacing: -.025em;
+  --normalLetterSpacing: 0;
+  --wideLetterSpacing: 1.5px;
+  --spacingList: borderWidth, micro, tiny, small, medium, large, xl, xxl, 3xl, 4xl, 5xl;
+  --micro: var(--size-spacing-micro);
+  --tiny: var(--size-spacing-tiny);
+  --small: var(--size-spacing-small);
+  --medium: var(--size-spacing-medium);
+  --large: var(--size-spacing-large);
+  --borderWidth: var(--size-border-width-default);
+  --lightBorderWidth: var(--size-border-width-light);
+  --smallRadius: var(--size-border-radius-small);
+  --bigRadius: var(--size-border-radius-big);
+  --largeRadius: var(--size-border-radius-large);
+  --largeRadius-xl: var(--size-border-radius-large-xl);
+  --largeRadius-xxl: var(--size-border-radius-large-xxl);
+  --fullRadius: var(--size-border-radius-full);
+  --listLoaderGradient: linear-gradient( to right, hsl(210, 25%, 97%) 8%, hsl(210, 25%, 95%) 18%, hsl(210, 25%, 97%) 33%);
+  --listLoaderGradientStatic: repeating-linear-gradient( 135deg, hsl(210, 25%, 97%) 1.25rem, hsl(210, 25%, 93%) 2.5rem, hsl(210, 25%, 97%) 3.75rem, hsl(210, 25%, 97%) 6.25rem);
+  --fadedGradient: linear-gradient( rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+  --unreadFadeOutBgColorFrom: var(--colorGrayLight);
+  --unreadFadeOutBgColorTo: var(--colorWhite);
+  --stripesDark: repeating-linear-gradient( 112deg, transparent, transparent .9375rem, rgba(0, 0, 0, .1) 0, rgba(0, 0, 0, .1) 1.875rem);
+  --stripesLight: repeating-linear-gradient( 112deg, transparent, transparent .9375rem, rgba(255, 255, 255, .3) 0, rgba(255, 255, 255, .3) 1.875rem);
+  --colorAppBackground: hsl(0, 0%, 100%);
+  --colorBg: hsla(198, 45%, 10%, .02);
+  --colorBgHover: hsla(198, 45%, 10%, .03);
+  --colorBgInverse: var(--colorBlack);
+  --colorBgInverseDarker: hsl(198, 45%, 9%);
+  --colorBgApp: var(--colorAppBackground);
+  --colorOverlay: hsla(198, 45%, 10%, .6);
+  --colorOverlayInverse: hsla(197, 84%, 5%, .75);
+  --colorListBackground: colorBg, colorBgLight, colorBgInverse, colorBgHover, colorBgApp, colorOverlay;
+  --opacityDisabled: .38;
+  --opacityPlaceholder: .38;
+  --opacityMuted: .38;
+  --colorTextLoud: var(--colorBlack);
+  --colorText: var(--colorGrayDarkest);
+  --colorTextMuted: var(--colorGrayDarker);
+  --colorPlaceholder: var(--colorGrayDark);
+  --colorTextInverse: var(--colorWhite);
+  --colorTextMutedInverse: var(--colorGrayDark);
+  --colorHR: var(--colorGrayLightest);
+  --colorListText: colorTextLoud, colorText, colorTextMuted, colorPlaceholder, colorTextInverse, colorTextMuted, colorTextMutedInverse, colorHR;
+  --colorList: var(--colorListNeutral), var(--colorListPrimary), var(--colorListPlans), var(--colorListThirdParty), var(--colorListOther), var(--colorListBackground), var(--colorListText), var(--colorListLegacyNeutral), var(--colorListProviders), var(--colorListPlan);
+  --nano: .25rem;
+  --scrollbarWidth: .9375rem;
+  --videoWidth: 35rem;
+  --creditCardWidth: 23.25rem;
+  --widescreenRatio: 56.25%;
+  --screenshotRatio: 1.6;
+  --avatarSize: 2rem;
+  --cardPadding: var(--small);
+  --cardRadius: var(--bigRadius);
+  --scrollableDropdownMaxHeight: 40vh;
+  --scrollableDropdownMinHeight: var(--medium);
+  --transition: .15s ease;
+  --zIndexSticky: 99;
+  --zIndexHeader: 999;
+  --zIndexDropdown: 999;
+  --zIndexBanner: 9999;
+  --zIndexOverlay: 99999;
+  --zIndexSkipToMain: 99999;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0.3rem;
+  height: 0.3rem;
+  background: var(--color-dark-third-party-github-dark);
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: var(--cardRadius);
+  background: var(--color-primary);
+}
+
+:is(input,
+textarea,
+select):focus,
+:is(input,
+textarea,
+select) {
+  outline: none;
+  border: none;
+}
+
+button,
+select {
+  text-transform: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+html {
+  color-scheme: dark light;
+  font-family: var(--fontFamily) !important;
+}
+
+body {
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url(./assets/Images/Background-2.jpg);
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button::-moz-focus-inner,
+input[type=button]::-moz-focus-inner,
+input[type=reset]::-moz-focus-inner,
+input[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0
+}
+
+button {
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  text-align: inherit
+}
+
+textarea {
+  overflow: auto
+}
+
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  padding: 0
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: auto;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+:is(ol,
+ul) {
+  list-style: none;
+}
+
+[hidden] {
+  display: none !important;
+}

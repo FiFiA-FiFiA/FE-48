@@ -1,0 +1,38 @@
+<header>
+  <div class="Container">
+    <div class="Left__Side Logo">
+      <i class="fa fa-users"></i>
+      <span>Users</span>
+    </div>
+
+    <div class="Right__Side">
+      <button class="Button-Add__User" (click)="Active__AddUser__Container(true)">
+        <i class="fa fa-user-plus"></i>
+        <span>Add User</span>
+      </button>
+
+      <button class="Button-Sort__User" Buttin-Sort__Dropdown (click)="Active__Dropdown__Manu()" (click)="Select__Sort__Value()" tive__Dropdown__Manu="true">
+        <label class="Input__Wrapper">
+          <input type="text" [(ngModel)]="SortValue" Input__Select placeholder="Sort By">
+          <i class="fa fa-angle-down"></i>
+        </label>
+
+        <div class="Dropdown__Menu__Wrapper">
+          <ul class="Dropdown__Menu" Dropdown__Menu>
+            <li class="Item" Dropdown__Menu__Item value="">Sort by</li>
+            <li class="Item" Dropdown__Menu__Item value="Age">Sort by Age</li>
+            <li class="Item" Dropdown__Menu__Item value="Name">Sort by Name</li>
+          </ul>
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="Container">
+    <div class="Users__Content__Wrapper" Users__Content__Wrapper>
+      <app-card class="Card" *ngFor="let User of User__Arr" [user]="User"></app-card>
+    </div>
+  </div>
+</main>
+<app-register (AddUserEmitter)="CreateUser($event)"></app-register>

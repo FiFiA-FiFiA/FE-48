@@ -1,0 +1,21 @@
+<ul class="Body__Content Content__Row" *ngIf="ServerArr.length > 0">
+  <li class="Collumn">
+    <span>{{ ServerInfo.ServerId }}</span>
+  </li>
+  <li class="Collumn">
+    <span>{{ ServerInfo.ServerName }}</span>
+  </li>
+  <li class="Collumn">
+    <span>{{ ServerInfo.Port }}</span>
+  </li>
+  <li class="Collumn">
+    <span class="status status-{{ ServerInfo.Status }}">{{
+      ServerInfo.Status
+    }}</span>
+  </li>
+  <li class="Collumn">
+    <button class="Button-Details" (click)="OpenServerDetails()">
+      Details
+    </button>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+<section Section__Index="1" Section__Active="true">
+  <div class="Table w-100">
+    <div class="Table__Header">
+      <ul class="row text-start border-bottom p-0 py-2 w-100">
+        <li class="col col-sm-1 text-secondary fs-6 fw-bold">#</li>
+        <li class="col col-md-3 text-secondary fs-6 fw-bold">Server Name</li>
+        <li class="col col-sm-3 text-secondary fs-6 fw-bold">Port</li>
+        <li class="col text-secondary fs-6 fw-bold">Status</li>
+        <li class="col text-end text-secondary fs-6 fw-bold">Action</li>
+      </ul>
+    </div>
+    <div class="Table__Body">
+      <app-server *ngFor="let server of ServerArr" [server]="server"></app-server>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,89 @@
+.Add__User__Form__Container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.Add__User__Form__Container[Active__AddUser__Container="true"] {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: painted;
+}
+
+.Add__User__Form__Container .Form__Overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--colorOverlay);
+  z-index: -1;
+}
+
+.Add__User__Form__Container .Add__User__Form {
+  max-width: 350px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--size-07rem);
+  z-index: 1;
+  padding: var(--size-1rem);
+  border-radius: var(--cardRadius);
+  background: var(--color-transparent-09);
+  backdrop-filter: blur(1rem);
+}
+
+.Add__User__Form__Container .Add__User__Form .Form__Title {
+  width: var(--full-width);
+  text-align: start;
+  font-size: var(--typography-size-xl);
+  font-weight: var(--mediumWeight);
+  color: var(--color-white-default);
+}
+
+.Add__User__Form__Container .Add__User__Form .Form__Wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-05rem);
+  width: var(--full-width);
+  margin-bottom: var(--size-07rem);
+}
+
+.Add__User__Form__Container .Add__User__Form .Form__Wrapper .Input {
+  background: var(--color-transparent-01);
+  border: var(--size-01rem) solid var(--color-primary-transparent-hover);
+  border-radius: var(--largeRadius-xxl);
+  padding: var(--size-05rem) var(--size-1rem);
+  color: var(--color-white-default);
+  outline: var(--size-01rem) solid var(--color-transparent-default);
+  height: 45px;
+  font-weight: var(--mediumWeight);
+  font-size: var(--typography-size-medium);
+  padding: var(--size-01rem) var(--size-1_5rem);
+}
+
+.Add__User__Form__Container .Add__User__Form .Button__Add__User {
+  background: var(--color-primary-transparent);
+  border: var(--size-01rem) solid var(--color-primary-transparent-hover);
+  border-radius: var(--largeRadius-xxl);
+  padding: var(--size-05rem) var(--size-1rem);
+  color: var(--color-white-default);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-07rem);
+  cursor: pointer;
+  outline: var(--size-01rem) solid var(--color-transparent-default);
+  height: 45px;
+  font-weight: var(--mediumWeight);
+  font-size: var(--typography-size-medium);
+}
+
+.Add__User__Form__Container .Add__User__Form .Button__Add__User:hover {
+  background: var(--color-primary);
+}

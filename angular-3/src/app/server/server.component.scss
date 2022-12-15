@@ -1,0 +1,41 @@
+@import "../../scss/Variable";
+@import "../../scss/Mixin";
+.Body__Content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 5% 30% 15% 30% 20%;
+  padding: 0 $size-05rem;
+  background: $color-white-default;
+  border-radius: $small-radius;
+  box-shadow: $shadow-basic;
+  margin-bottom: $size-05rem;
+  min-width: 400px;
+  .Collumn {
+    @include display-flex(row, flex-start, center, 0);
+    padding: $size-05rem 0;
+    font-weight: $fw-medium;
+    font-size: $fs-small;
+    color: $color-gray-600;
+    &:last-child {
+      justify-content: flex-end;
+    }
+    .status {
+      @include display-flex(row, center, center, 0);
+      padding: 0 $size-08rem;
+      height: $full-height;
+      font-weight: $fw-medium;
+      font-size: $fs-small;
+      border-radius: $small-radius;
+      &.status-Disabled {
+        color: $color-red-600;
+        background: $color-red-200;
+        border: 0.1rem solid $color-red-600;
+      }
+      &.status-Enabled {
+        color: $color-green-700;
+        background: $color-green-200;
+        border: 0.1rem solid $color-green-700;
+      }
+    }
+  }
+}

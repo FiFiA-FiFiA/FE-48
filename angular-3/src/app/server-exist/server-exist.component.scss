@@ -1,0 +1,14 @@
+@import "../../scss/Variable";
+@import "../../scss/Mixin";
+.Server__NotExist {
+  position: relative;
+  width: $full-width;
+  min-height: 150px;
+  box-shadow: $shadow-basic;
+  border-radius: $small-radius;
+  font-weight: $fw-bold;
+  font-size: $fs-medium;
+  color: $color-gray-500;
+  background: $color-white-default;
+  @include display-flex(row, center, center, 0);
+}

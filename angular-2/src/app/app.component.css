@@ -1,0 +1,67 @@
+.Container {
+  min-height: var(--full-height-vh);
+  padding-top: var(--size-3rem);
+}
+
+.Content__Wrapper {
+  padding: var(--size-1rem);
+  background: var(--bg-color-light);
+  border: var(--size-01rem) solid var(--color-gray-dark-200);
+  border-radius: var(--smallRadius);
+  width: var(--full-width);
+  max-width: 900px;
+  margin: auto;
+}
+
+main {
+  max-height: 80vh;
+}
+
+section {
+  display: none;
+}
+
+section[Section__Index="1"][Section__Active="true"],
+section[Section__Index="2"][Section__Active="true"] {
+  display: block;
+}
+
+section ul:last-child {
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+section ul li:last-child {
+  padding-right: 0 !important;
+}
+
+.Button-Section__Tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  border: var(--size-01rem) solid var(--color-transparent-default);
+  border-top-left-radius: var(--smallRadius);
+  border-top-right-radius: var(--smallRadius);
+  border-bottom: 0;
+  padding: var(--size-03rem) var(--size-05rem);
+  color: var(--color-gray-dark-300);
+  font-weight: var(--typography-weight-regular);
+  z-index: 2;
+}
+
+.Button-Section__Tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: var(--size-05rem);
+  background: var(--color-white-default);
+}
+
+.Button-Section__Tab.active {
+  background: var(--color-white-default);
+  border-color: var(--color-gray-dark-200);
+}
